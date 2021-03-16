@@ -290,3 +290,5 @@ Be careful, these validators will be run in this the order you will add them.
 So, don't add StringLength validator before Required validator for example.
 
 ## Create validators
+
+You easily can create you own validators.
