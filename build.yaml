@@ -1,0 +1,8 @@
+targets:
+  $default:
+    builders:
+      reflectable:
+        generate_for:
+          - test/models/models.dart
+        options:
+          formatted: true
