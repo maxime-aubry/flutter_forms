@@ -1,2 +1,99 @@
 [English](https://github.com/maxime-aubry/flutter_forms/blob/main/README.md) |
-[Français]()
+[Français](https://github.com/maxime-aubry/flutter_forms/blob/main/resources/translations/fr_FR/README.md)
+
+![Pub Version](https://img.shields.io/pub/v/flutter_forms)
+![GitHub](https://img.shields.io/github/license/maxime-aubry/flutter_forms)
+![GitHub top language](https://img.shields.io/github/languages/top/maxime-aubry/flutter_forms)
+![flutter tests](https://github.com/maxime-aubry/flutter_forms/workflows/flutter%20tests/badge.svg?branch=master)
+![collection version](https://img.shields.io/badge/collection-1.15.0-brightgreen)
+![constant_datetime version](https://img.shields.io/badge/collection-1.0.0-brightgreen)
+![image version](https://img.shields.io/badge/collection-2.1.19-brightgreen)
+![mime version](https://img.shields.io/badge/collection-1.0.0-brightgreen)
+![provider version](https://img.shields.io/badge/collection-5.0.0-brightgreen)
+![queries version](https://img.shields.io/badge/collection-0.1.14-brightgreen)
+![reflectable version](https://img.shields.io/badge/collection-2.2.9-brightgreen)
+
+As with Angular, reactive forms are now on Flutter !
+
+By using `flutter_forms`, you will be able to simplify your code and validation of you forms.
+
+## Summary
+
+- [Getting Started](#getting-started)
+    - [Requirements](#requirements)
+    - [Dependencies] (#dependencies)
+- [Define a model file] (#define-model-file)
+- [Initialize library] (#initialize-library)
+
+
+## Getting Started
+
+Flutter_forms is very easy to use. First, you should learn to use Flutter.
+Please, read the [online documentation](https://flutter.dev/docs) before using this library.
+You will find tutorials, code labs, sample projects... Everything you need to be autonomous.
+
+## Requirements
+
+- Dart SDK: >=2.7.0 <3.0.0
+- Flutter: >= 1.17.0
+
+## Dependencies
+
+You must install all these dependencies to use `flutter_forms` :
+
+``` dart
+dependencies:
+  flutter:
+    sdk: flutter
+
+  build_runner: any
+  reflectable: ^2.2.9
+  flutter_forms: ^1.0.0
+```
+
+Then, run `flutter packages get` command on the console.
+
+## Define a model file
+
+First, you should define a model file.
+This one will contain all you enums, if you will use them.
+Into the `./lib/models.dart`, here are the differents steps we will do :
+    - define a namespace for models
+    - import flutter_forms
+    - define a main method (for reflectable)
+    - define you enums
+Please, use `@flutterFormsValidator` notation to declare the content.
+
+```dart
+@flutterFormsValidator
+library example.models;
+
+import 'package:flutter_forms/flutter_forms.dart';
+
+void main() {}
+
+@flutterFormsValidator
+enum EGender { male, female }
+```
+
+Use this command line to get the file to get a new file named `*.reflectable.dart` into a flutter application project.
+
+```console
+> flutter pub run build_runner build
+```
+
+## Initialize library
+
+Next, into the main.dart file, you must initialize the namespace to import.
+Here, you import `example.models` from `./lib/models.reflectable.dart`.
+
+```dart
+import 'package:example/models.reflectable.dart';
+import 'package:flutter_forms/flutter_forms.dart';
+
+void main() {
+  initializeReflectable();
+  LibraryInitializer.initialize(libraryName: 'example.models');
+  runApp(new MyApp());
+}
+```
