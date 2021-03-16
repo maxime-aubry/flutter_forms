@@ -1,2 +1,2 @@
-# flutter_forms
-A new flutter package to create reactive and model forms.
+[English](https://github.com/maxime-aubry/flutter_forms/blob/main/README.md) |
+[Français]()
