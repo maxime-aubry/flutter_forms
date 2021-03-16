@@ -208,8 +208,62 @@ FormControls :
 | Validator | Description  | Progress |
 | ----- | ----- | ----- |
 | `Email` | Checks if a value is a valid email. | **done** |
-| `EqualToDateTime` | Checks if a DateTime value is equal to another. | **done** |
+| `EqualToDateTime` | Checks if a datetime value is equal to another. | **done** |
 | `EqualToDouble` | Checks if a double value is equal to another. | **done** |
 | `EqualToInt` | Checks if a int value is equal to another. | **done** |
 | `EqualToNumber` | Checks if a number value is equal to another. | **done** |
 | `EqualToString` | Checks if a string value is equal to another. | **done** |
+| `FileMimeType` | Checks if a file has an allowed mime type. | **done** |
+| `FileSize` | Checks if a file has an allowed size. | **done** |
+| `GreaterOrEqualToDateTime` | Checks if a datetime value is greater or equal to another. | **done** |
+| `GreaterOrEqualToDouble` | Checks if a double value is greater or equal to another. | **done** |
+| `GreaterOrEqualToInt` | Checks if a int value is greater or equal to another. | **done** |
+| `GreaterOrEqualToNumber` | Checks if a number value is greater or equal to another. | **done** |
+| `GreaterOrEqualToString` | Checks if a string value is greater or equal to another. | **done** |
+| `GreaterThanDateTime` | Checks if a datetime value is greater than another. | **done** |
+| `GreaterThanDouble` | Checks if a double value is greater than another. | **done** |
+| `GreaterThanInt` | Checks if a int value is greater than another. | **done** |
+| `GreaterThanNumber` | Checks if a number value is greater than another. | **done** |
+| `GreaterThanString` | Checks if a string value is greater than another. | **done** |
+| `xxxxxxxxx` | xxxxxxxxx | **done** |
+| `xxxxxxxxx` | xxxxxxxxx | **done** |
+| `xxxxxxxxx` | xxxxxxxxx | **done** |
+| `xxxxxxxxx` | xxxxxxxxx | **done** |
+| `xxxxxxxxx` | xxxxxxxxx | **done** |
+| `xxxxxxxxx` | xxxxxxxxx | **done** |
+| `xxxxxxxxx` | xxxxxxxxx | **done** |
+| `xxxxxxxxx` | xxxxxxxxx | **done** |
+| `xxxxxxxxx` | xxxxxxxxx | **done** |
+| `xxxxxxxxx` | xxxxxxxxx | **done** |
+| `xxxxxxxxx` | xxxxxxxxx | **done** |
+| `xxxxxxxxx` | xxxxxxxxx | **done** |
+| `xxxxxxxxx` | xxxxxxxxx | **done** |
+| `xxxxxxxxx` | xxxxxxxxx | **done** |
+| `xxxxxxxxx` | xxxxxxxxx | **done** |
+| `xxxxxxxxx` | xxxxxxxxx | **done** |
+| `xxxxxxxxx` | xxxxxxxxx | **done** |
+| `xxxxxxxxx` | xxxxxxxxx | **done** |
+| `xxxxxxxxx` | xxxxxxxxx | **done** |
+| `xxxxxxxxx` | xxxxxxxxx | **done** |
+| `xxxxxxxxx` | xxxxxxxxx | **done** |
+| `xxxxxxxxx` | xxxxxxxxx | **done** |
+| `xxxxxxxxx` | xxxxxxxxx | **done** |
+| `xxxxxxxxx` | xxxxxxxxx | **done** |
+| `xxxxxxxxx` | xxxxxxxxx | **done** |
+| `xxxxxxxxx` | xxxxxxxxx | **done** |
+| `xxxxxxxxx` | xxxxxxxxx | **done** |
+| `xxxxxxxxx` | xxxxxxxxx | **done** |
+| `xxxxxxxxx` | xxxxxxxxx | **done** |
+| `xxxxxxxxx` | xxxxxxxxx | **done** |
+| `xxxxxxxxx` | xxxxxxxxx | **done** |
+| `xxxxxxxxx` | xxxxxxxxx | **done** |
+| `xxxxxxxxx` | xxxxxxxxx | **done** |
+| `xxxxxxxxx` | xxxxxxxxx | **done** |
+| `xxxxxxxxx` | xxxxxxxxx | **done** |
+| `xxxxxxxxx` | xxxxxxxxx | **done** |
+| `xxxxxxxxx` | xxxxxxxxx | **done** |
+| `xxxxxxxxx` | xxxxxxxxx | **done** |
+| `xxxxxxxxx` | xxxxxxxxx | **done** |
+| `xxxxxxxxx` | xxxxxxxxx | **done** |
+| `xxxxxxxxx` | xxxxxxxxx | **done** |
+| `xxxxxxxxx` | xxxxxxxxx | **done** |
