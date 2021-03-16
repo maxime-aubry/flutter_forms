@@ -225,12 +225,16 @@ FormControls :
 | `GreaterThanInt` | Checks if a int value is greater than another. | **done** |
 | `GreaterThanNumber` | Checks if a number value is greater than another. | **done** |
 | `GreaterThanString` | Checks if a string value is greater than another. | **done** |
-| `xxxxxxxxx` | xxxxxxxxx | **done** |
-| `xxxxxxxxx` | xxxxxxxxx | **done** |
-| `xxxxxxxxx` | xxxxxxxxx | **done** |
-| `xxxxxxxxx` | xxxxxxxxx | **done** |
-| `xxxxxxxxx` | xxxxxxxxx | **done** |
-| `xxxxxxxxx` | xxxxxxxxx | **done** |
+| `ImageSize` | Checks if the image width and height. | **done** |
+| `InText` | Checks if the text is contained into another text. | **done** |
+| `MembershipPassword` | Checks if the password has a good format according to the settings. | **done** |
+| `MultiSelect` | Checks if value is a selection of items contained into a list of items. | **done** |
+| `NbValues` | Checks if a array value has a valid length. | **done** |
+| `NotEqualToDateTime` | Checks if a datetime value is not equal to another. | **done** |
+| `NotEqualToDouble` | Checks if a double value is not equal to another. | **done** |
+| `NotEqualToInt` | Checks if a int value is not equal to another. | **done** |
+| `NotEqualToNumber` | Checks if a number value is not equal to another. | **done** |
+| `NotEqualToString` | Checks if a string value is not equal to another. | **done** |
 | `xxxxxxxxx` | xxxxxxxxx | **done** |
 | `xxxxxxxxx` | xxxxxxxxx | **done** |
 | `xxxxxxxxx` | xxxxxxxxx | **done** |
