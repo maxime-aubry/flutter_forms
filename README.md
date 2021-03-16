@@ -193,6 +193,6 @@ So, here is a list of available validators :
 
 Common :
 
-| Validator         | Description                                       | Progress          |
-| ----------------- | ------------------------------------------------- | ----------------- |
-| `Required`        | Validate a [FormGroup], [FormArray] and[FormControl]. | **done**      |
+| Validator         | Description                                               | Progress                  |
+| ----------------- | --------------------------------------------------------- | ------------------------- |
+| `Required`        | Validate a FormGroup, FormArray and FormControl.          | **done**                  |
