@@ -27,6 +27,7 @@ By using `flutter_forms`, you will be able to simplify your code and validation 
 - [Define a new basic form](#define-a-new-basic-form)
 - [Add inputs](#add-inputs)
 - [Add validators](#add-validators)
+- [Create validators](#create-validators)
 
 ## Getting Started
 
@@ -254,3 +255,38 @@ FormControls :
 | `SmallerThanString` | Checks if a string value is smaller than another. | **done** |
 | `StringLength` | Checks if a string value is a valid length. | **done** |
 | `Url` | Checks if a value has a good URL format.. | **done** |
+
+How can we add validators to a form element ?
+You can add these functions to FormGroup, FormArray and FormControls.
+These three classes has a `validators` property.
+So, let see how to do this.
+
+```dart
+ReactiveFormBuilder _getFormBuilder() => new ReactiveFormBuilder(
+  group: new FormGroup(
+    controls: {
+      'first_name': new FormControl<String>(
+        value: 'Maxime',
+        validators: [
+          Required(error: 'first name is required'),
+          StringLength(min: 3, max: 50, error: 'first name must have between 3 and 50 characters.')
+        ],
+      ),
+      'last_name': new FormControl<String>(
+        value: 'AUBRY',
+        validators: [
+          Required(error: 'last name is required'),
+          StringLength(min: 3, max: 50, error: 'last name must have between 3 and 50 characters.')
+        ],
+      ),
+    },
+    validators: [],
+  ),
+);
+```
+
+Next time you will validate the form, these validators will be run.
+Be careful, these validators will be run in this the order you will add them.
+So, don't add StringLength validator before Required validator for example.
+
+## Create validators
