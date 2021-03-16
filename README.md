@@ -195,6 +195,6 @@ Common :
 
 | Validator         | Description                                      | Progress                  |
 | ----------------- | ------------------------------------------------ | ------------------------- |
-| `Required`        |   Validate a FormGroup, FormArray and FormControl. Checks if a FormGroup is not null and contains controls. Checks if a FormArray is not null and contains items. Checks if a FormControl is not null. If this one is a string, checks if it's not an empty string. | **done**                  |
+| `Required`        |   Validate a FormGroup, FormArray and FormControl. - Checks if a FormGroup is not null and contains controls. Checks if a FormArray is not null and contains items. Checks if a FormControl is not null. If this one is a string, checks if it's not an empty string. | **done**                  |
 
 FormGroup :
