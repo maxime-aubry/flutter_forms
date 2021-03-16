@@ -235,39 +235,22 @@ FormControls :
 | `NotEqualToInt` | Checks if a int value is not equal to another. | **done** |
 | `NotEqualToNumber` | Checks if a number value is not equal to another. | **done** |
 | `NotEqualToString` | Checks if a string value is not equal to another. | **done** |
-| `xxxxxxxxx` | xxxxxxxxx | **done** |
-| `xxxxxxxxx` | xxxxxxxxx | **done** |
-| `xxxxxxxxx` | xxxxxxxxx | **done** |
-| `xxxxxxxxx` | xxxxxxxxx | **done** |
-| `xxxxxxxxx` | xxxxxxxxx | **done** |
-| `xxxxxxxxx` | xxxxxxxxx | **done** |
-| `xxxxxxxxx` | xxxxxxxxx | **done** |
-| `xxxxxxxxx` | xxxxxxxxx | **done** |
-| `xxxxxxxxx` | xxxxxxxxx | **done** |
-| `xxxxxxxxx` | xxxxxxxxx | **done** |
-| `xxxxxxxxx` | xxxxxxxxx | **done** |
-| `xxxxxxxxx` | xxxxxxxxx | **done** |
-| `xxxxxxxxx` | xxxxxxxxx | **done** |
-| `xxxxxxxxx` | xxxxxxxxx | **done** |
-| `xxxxxxxxx` | xxxxxxxxx | **done** |
-| `xxxxxxxxx` | xxxxxxxxx | **done** |
-| `xxxxxxxxx` | xxxxxxxxx | **done** |
-| `xxxxxxxxx` | xxxxxxxxx | **done** |
-| `xxxxxxxxx` | xxxxxxxxx | **done** |
-| `xxxxxxxxx` | xxxxxxxxx | **done** |
-| `xxxxxxxxx` | xxxxxxxxx | **done** |
-| `xxxxxxxxx` | xxxxxxxxx | **done** |
-| `xxxxxxxxx` | xxxxxxxxx | **done** |
-| `xxxxxxxxx` | xxxxxxxxx | **done** |
-| `xxxxxxxxx` | xxxxxxxxx | **done** |
-| `xxxxxxxxx` | xxxxxxxxx | **done** |
-| `xxxxxxxxx` | xxxxxxxxx | **done** |
-| `xxxxxxxxx` | xxxxxxxxx | **done** |
-| `xxxxxxxxx` | xxxxxxxxx | **done** |
-| `xxxxxxxxx` | xxxxxxxxx | **done** |
-| `xxxxxxxxx` | xxxxxxxxx | **done** |
-| `xxxxxxxxx` | xxxxxxxxx | **done** |
-| `xxxxxxxxx` | xxxxxxxxx | **done** |
-| `xxxxxxxxx` | xxxxxxxxx | **done** |
-| `xxxxxxxxx` | xxxxxxxxx | **done** |
-| `xxxxxxxxx` | xxxxxxxxx | **done** |
+| `RangeOfDateTime` | Checks if a datetime value is between min and max values. | **done** |
+| `RangeOfDouble` | Checks if a double value is between min and max values. | **done** |
+| `RangeOfInt` | Checks if a int value is between min and max values. | **done** |
+| `RangeOfNumber` | Checks if a number value is between min and max values. | **done** |
+| `RangeOfString` | Checks if a string value is between min and max values. | **done** |
+| `RegularExpression` | Checks if a value has a good format according to a regular expression. | **done** |
+| `SingleSelect` | Checks if value is an item contained into a list of items. | **done** |
+| `SmallerOrEqualToDateTime` | Checks if a datetime value is smaller or equal to another. | **done** |
+| `SmallerOrEqualToDouble` | Checks if a double value is smaller or equal to another. | **done** |
+| `SmallerOrEqualToInt` | Checks if a int value is smaller or equal to another. | **done** |
+| `SmallerOrEqualToNumber` | Checks if a number value is smaller or equal to another. | **done** |
+| `SmallerThanString` | Checks if a string value is smaller or equal to another. | **done** |
+| `SmallerThanDateTime` | Checks if a datetime value is smaller than another. | **done** |
+| `SmallerThanDouble` | Checks if a double value is smaller than another. | **done** |
+| `SmallerThanInt` | Checks if a int value is smaller than another. | **done** |
+| `SmallerThanNumber` | Checks if a number value is smaller than another. | **done** |
+| `SmallerThanString` | Checks if a string value is smaller than another. | **done** |
+| `StringLength` | Checks if a string value is a valid length. | **done** |
+| `Url` | Checks if a value has a good URL format.. | **done** |

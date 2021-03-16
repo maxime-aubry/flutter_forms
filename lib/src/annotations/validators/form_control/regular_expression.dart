@@ -1,7 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter_forms/flutter_forms.dart';
 
-/// [RegularExpression] is a validator that checks if a value has a good format accorging to a regular expression.
+/// [RegularExpression] is a validator that checks if a value has a good format according to a regular expression.
 /// {@category Metadata}
 /// {@subCategory Form validators}
 class RegularExpression extends FormControlValidatorAnnotation<String> {
