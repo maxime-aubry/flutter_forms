@@ -26,6 +26,7 @@ By using `flutter_forms`, you will be able to simplify your code and validation 
 - [Initialize library](#initialize-library)
 - [Define a new basic form](#define-a-new-basic-form)
 - [Add inputs](#add-inputs)
+- [Add validators](#add-validators)
 
 ## Getting Started
 
@@ -174,8 +175,24 @@ Widget _inputText(FormControl<String> formControl, String label) =>
     decoration: InputDecoration(labelText: label),
     keyboardType: TextInputType.text,
     controller: new TextEditingController(text: formControl.value),
+    // here, we set the value into the FormControl
     onChanged: (String value) async => await formControl.setValue(value),
+    // here, we set the value into the FormControl
     onSaved: (String value) async => await formControl.setValue(value),
+    // here, we display the error if there is one
     validator: (String value) => formControl.error?.message,
   );
 ```
+
+## Add validators
+
+What would be this library without validators ?
+NOTHING !
+
+So, here is a list of available validators :
+
+Common :
+
+| Validator         | Description                                       | Progress          |
+| ----------------- | ------------------------------------------------- | ----------------- |
+| `Required`        | Validate a [FormGroup], [FormArray] and[FormControl]. | **done**      |
