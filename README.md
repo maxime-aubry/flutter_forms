@@ -208,3 +208,8 @@ FormControls :
 | Validator | Description  | Progress |
 | ----- | ----- | ----- |
 | `Email` | Checks if a value is a valid email. | **done** |
+| `EqualToDateTime` | Checks if a DateTime value is equal to another. | **done** |
+| `EqualToDouble` | Checks if a double value is equal to another. | **done** |
+| `EqualToInt` | Checks if a int value is equal to another. | **done** |
+| `EqualToNumber` | Checks if a number value is equal to another. | **done** |
+| `EqualToString` | Checks if a string value is equal to another. | **done** |

@@ -86,36 +86,6 @@ class EqualToDateTime extends EqualTo<DateTime> {
   /* Private methods */
 }
 
-/// [EqualToNumber] is a validator that checks if a [num] value is equal to another.
-class EqualToNumber extends EqualTo<num> {
-  /* Public properties */
-
-  /* Protected properties */
-
-  /* Private properties */
-
-  /* Getters */
-
-  /* Setters */
-
-  /* Constructors */
-  const EqualToNumber({
-    num valueToCompare,
-    String remoteValueToCompare,
-    @required String error,
-  }) : super(
-          valueToCompare: valueToCompare,
-          remoteValueToCompare: remoteValueToCompare,
-          error: error,
-        );
-
-  /* Public methods */
-
-  /* Protected methods */
-
-  /* Private methods */
-}
-
 /// [EqualToDouble] is a validator that checks if a [double] value is equal to another.
 class EqualToDouble extends EqualTo<double> {
   /* Public properties */
@@ -174,6 +144,36 @@ class EqualToInt extends EqualTo<int> {
   /* Protected methods */
 
   /* Private methods */
+}
+
+/// [EqualToNumber] is a validator that checks if a [num] value is equal to another.
+class EqualToNumber extends EqualTo<num> {
+  /* Public properties */
+
+  /* Protected properties */
+
+  /* Private properties */
+
+  /* Getters */
+
+  /* Setters */
+
+  /* Constructors */
+  const EqualToNumber({
+    num valueToCompare,
+    String remoteValueToCompare,
+    @required String error,
+  }) : super(
+          valueToCompare: valueToCompare,
+          remoteValueToCompare: remoteValueToCompare,
+          error: error,
+        );
+
+/* Public methods */
+
+/* Protected methods */
+
+/* Private methods */
 }
 
 /// [EqualToString] is a validator that checks if a [String] value is equal to another.
