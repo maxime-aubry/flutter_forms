@@ -24,7 +24,7 @@ By using `flutter_forms`, you will be able to simplify your code and validation 
     - [Dependencies] (#dependencies)
 - [Define a model file] (#define-model-file)
 - [Initialize library] (#initialize-library)
-
+- [Define a new basic form] (#define-basic-form)
 
 ## Getting Started
 
@@ -97,3 +97,33 @@ void main() {
   runApp(new MyApp());
 }
 ```
+
+## Define a new basic form
+
+Here we are. We are going to define our new form.
+Into your widget, start by defining a [ReactiveForm] object.
+[formBuilder] property receives the form builder.
+
+```dart
+@override
+Widget build(BuildContext context) {
+  return ReactiveForm(
+    formBuilder: this._getFormBuilder(),
+    builder: (context, _) {
+      return new Container();
+    },
+  );
+}
+
+ReactiveFormBuilder _getFormBuilder() => new ReactiveFormBuilder(
+  group: new FormGroup(
+    controls: {
+      'first_name': new FormControl<String>(value: 'Maxime', validators: []),
+      'last_name': new FormControl<String>(value: 'AUBRY', validators: []),
+    },
+    validators: [],
+  ),
+);
+```
+
+We just created a new form with two fields, `first_name` and `last_name`.
