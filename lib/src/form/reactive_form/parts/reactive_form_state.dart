@@ -1,5 +1,4 @@
 import 'package:flutter/widgets.dart';
-import 'package:flutter_forms/src/exceptions/index.dart';
 import 'package:flutter_forms/src/form/index.dart';
 import 'package:flutter_forms/src/form/reactive_form/index.dart';
 import 'package:queries/collections.dart';
@@ -80,7 +79,7 @@ class ReactiveFormState {
     return isValid;
   }
 
-  /// [getStatus] returns form element's status using by unique name.
+  /*/// [getStatus] returns form element's status using by unique name.
   EAbstractControlStatus getStatus(String name) {
     if (name == null || name.isEmpty)
       throw new FormBuilderException(
@@ -105,7 +104,7 @@ class ReactiveFormState {
   }
 
   /// [getError] returns form element's error message using by unique name.
-  String getErrorMessage(String name) => this.getError(name)?.message;
+  String getErrorMessage(String name) => this.getError(name)?.message;*/
 
   /* Proptected methods */
 

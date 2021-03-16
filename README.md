@@ -21,10 +21,11 @@ By using `flutter_forms`, you will be able to simplify your code and validation 
 
 - [Getting Started](#getting-started)
     - [Requirements](#requirements)
-    - [Dependencies] (#dependencies)
-- [Define a model file] (#define-model-file)
-- [Initialize library] (#initialize-library)
-- [Define a new basic form] (#define-basic-form)
+    - [Dependencies](#dependencies)
+- [Define a model file](#define-a-model-file)
+- [Initialize library](#initialize-library)
+- [Define a new basic form](#define-a-new-basic-form)
+- [Add inputs](#add-inputs)
 
 ## Getting Started
 
@@ -127,3 +128,54 @@ ReactiveFormBuilder _getFormBuilder() => new ReactiveFormBuilder(
 ```
 
 We just created a new form with two fields, `first_name` and `last_name`.
+
+## Add inputs
+
+Next, let add inputs to display on our screen.
+
+```dart
+@override
+Widget build(BuildContext context) {
+  return ReactiveForm(
+    formBuilder: this._getFormBuilder(),
+    builder: (context, _) {
+      // here, we get the root level of the form builder.
+      FormGroup root = context.watchFormGroup();
+
+      return new Scaffold(
+        appBar: new AppBar(title: Text("Reactive form")),
+        body: new Padding(
+          padding: EdgeInsets.all(5.0),
+          child: new Column(
+            children: [
+              // here, we add inputs for first_name and last_name fields
+              this._inputText(root.getFormControl<String>('first_name'), 'first name'),
+              this._inputText(root.getFormControl<String>('last_name'), 'last name'),
+            ],
+          ),
+        ),
+        floatingActionButton: new FloatingActionButton(
+          child: Icon(Icons.done),
+          onPressed: () async {
+            // here, we get the form state and validate the form
+            ReactiveFormState formState = context.readFormState();
+            if (await formState.validate()) {
+              // Data treatment and post to server here...
+            }
+          },
+        ),
+      );
+    },
+  );
+}
+
+Widget _inputText(FormControl<String> formControl, String label) => 
+  new TextFormField(
+    decoration: InputDecoration(labelText: label),
+    keyboardType: TextInputType.text,
+    controller: new TextEditingController(text: formControl.value),
+    onChanged: (String value) async => await formControl.setValue(value),
+    onSaved: (String value) async => await formControl.setValue(value),
+    validator: (String value) => formControl.error?.message,
+  );
+```
