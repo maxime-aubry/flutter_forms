@@ -477,6 +477,8 @@ FormGroup root = new FormGroup(
 root.removeControl('child');
 ```
 
+> That function will trigger the validation engine and update the form to display errors if there are.
+
 Here is a short code to remove a **FormArray** from the children collection of a **FormGroup** :
 
 ```dart
@@ -489,6 +491,8 @@ FormGroup root = new FormGroup(
 root.removeControl('child');
 ```
 
+> That function will trigger the validation engine and update the form to display errors if there are.
+
 Finally, here is a short code to remove a **FormControl** from the children collection of a **FormGroup** :
 
 ```dart
@@ -500,6 +504,8 @@ FormGroup root = new FormGroup(
 );
 root.removeControl('child');
 ```
+
+> That function will trigger the validation engine and update the form to display errors if there are.
 
 ## Check if a control exists into a FormGroup
 
@@ -559,6 +565,8 @@ FormGroup child = new FormGroup(controls: {}, validators: []);
 array.addGroup(child);
 ```
 
+> That function will trigger the validation engine and update the form to display errors if there are.
+
 ## Remove item from a FormArray
 
 Here is the way to remove an item :
@@ -574,6 +582,7 @@ FormGroup child = new FormGroup(controls: {}, validators: []);
 array.removeGroup(child);
 ```
 
+> That function will trigger the validation engine and update the form to display errors if there are.
 > This part is a little confuse because you don't see how to get an item from the form array. Lets see that later.
 
 ## FormControl
@@ -615,3 +624,8 @@ ReactiveFormBuilder form_builder = new ReactiveFormBuilder(
   ),
 );
 ```
+
+## Set a value
+
+
+
