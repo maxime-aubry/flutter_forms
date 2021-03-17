@@ -873,6 +873,8 @@ class CustomValidator extends FormControlValidatorAnnotation<String> {
 
 For almost each provider of **flutter_forms**, you can use **Consumers** (they are widgets), **watchers** and **readers**.
 
+If you want to use **Consumers**, **watchers** or **readers**, data must be provided before.
+
 Watchers are done to get form elements and rebuild widgets than use them when their value changes.
 
 Readers are done to get form elements without rebuilding widgets than use them when their value changes.
@@ -883,7 +885,9 @@ The last thing to know is **watchers** and **Consumers** do exactly the same thi
 
 ## FormProvider
 
-If you need to go to a new route, you will must share elements with the new widget.
+FormProvider is used inside **ReactiveForm** widget. Thanks to him, you are able to use **Consumers**, **watchers** and **readers** without defining it yourself.
+
+Except if you need to go to a new route, you will must share elements with the new widget.
 
 ```dart
 Navigator.push(
@@ -900,6 +904,8 @@ Navigator.push(
 ```
 
 ## ReactiveFormStateProvider
+
+ReactiveFormStateProvider is used inside **ReactiveForm** widget. Thanks to him, you are able to use **Consumers**, **watchers** and **readers** without defining it yourself.
 
 ReactiveFormState watcher :
 
@@ -924,6 +930,59 @@ child: new ReactiveFormStateConsumer(
 ```
 
 ## FormGroupProvider
+
+ReactiveFormStateProvider is used inside **ReactiveForm** widget. Thanks to him, you are able to use **Consumers**, **watchers** and **readers** without defining it yourself.
+
+But, if you want to consume a sub form element, in the sub level of the root **FormGroup**, you must provide it.
+
+For example, here is a form. Root level is provided, thanks to **ReactiveForm** widget.
+
+If we want to use **Consumers**, **watchers** or **readers** on a sub form element, use **FormGroupProvider.value** on it !
+
+```dart
+@override
+  Widget build(BuildContext context) {
+    return ReactiveForm(
+      formBuilder: this._getFormBuilder(),
+      builder: (context, _) {
+        // here, we get the root level of the form builder.
+        FormGroup root = context.watchFormGroup();
+
+        // here, we provide the child FormGroup
+        return new FormGroupProvider.value(
+          value: root.getFormGroup('child'),
+          builder: (context, _) {
+            FormGroup child = context.watchFormGroup();
+
+            return new Container();
+          }
+        );
+      },
+    );
+  }
+```
+
+FormGroup watcher :
+
+```dart
+FormGroup formGroup = context.watchFormGroup();
+```
+
+FormGroup reader :
+
+```dart
+FormGroup formGroup = context.readFormGroup();
+```
+
+FormGroup consumer :
+
+```dart
+child: new FormGroupConsumer(
+  builder: (context, formGroup, child) {
+    return new Container();
+  },
+);
+```
 
 ## FormArrayProvider
 
