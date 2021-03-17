@@ -448,7 +448,24 @@ Here is a short code to add a **FormGroup** in the children collection of a **Fo
 
 ```dart
 FormGroup formGroup = new FormGroup(controls: {}, validators: []);
-formGroup.addControl('child', null);
+FormGroup child = new FormGroup(controls: {}, validators: []);
+formGroup.addControl('child', child);
+```
+
+Here is a short code to add a **FormArray** in the children collection of a **FormGroup** :
+
+```dart
+FormGroup formGroup = new FormGroup(controls: {}, validators: []);
+FormArray child = new FormArray(groups: [], validators: []);
+formGroup.addControl('child', child);
+```
+
+Finally, here is a short code to add a **FormArray** in the children collection of a **FormGroup** :
+
+```dart
+FormGroup formGroup = new FormGroup(controls: {}, validators: []);
+FormControl<String> child = new FormControl<String>(value: null, validators: []);
+formGroup.addControl('child', child);
 ```
 
 ## FormArray
