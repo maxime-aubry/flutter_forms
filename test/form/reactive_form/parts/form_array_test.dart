@@ -3,7 +3,7 @@ import 'package:flutter_test/flutter_test.dart';
 
 import '../../../expect_exception.dart';
 import '../../../models/models.reflectable.dart';
-import 'initializer/fake_initializer.dart';
+import 'initializer/initializer.dart';
 
 void main() {
   setUp(() {

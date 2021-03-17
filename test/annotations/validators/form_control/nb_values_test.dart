@@ -2,7 +2,7 @@ import 'package:flutter_forms/flutter_forms.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import '../../../expect_exception.dart';
-import '../../../form/reactive_form/parts/initializer/fake_initializer.dart';
+import '../../../form/reactive_form/parts/initializer/initializer.dart';
 
 void main() {
   group('Annotations > Validators > FormControl<TProperty> > NbValues.', () {
