@@ -46,8 +46,13 @@ By using **flutter_forms**, you will be able to simplify your code and validatio
     - [Add validators](#add-validators)
     - [Create validators](#create-validators)
 - [Providers and Consumers](#providers-and-consumers)
-    - [Providers](#providers)
-    - [Consumers](#consumers)
+    - [FormProvider](#formprovider)
+    - [ReactiveFormStateProvider](#reactiveformstateprovider)
+    - [FormGroupProvider](#formgroupprovider)
+    - [FormArrayProvider](#formarrayprovider)
+    - [FormControlProvider](#formcontrolprovider)
+    - [MultipleStepFormStateIndexerProvider](#multiplestepformstateindexerprovider)
+    - 
 - [See more examples](#see-more-examples)
 
 ## Getting Started
@@ -865,6 +870,38 @@ class CustomValidator extends FormControlValidatorAnnotation<String> {
 ## Providers and Consumers
 
 **flutter_forms** uses [Provider library] to provide and consume form elements into your widgets.
+
+For each provider of **flutter_forms**, you can use **Consumers** (they are widgets), **readers** and **watchers**.
+
+Consumers can make reading difficult.
+
+## FormProvider
+
+If you need to go to a new route, you will must share elements with the new widget.
+
+```dart
+Navigator.push(
+  context,
+  MaterialPageRoute(
+    builder: (context) => new FormProvider(
+      providers: [
+        new FormGroupProvider.value(value: existingFormGroup),
+      ],
+      child: new Destination(),
+    ),
+  ),
+);
+```
+
+## ReactiveFormStateProvider
+
+## FormGroupProvider
+
+## FormArrayProvider
+
+## FormControlProvider
+
+## MultipleStepFormStateIndexerProvider
 
 ## See more examples
 

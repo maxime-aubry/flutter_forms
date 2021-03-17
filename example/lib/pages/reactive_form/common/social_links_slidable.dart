@@ -94,7 +94,7 @@ class _SocialLinksSlidableState extends State<SocialLinksSlidable> {
   void _goToEditPage(FormGroup socialLink) => Navigator.push(
         context,
         MaterialPageRoute(
-          builder: (context) => FormProvider(
+          builder: (context) => new FormProvider(
             providers: [
               new FormGroupProvider.value(value: socialLink),
             ],
@@ -110,7 +110,7 @@ class _SocialLinksSlidableState extends State<SocialLinksSlidable> {
     await showDialog<bool>(
       context: context,
       builder: (_) {
-        return FormProvider(
+        return new FormProvider(
           providers: [
             new FormGroupProvider.value(value: socialLink),
             new FormArrayProvider.value(value: socialLinks),

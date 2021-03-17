@@ -205,7 +205,7 @@ class _ReactiveFormWithFormArrayScreenState
   void _goToAddPage(FormArray socialLinks) => Navigator.push(
         context,
         MaterialPageRoute(
-          builder: (context) => FormProvider(
+          builder: (context) => new FormProvider(
             providers: [
               new FormArrayProvider.value(value: socialLinks),
             ],

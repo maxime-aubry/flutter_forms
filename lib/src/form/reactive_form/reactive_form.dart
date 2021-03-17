@@ -84,7 +84,7 @@ class _ReactiveFormState extends SingleChildState<ReactiveForm> {
     return Form(
       key: this._formKey,
       autovalidateMode: AutovalidateMode.always,
-      child: FormProvider(
+      child: new FormProvider(
         providers: [
           new ReactiveFormStateProvider.value(value: widget.formState),
           new FormGroupProvider.value(value: widget.formBuilder.group),
