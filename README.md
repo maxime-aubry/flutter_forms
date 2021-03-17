@@ -663,4 +663,5 @@ FormControl<String> child = form_builder.group.getFormControl<String>('first_nam
 FormControl<String> clone = child.getClone();
 ```
 
-> Whetever for **FormGroup**, **FormArray** or **FormControl**, you can use the same **getClone()** method.
+> Whether for **FormGroup**, **FormArray** or **FormControl**, you can use the same **getClone()** method.
+
