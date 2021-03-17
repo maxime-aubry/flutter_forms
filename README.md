@@ -596,6 +596,83 @@ Widget _inputText(FormControl<String> formControl, String label) =>
 
 **flutter_forms** supports forms with multiples steps !
 
+You must add your forms into a container that will assemble all form states.
+
+Lets see an easy example.
+
+Here is the main screen :
+
+```dart
+@override
+  Widget build(BuildContext context) {
+    return new Scaffold(
+      appBar: new AppBar(title: Text("Reactive multiple steps form")),
+      body: new MultipleStepFormContainer(
+        builder: (context, _) {
+          return new Stepper(
+            // ...
+          );
+        },
+      ),
+    );
+  }
+```
+
+Here is a step :
+
+```dart
+@override
+  Widget build(BuildContext context) {
+    return new ReactiveForm(
+      step: 'profile', // here we define the step name
+      formBuilder: this._getFormBuilder(),
+      builder: (context, _) {
+        FormGroup root = context.watchFormGroup();
+
+        // form content here
+        return new Container();
+      },
+    );
+  }
+
+  ReactiveFormBuilder _getFormBuilder() => new ReactiveFormBuilder(
+        group: new FormGroup(
+          controls: {
+            'first_name': new FormControl<String>(value: null, validators: []),
+            'last_name': new FormControl<String>(value: null, validators: []),
+          },
+          validators: [],
+        ),
+      );
+```
+
+Here is another step :
+
+```dart
+@override
+  Widget build(BuildContext context) {
+    return new ReactiveForm(
+      step: 'social_links', // here we define the step name
+      formBuilder: this._getFormBuilder(),
+      builder: (context, _) {
+        FormGroup root = context.watchFormGroup();
+
+        // form content here
+        return new Container();
+      },
+    );
+  }
+
+  ReactiveFormBuilder _getFormBuilder() => new ReactiveFormBuilder(
+        group: new FormGroup(
+          controls: {
+            'social_links': new FormArray(groups: [], validators: []),
+          },
+          validators: [],
+        ),
+      );
+```
+
 ## What about validators?
 
 What would be this library without validators ? NOTHING !
