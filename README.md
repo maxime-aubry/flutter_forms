@@ -6,12 +6,12 @@
 ![GitHub top language](https://img.shields.io/github/languages/top/maxime-aubry/flutter_forms)
 ![flutter tests](https://github.com/maxime-aubry/flutter_forms/workflows/flutter%20tests/badge.svg?branch=master)
 ![collection version](https://img.shields.io/badge/collection-1.15.0-brightgreen)
-![constant_datetime version](https://img.shields.io/badge/collection-1.0.0-brightgreen)
-![image version](https://img.shields.io/badge/collection-2.1.19-brightgreen)
-![mime version](https://img.shields.io/badge/collection-1.0.0-brightgreen)
-![provider version](https://img.shields.io/badge/collection-5.0.0-brightgreen)
-![queries version](https://img.shields.io/badge/collection-0.1.14-brightgreen)
-![reflectable version](https://img.shields.io/badge/collection-2.2.9-brightgreen)
+![constant_datetime version](https://img.shields.io/badge/constant_datetime-1.0.0-brightgreen)
+![image version](https://img.shields.io/badge/image-2.1.19-brightgreen)
+![mime version](https://img.shields.io/badge/mime-1.0.0-brightgreen)
+![provider version](https://img.shields.io/badge/provider-5.0.0-brightgreen)
+![queries version](https://img.shields.io/badge/queries-0.1.14-brightgreen)
+![reflectable version](https://img.shields.io/badge/reflectable-2.2.9-brightgreen)
 
 As with **Angular**, reactive forms are now on Flutter !
 
