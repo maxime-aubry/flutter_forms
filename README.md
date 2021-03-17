@@ -292,3 +292,57 @@ So, don't add StringLength validator before Required validator for example.
 ## Create validators
 
 You easily can create you own validators.
+Custom validators must override one of these three classes :
+    - `FormGroupValidatorAnnotation` for FormGroup validators.
+    - `FormArrayValidatorAnnotation` for FormArray validators.
+    - `FormControlValidatorAnnotation` for FormControl validators.
+    - `FormValidatorAnnotation` for validators that are common for these three form elements.
+
+Here is a basic example for a FormGroup validator :
+
+```dart
+class CustomValidator extends FormGroupValidatorAnnotation {
+  const CustomValidator({
+    @required String error,
+  }) : super(error: error);
+
+  @override
+  Future<bool> isValid(FormGroup control) async {
+    // TODO: implement isValid
+    throw UnimplementedError();
+  }
+}
+```
+
+Here is a basic example for a FormArray validator :
+
+```dart
+class CustomValidator extends FormArrayValidatorAnnotation {
+  const CustomValidator({
+    @required String error,
+  }) : super(error: error);
+
+  @override
+  Future<bool> isValid(FormArray control) async {
+    // TODO: implement isValid
+    throw UnimplementedError();
+  }
+}
+```
+
+For FormControl validators, you must use generic type !
+Here is a basic example for a FormControl validator :
+
+```dart
+class CustomValidator extends FormControlValidatorAnnotation<String> {
+  const CustomValidator({
+    @required String error,
+  }) : super(error: error);
+
+  @override
+  Future<bool> isValid(FormControl<String> control) async {
+    // TODO: implement isValid
+    throw UnimplementedError();
+  }
+}
+```

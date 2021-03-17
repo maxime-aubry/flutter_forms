@@ -2,13 +2,13 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter_forms/src/annotations/validators/form_control/index.dart';
 import 'package:flutter_forms/src/form/reactive_form/index.dart';
 
-/// [GreaterOrEqualTo] with [TProperty] generic type is a validator that checks if a value is greater or equal to another.
+/// [_GreaterOrEqualTo] with [TProperty] generic type is a validator that checks if a value is greater or equal to another.
 /// {@category Metadata}
 /// {@subCategory Form validators}
-class GreaterOrEqualTo<TProperty extends Comparable>
+class _GreaterOrEqualTo<TProperty extends Comparable>
     extends FormControlValidatorAnnotation<TProperty> {
   /* Public properties */
-  /// [valueToCompare] is default value to compare. It's a constant, provided by developer inside the [GreaterOrEqualTo] annotation.
+  /// [valueToCompare] is default value to compare. It's a constant, provided by developer inside the [_GreaterOrEqualTo] annotation.
   final TProperty valueToCompare;
 
   /// [remoteValueToCompare] is a name of [FormControl] that provides an overriding value of [valueToCompare].
@@ -23,7 +23,7 @@ class GreaterOrEqualTo<TProperty extends Comparable>
   /* Setters */
 
   /* Constructors */
-  const GreaterOrEqualTo({
+  const _GreaterOrEqualTo({
     this.valueToCompare,
     this.remoteValueToCompare,
     @required String error,
@@ -57,7 +57,7 @@ class GreaterOrEqualTo<TProperty extends Comparable>
 }
 
 /// [GreaterOrEqualToDateTime] is a validator that checks if a [DateTime] value is greater or equal to another.
-class GreaterOrEqualToDateTime extends GreaterOrEqualTo<DateTime> {
+class GreaterOrEqualToDateTime extends _GreaterOrEqualTo<DateTime> {
   /* Public properties */
 
   /* Protected properties */
@@ -87,7 +87,7 @@ class GreaterOrEqualToDateTime extends GreaterOrEqualTo<DateTime> {
 }
 
 /// [GreaterOrEqualToDouble] is a validator that checks if a [DateTime] value is greater or equal to another.
-class GreaterOrEqualToDouble extends GreaterOrEqualTo<double> {
+class GreaterOrEqualToDouble extends _GreaterOrEqualTo<double> {
   /* Public properties */
 
   /* Protected properties */
@@ -117,7 +117,7 @@ class GreaterOrEqualToDouble extends GreaterOrEqualTo<double> {
 }
 
 /// [GreaterOrEqualToInt] is a validator that checks if a [DateTime] value is greater or equal to another.
-class GreaterOrEqualToInt extends GreaterOrEqualTo<int> {
+class GreaterOrEqualToInt extends _GreaterOrEqualTo<int> {
   /* Public properties */
 
   /* Protected properties */
@@ -147,7 +147,7 @@ class GreaterOrEqualToInt extends GreaterOrEqualTo<int> {
 }
 
 /// [GreaterOrEqualToNumber] is a validator that checks if a [DateTime] value is greater or equal to another.
-class GreaterOrEqualToNumber extends GreaterOrEqualTo<num> {
+class GreaterOrEqualToNumber extends _GreaterOrEqualTo<num> {
   /* Public properties */
 
   /* Protected properties */
@@ -177,7 +177,7 @@ class GreaterOrEqualToNumber extends GreaterOrEqualTo<num> {
 }
 
 /// [GreaterOrEqualToString] is a validator that checks if a [DateTime] value is greater or equal to another.
-class GreaterOrEqualToString extends GreaterOrEqualTo<String> {
+class GreaterOrEqualToString extends _GreaterOrEqualTo<String> {
   /* Public properties */
 
   /* Protected properties */

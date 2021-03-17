@@ -2,10 +2,10 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter_forms/src/annotations/validators/form_control/index.dart';
 import 'package:flutter_forms/src/form/reactive_form/index.dart';
 
-/// [GreaterThan] with [TProperty] generic type is a validator that checks if a value is greater than another.
+/// [_GreaterThan] with [TProperty] generic type is a validator that checks if a value is greater than another.
 /// {@category Metadata}
 /// {@subCategory Form validators}
-class GreaterThan<TProperty extends Comparable>
+class _GreaterThan<TProperty extends Comparable>
     extends FormControlValidatorAnnotation<TProperty> {
   /* Public properties */
   /// [valueToCompare] is default value to compare.
@@ -23,7 +23,7 @@ class GreaterThan<TProperty extends Comparable>
   /* Setters */
 
   /* Constructors */
-  const GreaterThan({
+  const _GreaterThan({
     this.valueToCompare,
     this.remoteValueToCompare,
     @required String error,
@@ -57,7 +57,7 @@ class GreaterThan<TProperty extends Comparable>
 }
 
 /// [GreaterThanDateTime] is a validator that checks if a [DateTime] value is greater than another.
-class GreaterThanDateTime extends GreaterThan<DateTime> {
+class GreaterThanDateTime extends _GreaterThan<DateTime> {
   /* Public properties */
 
   /* Protected properties */
@@ -87,7 +87,7 @@ class GreaterThanDateTime extends GreaterThan<DateTime> {
 }
 
 /// [GreaterThanDouble] is a validator that checks if a [double] value is greater than another.
-class GreaterThanDouble extends GreaterThan<double> {
+class GreaterThanDouble extends _GreaterThan<double> {
   /* Public properties */
 
   /* Protected properties */
@@ -117,7 +117,7 @@ class GreaterThanDouble extends GreaterThan<double> {
 }
 
 /// [GreaterThanInt] is a validator that checks if a [int] value is greater than another.
-class GreaterThanInt extends GreaterThan<int> {
+class GreaterThanInt extends _GreaterThan<int> {
   /* Public properties */
 
   /* Protected properties */
@@ -147,7 +147,7 @@ class GreaterThanInt extends GreaterThan<int> {
 }
 
 /// [GreaterThanNumber] is a validator that checks if a [num] value is greater than another.
-class GreaterThanNumber extends GreaterThan<num> {
+class GreaterThanNumber extends _GreaterThan<num> {
   /* Public properties */
 
   /* Protected properties */
@@ -177,7 +177,7 @@ class GreaterThanNumber extends GreaterThan<num> {
 }
 
 /// [GreaterThanString] is a validator that checks if a [String] value is greater than another.
-class GreaterThanString extends GreaterThan<String> {
+class GreaterThanString extends _GreaterThan<String> {
   /* Public properties */
 
   /* Protected properties */

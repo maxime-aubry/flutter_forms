@@ -2,13 +2,13 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter_forms/src/annotations/validators/form_control/index.dart';
 import 'package:flutter_forms/src/form/reactive_form/index.dart';
 
-/// [EqualTo] with [TProperty] generic type is a validator that checks if a value is equal to another.
+/// [_EqualTo] with [TProperty] generic type is a validator that checks if a value is equal to another.
 /// {@category Metadata}
 /// {@subCategory Form validators}
-class EqualTo<TProperty extends Comparable>
+class _EqualTo<TProperty extends Comparable>
     extends FormControlValidatorAnnotation<TProperty> {
   /* Public properties */
-  /// [valueToCompare] is default value to compare. It's a constant, provided by developer inside the [EqualTo] annotation.
+  /// [valueToCompare] is default value to compare. It's a constant, provided by developer inside the [_EqualTo] annotation.
   final TProperty valueToCompare;
 
   /// [remoteValueToCompare] is a name of [FormControl] that provides an overriding value of [valueToCompare].
@@ -23,7 +23,7 @@ class EqualTo<TProperty extends Comparable>
   /* Setters */
 
   /* Constructors */
-  const EqualTo({
+  const _EqualTo({
     this.valueToCompare,
     this.remoteValueToCompare,
     @required String error,
@@ -57,7 +57,7 @@ class EqualTo<TProperty extends Comparable>
 }
 
 /// [EqualToDateTime] is a validator that checks if a [DateTime] value is equal to another.
-class EqualToDateTime extends EqualTo<DateTime> {
+class EqualToDateTime extends _EqualTo<DateTime> {
   /* Public properties */
 
   /* Protected properties */
@@ -87,7 +87,7 @@ class EqualToDateTime extends EqualTo<DateTime> {
 }
 
 /// [EqualToDouble] is a validator that checks if a [double] value is equal to another.
-class EqualToDouble extends EqualTo<double> {
+class EqualToDouble extends _EqualTo<double> {
   /* Public properties */
 
   /* Protected properties */
@@ -117,7 +117,7 @@ class EqualToDouble extends EqualTo<double> {
 }
 
 /// [EqualToInt] is a validator that checks if a [int] value is equal to another.
-class EqualToInt extends EqualTo<int> {
+class EqualToInt extends _EqualTo<int> {
   /* Public properties */
 
   /* Protected properties */
@@ -147,7 +147,7 @@ class EqualToInt extends EqualTo<int> {
 }
 
 /// [EqualToNumber] is a validator that checks if a [num] value is equal to another.
-class EqualToNumber extends EqualTo<num> {
+class EqualToNumber extends _EqualTo<num> {
   /* Public properties */
 
   /* Protected properties */
@@ -177,7 +177,7 @@ class EqualToNumber extends EqualTo<num> {
 }
 
 /// [EqualToString] is a validator that checks if a [String] value is equal to another.
-class EqualToString extends EqualTo<String> {
+class EqualToString extends _EqualTo<String> {
   /* Public properties */
 
   /* Protected properties */
