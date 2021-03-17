@@ -1039,6 +1039,57 @@ child: new FormArrayConsumer(
 
 ## FormControlProvider
 
+FormControl is always a sub form element of root level. If you want to consume it, you must provide it.
+
+For example, here is a form. Root level is provided, thanks to **ReactiveForm** widget.
+
+If we want to use **Consumers**, **watchers** or **readers** on a sub form element, use **FormControlProvider.value** on it !
+
+```dart
+@override
+  Widget build(BuildContext context) {
+    return ReactiveForm(
+      formBuilder: this._getFormBuilder(),
+      builder: (context, _) {
+        // here, we get the root level of the form builder.
+        FormGroup root = context.watchFormGroup();
+
+        // here, we provide the child FormControl
+        return new FormControlProvider.value(
+          value: root.getFormControl<String>('child'),
+          builder: (context, _) {
+            FormControl<String> child = context.watchFormControl<String>();
+
+            return new Container();
+          }
+        );
+      },
+    );
+  }
+```
+
+FormControl watcher :
+
+```dart
+FormControl<String> formControl = context.watchFormControl<String>();
+```
+
+FormControl reader :
+
+```dart
+FormControl<String> formControl = context.readFormControl<String>();
+```
+
+FormControl consumer :
+
+```dart
+child: new FormControlConsumer<String>(
+  builder: (context, formControl, child) {
+    return new Container();
+  },
+);
+```
+
 ## MultipleStepFormStateIndexerProvider
 
 ## See more examples
