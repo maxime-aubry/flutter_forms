@@ -15,7 +15,7 @@
 
 As with Angular, reactive forms are now on Flutter !
 
-By using `flutter_forms`, you will be able to simplify your code and validation of you forms.
+By using **flutter_forms**, you will be able to simplify your code and validation of you forms.
 
 ## Summary
 
@@ -28,6 +28,10 @@ By using `flutter_forms`, you will be able to simplify your code and validation 
 - [Add inputs](#add-inputs)
 - [Add validators](#add-validators)
 - [Create validators](#create-validators)
+- [What are FormGroup, FormArray and FormControl?](#formgroup-formarray-and-formcontrol)
+    - [FormGroup](#formgroup)
+    - [FormArray](#formarray)
+    - [FormControl](#formcontrol)
 
 ## Getting Started
 
@@ -44,7 +48,7 @@ You will find tutorials, code labs, sample projects... Everything you need to be
 
 ## Dependencies
 
-You must install all these dependencies to use `flutter_forms` :
+You must install all these dependencies to use **flutter_forms** :
 
 ``` dart
 dependencies:
@@ -56,7 +60,7 @@ dependencies:
   flutter_forms: ^1.0.0
 ```
 
-Then, run `flutter packages get` command on the console.
+Then, run **flutter packages get** command on the console.
 
 ## Define a model file
 
@@ -64,14 +68,14 @@ First, you should define a model file.
 
 This one will contain all you enums, if you will use them.
 
-Into the `./lib/models.dart`, here are the differents steps we will do :
+Into the **./lib/models.dart**, here are the different steps we will do :
 
 - define a namespace for models
 - import flutter_forms
 - define a main method (for reflectable)
 - define you enums
     
-Please, use `@flutterFormsValidator` notation to declare the content.
+Please, use **@flutterFormsValidator** notation to declare the content.
 
 ```dart
 @flutterFormsValidator
@@ -85,7 +89,7 @@ void main() {}
 enum EGender { male, female }
 ```
 
-Use this command line to get the file to get a new file named `*.reflectable.dart` into a flutter application project.
+Use this command line to get the file to get a new file named **models.reflectable.dart** into a flutter application project.
 
 ```console
 > flutter pub run build_runner build
@@ -95,7 +99,7 @@ Use this command line to get the file to get a new file named `*.reflectable.dar
 
 Next, into the main.dart file, you must initialize the namespace to import.
 
-Here, you import `example.models` from `./lib/models.reflectable.dart`.
+Here, you import **example.models** from **./lib/models.reflectable.dart**.
 
 ```dart
 import 'package:example/models.reflectable.dart';
@@ -138,7 +142,7 @@ ReactiveFormBuilder _getFormBuilder() => new ReactiveFormBuilder(
 );
 ```
 
-We just created a new form with two fields, `first_name` and `last_name`.
+We just created a new form with two fields, **first_name** and **last_name**.
 
 ## Add inputs
 
@@ -206,71 +210,71 @@ Common :
 
 | Validator | Description  | Progress |
 | ----- | ----- | ----- |
-| `Required` | Validate a FormGroup, FormArray and FormControl. Checks if a FormGroup is not null and contains controls. Checks if a FormArray is not null and contains items. Checks if a FormControl is not null. If this one is a string, checks if it's not an empty string. | **done** |
+| **Required** | Validate a FormGroup, FormArray and FormControl. Checks if a FormGroup is not null and contains controls. Checks if a FormArray is not null and contains items. Checks if a FormControl is not null. If this one is a string, checks if it's not an empty string. | **done** |
 
 FormArray :
 
 | Validator | Description  | Progress |
 | ----- | ----- | ----- |
-| `NbItems` | Checks if a FormArray has a valid length. | **done** |
+| **NbItems** | Checks if a FormArray has a valid length. | **done** |
 
 FormControls :
 
 | Validator | Description  | Progress |
 | ----- | ----- | ----- |
-| `Email` | Checks if a value is a valid email. | **done** |
-| `EqualToDateTime` | Checks if a datetime value is equal to another. | **done** |
-| `EqualToDouble` | Checks if a double value is equal to another. | **done** |
-| `EqualToInt` | Checks if a int value is equal to another. | **done** |
-| `EqualToNumber` | Checks if a number value is equal to another. | **done** |
-| `EqualToString` | Checks if a string value is equal to another. | **done** |
-| `FileMimeType` | Checks if a file has an allowed mime type. | **done** |
-| `FileSize` | Checks if a file has an allowed size. | **done** |
-| `GreaterOrEqualToDateTime` | Checks if a datetime value is greater or equal to another. | **done** |
-| `GreaterOrEqualToDouble` | Checks if a double value is greater or equal to another. | **done** |
-| `GreaterOrEqualToInt` | Checks if a int value is greater or equal to another. | **done** |
-| `GreaterOrEqualToNumber` | Checks if a number value is greater or equal to another. | **done** |
-| `GreaterOrEqualToString` | Checks if a string value is greater or equal to another. | **done** |
-| `GreaterThanDateTime` | Checks if a datetime value is greater than another. | **done** |
-| `GreaterThanDouble` | Checks if a double value is greater than another. | **done** |
-| `GreaterThanInt` | Checks if a int value is greater than another. | **done** |
-| `GreaterThanNumber` | Checks if a number value is greater than another. | **done** |
-| `GreaterThanString` | Checks if a string value is greater than another. | **done** |
-| `ImageSize` | Checks if the image width and height. | **done** |
-| `InText` | Checks if the text is contained into another text. | **done** |
-| `MembershipPassword` | Checks if the password has a good format according to the settings. | **done** |
-| `MultiSelect` | Checks if value is a selection of items contained into a list of items. | **done** |
-| `NbValues` | Checks if a array value has a valid length. | **done** |
-| `NotEqualToDateTime` | Checks if a datetime value is not equal to another. | **done** |
-| `NotEqualToDouble` | Checks if a double value is not equal to another. | **done** |
-| `NotEqualToInt` | Checks if a int value is not equal to another. | **done** |
-| `NotEqualToNumber` | Checks if a number value is not equal to another. | **done** |
-| `NotEqualToString` | Checks if a string value is not equal to another. | **done** |
-| `RangeOfDateTime` | Checks if a datetime value is between min and max values. | **done** |
-| `RangeOfDouble` | Checks if a double value is between min and max values. | **done** |
-| `RangeOfInt` | Checks if a int value is between min and max values. | **done** |
-| `RangeOfNumber` | Checks if a number value is between min and max values. | **done** |
-| `RangeOfString` | Checks if a string value is between min and max values. | **done** |
-| `RegularExpression` | Checks if a value has a good format according to a regular expression. | **done** |
-| `SingleSelect` | Checks if value is an item contained into a list of items. | **done** |
-| `SmallerOrEqualToDateTime` | Checks if a datetime value is smaller or equal to another. | **done** |
-| `SmallerOrEqualToDouble` | Checks if a double value is smaller or equal to another. | **done** |
-| `SmallerOrEqualToInt` | Checks if a int value is smaller or equal to another. | **done** |
-| `SmallerOrEqualToNumber` | Checks if a number value is smaller or equal to another. | **done** |
-| `SmallerThanString` | Checks if a string value is smaller or equal to another. | **done** |
-| `SmallerThanDateTime` | Checks if a datetime value is smaller than another. | **done** |
-| `SmallerThanDouble` | Checks if a double value is smaller than another. | **done** |
-| `SmallerThanInt` | Checks if a int value is smaller than another. | **done** |
-| `SmallerThanNumber` | Checks if a number value is smaller than another. | **done** |
-| `SmallerThanString` | Checks if a string value is smaller than another. | **done** |
-| `StringLength` | Checks if a string value is a valid length. | **done** |
-| `Url` | Checks if a value has a good URL format.. | **done** |
+| **Email** | Checks if a value is a valid email. | **done** |
+| **EqualToDateTime** | Checks if a datetime value is equal to another. | **done** |
+| **EqualToDouble** | Checks if a double value is equal to another. | **done** |
+| **EqualToInt** | Checks if a int value is equal to another. | **done** |
+| **EqualToNumber** | Checks if a number value is equal to another. | **done** |
+| **EqualToString** | Checks if a string value is equal to another. | **done** |
+| **FileMimeType** | Checks if a file has an allowed mime type. | **done** |
+| **FileSize** | Checks if a file has an allowed size. | **done** |
+| **GreaterOrEqualToDateTime** | Checks if a datetime value is greater or equal to another. | **done** |
+| **GreaterOrEqualToDouble** | Checks if a double value is greater or equal to another. | **done** |
+| **GreaterOrEqualToInt** | Checks if a int value is greater or equal to another. | **done** |
+| **GreaterOrEqualToNumber** | Checks if a number value is greater or equal to another. | **done** |
+| **GreaterOrEqualToString** | Checks if a string value is greater or equal to another. | **done** |
+| **GreaterThanDateTime** | Checks if a datetime value is greater than another. | **done** |
+| **GreaterThanDouble** | Checks if a double value is greater than another. | **done** |
+| **GreaterThanInt** | Checks if a int value is greater than another. | **done** |
+| **GreaterThanNumber** | Checks if a number value is greater than another. | **done** |
+| **GreaterThanString** | Checks if a string value is greater than another. | **done** |
+| **ImageSize** | Checks if the image width and height. | **done** |
+| **InText** | Checks if the text is contained into another text. | **done** |
+| **MembershipPassword** | Checks if the password has a good format according to the settings. | **done** |
+| **MultiSelect** | Checks if value is a selection of items contained into a list of items. | **done** |
+| **NbValues** | Checks if a array value has a valid length. | **done** |
+| **NotEqualToDateTime** | Checks if a datetime value is not equal to another. | **done** |
+| **NotEqualToDouble** | Checks if a double value is not equal to another. | **done** |
+| **NotEqualToInt** | Checks if a int value is not equal to another. | **done** |
+| **NotEqualToNumber** | Checks if a number value is not equal to another. | **done** |
+| **NotEqualToString** | Checks if a string value is not equal to another. | **done** |
+| **RangeOfDateTime** | Checks if a datetime value is between min and max values. | **done** |
+| **RangeOfDouble** | Checks if a double value is between min and max values. | **done** |
+| **RangeOfInt** | Checks if a int value is between min and max values. | **done** |
+| **RangeOfNumber** | Checks if a number value is between min and max values. | **done** |
+| **RangeOfString** | Checks if a string value is between min and max values. | **done** |
+| **RegularExpression** | Checks if a value has a good format according to a regular expression. | **done** |
+| **SingleSelect** | Checks if value is an item contained into a list of items. | **done** |
+| **SmallerOrEqualToDateTime** | Checks if a datetime value is smaller or equal to another. | **done** |
+| **SmallerOrEqualToDouble** | Checks if a double value is smaller or equal to another. | **done** |
+| **SmallerOrEqualToInt** | Checks if a int value is smaller or equal to another. | **done** |
+| **SmallerOrEqualToNumber** | Checks if a number value is smaller or equal to another. | **done** |
+| **SmallerThanString** | Checks if a string value is smaller or equal to another. | **done** |
+| **SmallerThanDateTime** | Checks if a datetime value is smaller than another. | **done** |
+| **SmallerThanDouble** | Checks if a double value is smaller than another. | **done** |
+| **SmallerThanInt** | Checks if a int value is smaller than another. | **done** |
+| **SmallerThanNumber** | Checks if a number value is smaller than another. | **done** |
+| **SmallerThanString** | Checks if a string value is smaller than another. | **done** |
+| **StringLength** | Checks if a string value is a valid length. | **done** |
+| **Url** | Checks if a value has a good URL format.. | **done** |
 
 How can we add validators to a form element ?
 
 You can add these functions to FormGroup, FormArray and FormControls.
 
-These three classes has a `validators` property.
+These three classes has a **validators** property.
 
 So, let see how to do this.
 
@@ -309,10 +313,10 @@ So, don't add StringLength validator before Required validator for example.
 You easily can create you own validators.
 
 Custom validators must override one of these three classes :
-- `FormGroupValidatorAnnotation` for FormGroup validators.
-- `FormArrayValidatorAnnotation` for FormArray validators.
-- `FormControlValidatorAnnotation` for FormControl validators.
-- `FormValidatorAnnotation` for validators that are common for these three form elements.
+- **FormGroupValidatorAnnotation** for FormGroup validators.
+- **FormArrayValidatorAnnotation** for FormArray validators.
+- **FormControlValidatorAnnotation** for FormControl validators.
+- **FormValidatorAnnotation** for validators that are common for these three form elements.
 
 Here is a basic example for a FormGroup validator :
 
@@ -363,3 +367,11 @@ class CustomValidator extends FormControlValidatorAnnotation<String> {
   }
 }
 ```
+
+## What are FormGroup, FormArray and FormControl?
+
+## FormGroup
+
+## FormArray
+
+## FormControl
