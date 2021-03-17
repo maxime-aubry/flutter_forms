@@ -7,7 +7,7 @@ import 'package:provider/provider.dart';
 /// {@category Providers}
 /// {@subCategory Providers}
 class ReactiveFormStateProvider extends Provider<ReactiveFormState> {
-  // FormStateProvider({
+  // ReactiveFormStateProvider({
   //   Key key,
   //   @required Create<ReactiveFormState> create,
   //   Dispose<ReactiveFormState> dispose,

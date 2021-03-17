@@ -871,9 +871,15 @@ class CustomValidator extends FormControlValidatorAnnotation<String> {
 
 **flutter_forms** uses [Provider library] to provide and consume form elements into your widgets.
 
-For each provider of **flutter_forms**, you can use **Consumers** (they are widgets), **readers** and **watchers**.
+For almost each provider of **flutter_forms**, you can use **Consumers** (they are widgets), **watchers** and **readers**.
+
+Watchers are done to get form elements and rebuild widgets than use them when their value changes.
+
+Readers are done to get form elements without rebuilding widgets than use them when their value changes.
 
 Consumers can make reading difficult.
+
+The last thing to know is **watchers** and **Consumers** do exactly the same thing.
 
 ## FormProvider
 
@@ -894,6 +900,28 @@ Navigator.push(
 ```
 
 ## ReactiveFormStateProvider
+
+ReactiveFormState watcher :
+
+```dart
+ReactiveFormState formState = context.watchFormState();
+```
+
+ReactiveFormState reader :
+
+```dart
+ReactiveFormState formState = context.readFormState();
+```
+
+ReactiveFormState consumer :
+
+```dart
+child: new ReactiveFormStateConsumer(
+  builder: (context, formState, child) {
+    return new Container();
+  },
+);
+```
 
 ## FormGroupProvider
 
