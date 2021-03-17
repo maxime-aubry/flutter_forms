@@ -48,6 +48,7 @@ By using **flutter_forms**, you will be able to simplify your code and validatio
 - [Providers and Consumers](#providers-and-consumers)
     - [Providers](#providers)
     - [Consumers](#consumers)
+- [See more examples](#see-more-examples)
 
 ## Getting Started
 
@@ -865,7 +866,10 @@ class CustomValidator extends FormControlValidatorAnnotation<String> {
 
 **flutter_forms** uses [Provider library] to provide and consume form elements into your widgets.
 
+## See more examples
 
+I invite you to study [example project].
 
 [Flutter]: https://flutter.dev/
 [Provider library]: https://github.com/rrousselGit/provider
+[example project]: https://github.com/maxime-aubry/flutter_forms/tree/main/example
