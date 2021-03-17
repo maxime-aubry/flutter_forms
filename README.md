@@ -931,9 +931,9 @@ child: new ReactiveFormStateConsumer(
 
 ## FormGroupProvider
 
-ReactiveFormStateProvider is used inside **ReactiveForm** widget. Thanks to him, you are able to use **Consumers**, **watchers** and **readers** without defining it yourself.
+FormGroupProvider is used inside **ReactiveForm** widget. Thanks to him, you are able to use **Consumers**, **watchers** and **readers** without defining it yourself.
 
-But, if you want to consume a sub form element, in the sub level of the root **FormGroup**, you must provide it.
+But, if you want to consume a sub form element, in the sub level of the root, you must provide it.
 
 For example, here is a form. Root level is provided, thanks to **ReactiveForm** widget.
 
@@ -985,6 +985,57 @@ child: new FormGroupConsumer(
 ```
 
 ## FormArrayProvider
+
+FormArray is always a sub form element of root level. If you want to consume it, you must provide it.
+
+For example, here is a form. Root level is provided, thanks to **ReactiveForm** widget.
+
+If we want to use **Consumers**, **watchers** or **readers** on a sub form element, use **FormArrayProvider.value** on it !
+
+```dart
+@override
+  Widget build(BuildContext context) {
+    return ReactiveForm(
+      formBuilder: this._getFormBuilder(),
+      builder: (context, _) {
+        // here, we get the root level of the form builder.
+        FormGroup root = context.watchFormGroup();
+
+        // here, we provide the child FormArray
+        return new FormArrayProvider.value(
+          value: root.getFormArray('child'),
+          builder: (context, _) {
+            FormArray child = context.watchFormArray();
+
+            return new Container();
+          }
+        );
+      },
+    );
+  }
+```
+
+FormArray watcher :
+
+```dart
+FormArray formArray = context.watchFormArray();
+```
+
+FormArray reader :
+
+```dart
+FormArray formArray = context.readFormArray();
+```
+
+FormArray consumer :
+
+```dart
+child: new FormArrayConsumer(
+  builder: (context, formArray, child) {
+    return new Container();
+  },
+);
+```
 
 ## FormControlProvider
 
