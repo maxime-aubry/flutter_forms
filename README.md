@@ -214,9 +214,6 @@ Common :
 
 FormGroup :
 
-| Validator | Description  | Progress |
-| ----- | ----- | ----- |
-
 > There are not validators for FormGroup for this time.
 
 FormArray :
