@@ -430,5 +430,6 @@ Next you have the **FormArray**. This one is a collection of **FormGroup** only.
 
 This a difference with Angular's library. I disagree with the fact a **FormArray** can contain directly **FormControl** items.
 
+In my opinion, Angular **FormArray** is too permissive. Developer could try to add **FormGroup** and **FormControl** items into the same **FormArray**. This should not be possible, even if an exception is thrown after.
 
 ## FormControl
