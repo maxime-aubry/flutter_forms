@@ -546,6 +546,36 @@ ReactiveFormBuilder form_builder = new ReactiveFormBuilder(
 
 > As you can see, you can register complex data into an item of a **FormArray**.
 
+## Add item to a FormArray
+
+Add an item to a **FormArray** is easy.
+Remember that you can add **FormGroup** items only.
+
+Here is the way to add an item :
+
+```dart
+FormArray array = new FormArray(groups: [], validators: []);
+FormGroup child = new FormGroup(controls: {}, validators: []);
+array.addGroup(child);
+```
+
+## Remove item from a FormArray
+
+Here is the way to remove an item :
+
+```dart
+FormArray array = new FormArray(
+  groups: [
+    // an item is here
+  ],
+  validators: [],
+);
+FormGroup child = new FormGroup(controls: {}, validators: []);
+array.removeGroup(child);
+```
+
+> This part is a little confuse because you don't see how to get an item from the form array. Lets see that later.
+
 ## FormControl
 
 What would be a form if we didn't use **FormControl** ?
