@@ -32,7 +32,9 @@ By using `flutter_forms`, you will be able to simplify your code and validation 
 ## Getting Started
 
 Flutter_forms is very easy to use. First, you should learn to use Flutter.
+
 Please, read the [online documentation](https://flutter.dev/docs) before using this library.
+
 You will find tutorials, code labs, sample projects... Everything you need to be autonomous.
 
 ## Requirements
@@ -59,12 +61,16 @@ Then, run `flutter packages get` command on the console.
 ## Define a model file
 
 First, you should define a model file.
+
 This one will contain all you enums, if you will use them.
+
 Into the `./lib/models.dart`, here are the differents steps we will do :
-    - define a namespace for models
-    - import flutter_forms
-    - define a main method (for reflectable)
-    - define you enums
+
+- define a namespace for models
+- import flutter_forms
+- define a main method (for reflectable)
+- define you enums
+    
 Please, use `@flutterFormsValidator` notation to declare the content.
 
 ```dart
@@ -88,6 +94,7 @@ Use this command line to get the file to get a new file named `*.reflectable.dar
 ## Initialize library
 
 Next, into the main.dart file, you must initialize the namespace to import.
+
 Here, you import `example.models` from `./lib/models.reflectable.dart`.
 
 ```dart
@@ -104,7 +111,9 @@ void main() {
 ## Define a new basic form
 
 Here we are. We are going to define our new form.
+
 Into your widget, start by defining a [ReactiveForm] object.
+
 [formBuilder] property receives the form builder.
 
 ```dart
@@ -188,6 +197,7 @@ Widget _inputText(FormControl<String> formControl, String label) =>
 ## Add validators
 
 What would be this library without validators ?
+
 NOTHING !
 
 So, here is a list of available validators :
@@ -257,8 +267,11 @@ FormControls :
 | `Url` | Checks if a value has a good URL format.. | **done** |
 
 How can we add validators to a form element ?
+
 You can add these functions to FormGroup, FormArray and FormControls.
+
 These three classes has a `validators` property.
+
 So, let see how to do this.
 
 ```dart
@@ -286,17 +299,20 @@ ReactiveFormBuilder _getFormBuilder() => new ReactiveFormBuilder(
 ```
 
 Next time you will validate the form, these validators will be run.
+
 Be careful, these validators will be run in this the order you will add them.
+
 So, don't add StringLength validator before Required validator for example.
 
 ## Create validators
 
 You easily can create you own validators.
+
 Custom validators must override one of these three classes :
-    - `FormGroupValidatorAnnotation` for FormGroup validators.
-    - `FormArrayValidatorAnnotation` for FormArray validators.
-    - `FormControlValidatorAnnotation` for FormControl validators.
-    - `FormValidatorAnnotation` for validators that are common for these three form elements.
+- `FormGroupValidatorAnnotation` for FormGroup validators.
+- `FormArrayValidatorAnnotation` for FormArray validators.
+- `FormControlValidatorAnnotation` for FormControl validators.
+- `FormValidatorAnnotation` for validators that are common for these three form elements.
 
 Here is a basic example for a FormGroup validator :
 
@@ -331,6 +347,7 @@ class CustomValidator extends FormArrayValidatorAnnotation {
 ```
 
 For FormControl validators, you must use generic type !
+
 Here is a basic example for a FormControl validator :
 
 ```dart
