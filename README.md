@@ -33,17 +33,12 @@ By using **flutter_forms**, you will be able to simplify your code and validatio
         - [Add control to a FormGroup](#add-control-to-a-formgroup)
         - [Remove control from a FormGroup](#remove-control-from-a-formgroup)
         - [Check if a control exists into a FormGroup](#check-if-a-control-exists-into-a-formgroup)
-        - [Clone a FormGroup](#clone-a-formgroup)
-        - [Validate a FormGroup](#validate-a-formgroup)
     - [FormArray](#formarray)
         - [Add item to a FormArray](#add-item-to-a-formarray)
         - [Remove item from a FormArray](#remove-item-from-a-formarray)
-        - [Clone a FormArray](#clone-a-formarray)
-        - [Validate a FormArray](#validate-a-formarray)
     - [FormControl](#formcontrol)
         - [Set a value](#set-a-value)
-        - [Clone a FormControl](#clone-a-formcontrol)
-        - [Validate a FormControl](#validate-a-formcontrol)
+    - [Clone a form element](#clone-a-form-element)
 
 ## Getting Started
 
@@ -466,6 +461,53 @@ Finally, here is a short code to add a **FormControl** in the children collectio
 FormGroup root = new FormGroup(controls: {}, validators: []);
 FormControl<String> child = new FormControl<String>(value: null, validators: []);
 root.addControl('child', child);
+```
+
+## Remove control from a FormGroup
+
+Here is a short code to remove a **FormGroup** from the children collection of a **FormGroup** :
+
+```dart
+FormGroup root = new FormGroup(
+  controls: {
+    'child': new FormGroup(controls: {}, validators: []),
+  },
+  validators: [],
+);
+root.removeControl('child');
+```
+
+Here is a short code to remove a **FormArray** from the children collection of a **FormGroup** :
+
+```dart
+FormGroup root = new FormGroup(
+  controls: {
+    'child': new FormArray(groups: [], validators: []),
+  },
+  validators: [],
+);
+root.removeControl('child');
+```
+
+Finally, here is a short code to remove a **FormControl** from the children collection of a **FormGroup** :
+
+```dart
+FormGroup root = new FormGroup(
+  controls: {
+    'child': new FormControl<String>(value: null, validators: []),
+  },
+  validators: [],
+);
+root.removeControl('child');
+```
+
+## Check if a control exists into a FormGroup
+
+How to check if a control does exist into a **FormGroup** ?
+
+```dart
+FormGroup root = new FormGroup(controls: {}, validators: []);
+bool exists = root.containsControl('child');
 ```
 
 ## FormArray
