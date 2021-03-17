@@ -610,7 +610,21 @@ Here is the main screen :
       body: new MultipleStepFormContainer(
         builder: (context, _) {
           return new Stepper(
-            // ...
+            onStepContinue: () async {
+              // here we get all steps names
+              List<String> stepsNames =
+                  context.readMultipleStepFormStateIndexer().keys.toList();
+    
+              // here we get the form state for the targeted step name
+              ReactiveFormState formState = context.readFormState(
+                step: stepsNames[currentStep],
+              );
+    
+              // here we validate the current step
+              if (await formState.validate()) {
+                // Data treatment and post to server here...
+              }
+            },
           );
         },
       ),
