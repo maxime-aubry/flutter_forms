@@ -28,7 +28,7 @@ By using **flutter_forms**, you will be able to simplify your code and validatio
 - [Add inputs](#add-inputs)
 - [Add validators](#add-validators)
 - [Create validators](#create-validators)
-- [What are FormGroup, FormArray and FormControl?](#formgroup-formarray-and-formcontrol)
+- [FormBuilder](#form-builder)
     - [FormGroup](#formgroup)
     - [FormArray](#formarray)
     - [FormControl](#formcontrol)
@@ -368,10 +368,67 @@ class CustomValidator extends FormControlValidatorAnnotation<String> {
 }
 ```
 
-## What are FormGroup, FormArray and FormControl?
+## FormBuilder
+
+**Flutter_forms** is inspired by Angular reactive forms.
+
+Of course, FormBuilder is the starting point of form creation.
+
+As we saw before, here is the way to build a form :
+
+```dart
+ReactiveFormBuilder form_builder = new ReactiveFormBuilder(
+  group: new FormGroup(
+    controls: {
+      'first_name': new FormControl<String>(value: null, validators: []),
+      'last_name': new FormControl<String>(value: null, validators: []),
+    },
+    validators: [],
+  ),
+);
+```
+
+A form is created and automatically instantiated when you add it to **ReactiveForm** widget. It provides a complete tree of form elements to use.
+
+> But it's a simplified version of Angular reactive forms. Lets see three main points together !
 
 ## FormGroup
 
+First you have the **FormGroup**. This one is a group of **FormGroup**, **FormArray** and **FormControl**.
+
+You must use them for complex forms, with multiple levels.
+
+Imagine you have a to set your profile. You could have two distinct parts into this form.
+
+```dart
+ReactiveFormBuilder form_builder = new ReactiveFormBuilder(
+  group: new FormGroup(
+    controls: {
+      'personal': new FormGroup(
+        controls: {
+          'first_name': new FormControl<String>(value: null, validators: []),
+          'last_name': new FormControl<String>(value: null, validators: []),
+        },
+        validators: [],
+      ),
+      'social_links': new FormGroup(
+        controls: {
+          'github': new FormControl<String>(value: null, validators: []),
+          'facebook': new FormControl<String>(value: null, validators: []),
+        },
+        validators: [],
+      )
+    },
+    validators: [],
+  ),
+);
+```
+
 ## FormArray
+
+Next you have the **FormArray**. This one is a collection of **FormGroup** only.
+
+This a difference with Angular's library. I disagree with the fact a **FormArray** can contain directly **FormControl** items.
+
 
 ## FormControl
