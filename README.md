@@ -41,11 +41,13 @@ By using **flutter_forms**, you will be able to simplify your code and validatio
     - [Initialize library](#initialize-library)
     - [Define a new basic form](#define-a-new-basic-form)
     - [Add inputs](#add-inputs)
+- [How to add a reactive form with multiple steps into an application?](#how-to-add-a-reactive-form-with-multiple-steps-into-an-application)
+- [What about validators?](#what-about-validators)
     - [Add validators](#add-validators)
     - [Create validators](#create-validators)
-    - [Providers and Consumers](#providers-and-consumers)
-        - [Providers](#providers)
-        - [Consumers](#consumers)
+- [Providers and Consumers](#providers-and-consumers)
+    - [Providers](#providers)
+    - [Consumers](#consumers)
 
 ## Getting Started
 
@@ -590,9 +592,15 @@ Widget _inputText(FormControl<String> formControl, String label) =>
   );
 ```
 
-## Add validators
+## How to add a reactive form with multiple steps into an application?
+
+**flutter_forms** supports forms with multiples steps !
+
+## What about validators?
 
 What would be this library without validators ? NOTHING !
+
+## Add validators
 
 So, here is a list of available validators :
 
@@ -765,6 +773,8 @@ class CustomValidator extends FormControlValidatorAnnotation<String> {
 ## Providers and Consumers
 
 **flutter_forms** uses [Provider library] to provide and consume form elements into your widgets.
+
+
 
 [Flutter]: https://flutter.dev/
 [Provider library]: https://github.com/rrousselGit/provider
