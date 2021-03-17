@@ -86,7 +86,7 @@ class CustomDrawer extends StatelessWidget {
             text: 'File (image for example)',
             onTap: () => Navigator.pushReplacementNamed(
               context,
-              null,
+              pageRoutes.inputFile,
             ),
           ),
           createDrawerBodyItem(
