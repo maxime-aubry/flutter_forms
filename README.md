@@ -4,7 +4,7 @@
 ![Pub Version](https://img.shields.io/pub/v/flutter_forms)
 ![GitHub](https://img.shields.io/github/license/maxime-aubry/flutter_forms)
 ![GitHub top language](https://img.shields.io/github/languages/top/maxime-aubry/flutter_forms)
-![flutter tests](https://github.com/maxime-aubry/flutter_forms/workflows/flutter%20tests/badge.svg?branch=master)
+[![flutter_forms tests](https://github.com/maxime-aubry/flutter_forms/actions/workflows/flutter_forms.yaml/badge.svg?branch=main&event=push)](https://github.com/maxime-aubry/flutter_forms/actions/workflows/flutter_forms.yaml)
 ![collection version](https://img.shields.io/badge/collection-1.15.0-brightgreen)
 ![constant_datetime version](https://img.shields.io/badge/constant_datetime-1.0.0-brightgreen)
 ![image version](https://img.shields.io/badge/image-2.1.19-brightgreen)
