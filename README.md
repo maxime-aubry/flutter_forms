@@ -1,10 +1,10 @@
 [English](https://github.com/maxime-aubry/flutter_forms/blob/main/README.md) |
 [Français](https://github.com/maxime-aubry/flutter_forms/blob/main/resources/translations/fr_FR/README.md)
 
-![Pub Version](https://img.shields.io/pub/v/flutter_forms)
+[![Run tests](https://github.com/maxime-aubry/flutter_forms/actions/workflows/build_and_test.yaml/badge.svg?branch=main&event=push)](https://github.com/maxime-aubry/flutter_forms/actions/workflows/build_and_test.yaml)
 ![GitHub](https://img.shields.io/github/license/maxime-aubry/flutter_forms)
 ![GitHub top language](https://img.shields.io/github/languages/top/maxime-aubry/flutter_forms)
-[![Run tests](https://github.com/maxime-aubry/flutter_forms/actions/workflows/build_and_test.yaml/badge.svg?branch=main&event=push)](https://github.com/maxime-aubry/flutter_forms/actions/workflows/build_and_test.yaml)
+![Pub Version](https://img.shields.io/pub/v/flutter_forms)
 ![collection version](https://img.shields.io/badge/collection-1.15.0-brightgreen)
 ![constant_datetime version](https://img.shields.io/badge/constant_datetime-1.0.0-brightgreen)
 ![image version](https://img.shields.io/badge/image-2.1.19-brightgreen)
