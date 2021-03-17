@@ -200,9 +200,7 @@ Widget _inputText(FormControl<String> formControl, String label) =>
 
 ## Add validators
 
-What would be this library without validators ?
-
-NOTHING !
+What would be this library without validators ? NOTHING !
 
 So, here is a list of available validators :
 
@@ -434,6 +432,72 @@ Next you have the **FormArray**. This one is a collection of **FormGroup** only.
 
 This a difference with Angular's library. I disagree with the fact a **FormArray** can contain directly **FormControl** items.
 
-In my opinion, Angular **FormArray** is too permissive. Developer could try to add **FormGroup** and **FormControl** items into the same **FormArray**. This should not be possible, even if an exception is thrown after.
+In my opinion, Angular **FormArray** is too permissive. Developer could try to add **FormGroup** and **FormControl** items into the same **FormArray**.
+
+This should not be possible, even if an exception is thrown after.
+
+So, here is the way to declare a **FormArray** :
+
+```dart
+ReactiveFormBuilder form_builder = new ReactiveFormBuilder(
+  group: new FormGroup(
+    controls: {
+      'social_links': new FormArray(
+        groups: [
+          new FormGroup(
+            controls: {
+              'social_network': new FormControl<String>(value: 'github', validators: []),
+              'url': new FormControl<String>(value: 'https://github.com/maxime-aubry/', validators: []),
+            },
+            validators: [],
+          ),
+        ],
+        validators: [],
+      )
+    },
+    validators: [],
+  ),
+);
+```
+
+> As you can see, you can register complex data into an item of a **FormArray**.
 
 ## FormControl
+
+What would be a form if we didn't use **FormControl** ?
+
+This is the way to store data, while **FormGroup** and **FormArray** are used for the structure !
+
+**FormControl** are done to support a limited list of data types :
+- DateTime.
+- num (Number).
+- int.
+- double.
+- String.
+- bool.
+- List of DateTime.
+- List of num.
+- List of int.
+- List of double.
+- List of String.
+- List of bool.
+- Uint8List, Uint16List, Uint32List, Uint64List, Int8List, Int16List, Int32List and Int64List (for buffer arrays).
+- enums.
+- list of enums.
+
+If you try to use a disallowed type, an exception will be thrown.
+
+This list could evolve later.
+
+Here is the way to declare a FormControl with String generic type :
+
+```dart
+ReactiveFormBuilder form_builder = new ReactiveFormBuilder(
+  group: new FormGroup(
+    controls: {
+      'first_name': new FormControl<String>(value: 'Maxime', validators: []),
+    },
+    validators: [],
+  ),
+);
+```
