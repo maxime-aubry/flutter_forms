@@ -42,7 +42,7 @@ By using **flutter_forms**, you will be able to simplify your code and validatio
 
 ## Getting Started
 
-Flutter_forms is very easy to use. First, you should learn to use Flutter.
+**flutter_forms** is very easy to use. First, you should learn to use Flutter.
 
 Please, read the [online documentation](https://flutter.dev/docs) before using this library.
 
@@ -379,7 +379,7 @@ class CustomValidator extends FormControlValidatorAnnotation<String> {
 
 ## FormBuilder
 
-**Flutter_forms** is inspired by Angular reactive forms.
+**flutter_forms** is inspired by Angular reactive forms.
 
 Of course, FormBuilder is the starting point of form creation.
 
@@ -400,7 +400,7 @@ ReactiveFormBuilder form_builder = new ReactiveFormBuilder(
 A form is created and automatically instantiated when you add it to **ReactiveForm** widget. It provides a complete tree of form elements to use.
 
 > But it's a simplified version of **Angular reactive forms**.
-> As for **Angular reactive forms**, **Flutter_forms** can create dynamic forms.
+> As for **Angular reactive forms**, **flutter_forms** can create dynamic forms.
 > Lets see all these points together !
 
 ## FormGroup
@@ -627,5 +627,31 @@ ReactiveFormBuilder form_builder = new ReactiveFormBuilder(
 
 ## Set a value
 
+Here is the way to set a value to a **FormControl** :
 
+```dart
+FormControl<String> control = new FormControl<String>(value: null, validators: []);
+control.setValue('my value');
+```
 
+> That function will trigger the validation engine and update the form to display errors if there are.
+
+## Clone a form element
+
+Clone a form element is a very important point of **flutter_forms**.
+
+Imagine you are modifying an item of your form, as a sub **FormGroup**.
+
+You changes values, and you decide to click on cancel button.
+
+Rollback your values could be hard !
+
+So, you should clone the part of the form you want to update, and apply those changes later if you want.
+
+When you clone a form element, you clone the full tree of **ReactiveFormBuilder**, so you can use you validators to compare a value with another.
+
+Here is an example :
+
+```dart
+
+```
