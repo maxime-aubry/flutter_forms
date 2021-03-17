@@ -28,10 +28,22 @@ By using **flutter_forms**, you will be able to simplify your code and validatio
 - [Add inputs](#add-inputs)
 - [Add validators](#add-validators)
 - [Create validators](#create-validators)
-- [FormBuilder](#form-builder)
+- [FormBuilder](#formbuilder)
     - [FormGroup](#formgroup)
+        - [Add control to a FormGroup](#add-control-to-a-formgroup)
+        - [Remove control from a FormGroup](#remove-control-from-a-formgroup)
+        - [Check if a control exists into a FormGroup](#check-if-a-control-exists-into-a-formgroup)
+        - [Clone a FormGroup](#clone-a-formgroup)
+        - [Validate a FormGroup](#validate-a-formgroup)
     - [FormArray](#formarray)
+        - [Add item to a FormArray](#add-item-to-a-formarray)
+        - [Remove item from a FormArray](#remove-item-from-a-formarray)
+        - [Clone a FormArray](#clone-a-formarray)
+        - [Validate a FormArray](#validate-a-formarray)
     - [FormControl](#formcontrol)
+        - [Set a value](#set-a-value)
+        - [Clone a FormControl](#clone-a-formcontrol)
+        - [Validate a FormControl](#validate-a-formcontrol)
 
 ## Getting Started
 
@@ -392,7 +404,9 @@ ReactiveFormBuilder form_builder = new ReactiveFormBuilder(
 
 A form is created and automatically instantiated when you add it to **ReactiveForm** widget. It provides a complete tree of form elements to use.
 
-> But it's a simplified version of Angular reactive forms. Lets see three main points together !
+> But it's a simplified version of **Angular reactive forms**.
+> As for **Angular reactive forms**, **Flutter_forms** can create dynamic forms.
+> Lets see all these points together !
 
 ## FormGroup
 
@@ -424,6 +438,17 @@ ReactiveFormBuilder form_builder = new ReactiveFormBuilder(
     validators: [],
   ),
 );
+```
+
+## Add control to a FormGroup
+
+How to add a sub part of you form dynamically ?
+
+Here is a short code to add a **FormGroup** in the children collection of a **FormGroup** :
+
+```dart
+FormGroup formGroup = new FormGroup(controls: {}, validators: []);
+formGroup.addControl('child', null);
 ```
 
 ## FormArray
