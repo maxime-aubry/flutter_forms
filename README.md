@@ -13,7 +13,7 @@
 ![queries version](https://img.shields.io/badge/collection-0.1.14-brightgreen)
 ![reflectable version](https://img.shields.io/badge/collection-2.2.9-brightgreen)
 
-As with Angular, reactive forms are now on Flutter !
+As with **Angular**, reactive forms are now on Flutter !
 
 By using **flutter_forms**, you will be able to simplify your code and validation of you forms.
 
@@ -511,21 +511,21 @@ What would be a form if we didn't use **FormControl** ?
 This is the way to store data, while **FormGroup** and **FormArray** are used for the structure !
 
 **FormControl** are done to support a limited list of data types :
-- DateTime.
-- num (Number).
-- int.
-- double.
-- String.
-- bool.
-- List of DateTime.
-- List of num.
-- List of int.
-- List of double.
-- List of String.
-- List of bool.
-- Uint8List, Uint16List, Uint32List, Uint64List, Int8List, Int16List, Int32List and Int64List (for buffer arrays).
-- enums.
-- list of enums.
+- **DateTime**.
+- **num** (Number).
+- **int**.
+- **double**.
+- **String**.
+- **bool**.
+- List of **DateTime**.
+- List of **num**.
+- List of **int**.
+- List of **double**.
+- List of **String**.
+- List of **bool**.
+- **Uint8List**, **Uint16List**, **Uint32List**, **Uint64List**, **Int8List**, **Int16List**, **Int32List** and **Int64List** (for **buffer arrays**).
+- **enums**.
+- list of **enums**.
 
 If you try to use a disallowed type, an exception will be thrown.
 
