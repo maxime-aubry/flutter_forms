@@ -13,7 +13,7 @@
 ![queries version](https://img.shields.io/badge/queries-0.1.14-brightgreen)
 ![reflectable version](https://img.shields.io/badge/reflectable-2.2.9-brightgreen)
 
-As with **Angular**, reactive forms are now on Flutter !
+As with **Angular**, reactive forms are now on [Flutter] !
 
 By using **flutter_forms**, you will be able to simplify your code and validation of you forms.
 
@@ -450,7 +450,7 @@ FormControl<String> clone = child.getClone();
 
 ## How to add a reactive form into an application?
 
-Now we studied the basics of **flutter_forms**, lets see how to create a form into a **Flutter** application.
+Now we studied the basics of **flutter_forms**, lets see how to create a form into a [Flutter] application.
 
 ## Define a model file
 
@@ -766,4 +766,5 @@ class CustomValidator extends FormControlValidatorAnnotation<String> {
 
 **flutter_forms** uses [Provider library] to provide and consume form elements into your widgets.
 
+[Flutter]: https://flutter.dev/
 [Provider library]: https://github.com/rrousselGit/provider
