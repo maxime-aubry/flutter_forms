@@ -1,6 +1,15 @@
+import 'package:flutter/widgets.dart';
 import 'package:flutter_forms/flutter_forms.dart';
 
-void fakeInitializeRoot(FormGroup root) =>
+void initializeRoot(FormGroup root) {
+  ReactiveFormState formState = new ReactiveFormState();
+  ReactiveFormBuilder formBuilder = new ReactiveFormBuilder(group: root);
+  formBuilder.initialize(formState);
+  GlobalKey<FormState> formKey = GlobalKey<FormState>();
+  formState.attachFormKey(formKey);
+}
+
+/*void fakeInitializeRoot(FormGroup root) =>
     _initializeFormGroup(root, 'root', null, false);
 
 void _initializeFormGroup(
@@ -54,4 +63,4 @@ void _initializeFormControl(
   formControl.name = name;
   formControl.parent = parent;
   formControl.isInitialized = true;
-}
+}*/

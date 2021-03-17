@@ -5,9 +5,9 @@ import 'package:flutter_forms/src/form/index.dart';
 import 'package:flutter_forms/src/form/reactive_form/index.dart';
 
 /// [FormArray] is a sub-class of [AbstractControl].
-/// 
+///
 /// It's a way to group form elements.
-/// 
+///
 /// [FormArray] can contain [FormGroup] items only.
 /// {@category Form}
 /// {@subCategory Reactive forms}
@@ -91,10 +91,6 @@ class FormArray extends AbstractControl {
     if (formGroup == null)
       throw new FormBuilderException(
           'Cannot add FormGroup if this one is null.');
-
-    // if (this.groups.contains(formGroup))
-    //   throw new FormBuilderException(
-    //       'Cannot add FormGroup if this one is already added.');
 
     FormGroup item = formGroup.clone(null);
     this.groups.add(item);

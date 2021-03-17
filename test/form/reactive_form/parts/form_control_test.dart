@@ -20,7 +20,7 @@ void main() {
           },
           validators: [],
         );
-        fakeInitializeRoot(root);
+        initializeRoot(root);
 
         FormControl<String> child =
             root.controls['child'] as FormControl<String>;
@@ -35,7 +35,7 @@ void main() {
           },
           validators: [],
         );
-        fakeInitializeRoot(root);
+        initializeRoot(root);
 
         FormControl<String> child =
             root.controls['child'] as FormControl<String>;
@@ -55,7 +55,7 @@ void main() {
           },
           validators: [],
         );
-        fakeInitializeRoot(root);
+        initializeRoot(root);
 
         FormControl<String> child =
             root.controls['child'] as FormControl<String>;
@@ -72,13 +72,13 @@ void main() {
           },
           validators: [],
         );
-        fakeInitializeRoot(root);
+        initializeRoot(root);
 
         FormControl<String> child =
             root.controls['child'] as FormControl<String>;
 
-        expect_exception<FormBuilderException>(() {
-          child.getValidator<Required>();
+        expect_exception<FormBuilderException>(() async {
+          await child.getValidator<Required>();
         }, 'Current FormControl<String> has no validator of Required type.');
       });
     });
@@ -91,7 +91,7 @@ void main() {
           },
           validators: [],
         );
-        fakeInitializeRoot(root);
+        initializeRoot(root);
 
         FormControl<String> child =
             root.controls['child'] as FormControl<String>;
@@ -107,7 +107,7 @@ void main() {
           },
           validators: [],
         );
-        fakeInitializeRoot(root);
+        initializeRoot(root);
 
         FormControl<String> child =
             root.controls['child'] as FormControl<String>;
@@ -123,7 +123,7 @@ void main() {
           },
           validators: [],
         );
-        fakeInitializeRoot(root);
+        initializeRoot(root);
 
         FormControl<DateTime> child =
             root.controls['child'] as FormControl<DateTime>;

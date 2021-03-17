@@ -20,7 +20,7 @@ void main() {
           },
           validators: [],
         );
-        fakeInitializeRoot(root);
+        initializeRoot(root);
 
         FormControl<int> child = root.controls['child'] as FormControl<int>;
         expect(root, child.root);
@@ -33,7 +33,7 @@ void main() {
           },
           validators: [],
         );
-        fakeInitializeRoot(root);
+        initializeRoot(root);
 
         FormGroup child = root.controls['child'] as FormGroup;
         expect(child.formPath, 'root.controls[\'child\']');
@@ -46,7 +46,7 @@ void main() {
           },
           validators: [],
         );
-        fakeInitializeRoot(root);
+        initializeRoot(root);
 
         FormGroup child = root.controls['child'] as FormGroup;
         expect(child.modelPath, 'root.child');
@@ -59,7 +59,7 @@ void main() {
           controls: {},
           validators: [Required(error: null)],
         );
-        fakeInitializeRoot(root);
+        initializeRoot(root);
 
         Required validator = root.getValidator<Required>();
         expect(validator, isNotNull);
@@ -72,10 +72,10 @@ void main() {
           controls: {},
           validators: [],
         );
-        fakeInitializeRoot(root);
+        initializeRoot(root);
 
-        expect_exception<FormBuilderException>(() {
-          root.getValidator<Required>();
+        expect_exception<FormBuilderException>(() async {
+          await root.getValidator<Required>();
         }, 'Current FormGroup has no validator of Required type.');
       });
     });
@@ -88,7 +88,7 @@ void main() {
           },
           validators: [],
         );
-        fakeInitializeRoot(root);
+        initializeRoot(root);
 
         bool exists = root.containsControl('child');
         expect(exists, isTrue);
@@ -99,7 +99,7 @@ void main() {
           controls: {},
           validators: [],
         );
-        fakeInitializeRoot(root);
+        initializeRoot(root);
 
         bool exists = root.containsControl('child');
         expect(exists, isFalse);
@@ -112,10 +112,10 @@ void main() {
           controls: {},
           validators: [],
         );
-        fakeInitializeRoot(root);
+        initializeRoot(root);
 
-        expect_exception<FormBuilderException>(() {
-          root.containsControl(null);
+        expect_exception<FormBuilderException>(() async {
+          await root.containsControl(null);
         }, 'Cannot check if control does exist if its name is not provided.');
       });
 
@@ -126,10 +126,10 @@ void main() {
           controls: {},
           validators: [],
         );
-        fakeInitializeRoot(root);
+        initializeRoot(root);
 
-        expect_exception<FormBuilderException>(() {
-          root.containsControl('');
+        expect_exception<FormBuilderException>(() async {
+          await root.containsControl('');
         }, 'Cannot check if control does exist if its name is not provided.');
       });
     });
@@ -140,7 +140,7 @@ void main() {
           controls: {},
           validators: [],
         );
-        fakeInitializeRoot(root);
+        initializeRoot(root);
         FormGroup controlToAdd = new FormGroup(controls: {}, validators: []);
 
         root.addControl('child', controlToAdd);
@@ -156,11 +156,11 @@ void main() {
           controls: {},
           validators: [],
         );
-        fakeInitializeRoot(root);
+        initializeRoot(root);
         FormGroup controlToAdd = new FormGroup(controls: {}, validators: []);
 
-        expect_exception<FormBuilderException>(() {
-          root.addControl(null, controlToAdd);
+        expect_exception<FormBuilderException>(() async {
+          await root.addControl(null, controlToAdd);
         }, 'Cannot add control if its name is not provided.');
       });
 
@@ -171,11 +171,11 @@ void main() {
           controls: {},
           validators: [],
         );
-        fakeInitializeRoot(root);
+        initializeRoot(root);
         FormGroup controlToAdd = new FormGroup(controls: {}, validators: []);
 
-        expect_exception<FormBuilderException>(() {
-          root.addControl(null, controlToAdd);
+        expect_exception<FormBuilderException>(() async {
+          await root.addControl(null, controlToAdd);
         }, 'Cannot add control if its name is not provided.');
       });
 
@@ -186,10 +186,10 @@ void main() {
           controls: {},
           validators: [],
         );
-        fakeInitializeRoot(root);
+        initializeRoot(root);
 
-        expect_exception<FormBuilderException>(() {
-          root.addControl('child', null);
+        expect_exception<FormBuilderException>(() async {
+          await root.addControl('child', null);
         }, 'Cannot add control if this one is null.');
       });
 
@@ -202,11 +202,11 @@ void main() {
           },
           validators: [],
         );
-        fakeInitializeRoot(root);
+        initializeRoot(root);
         FormGroup controlToAdd = new FormGroup(controls: {}, validators: []);
 
-        expect_exception<FormBuilderException>(() {
-          root.addControl('child', controlToAdd);
+        expect_exception<FormBuilderException>(() async {
+          await root.addControl('child', controlToAdd);
         }, 'Cannot add control if this one is already added.');
       });
     });
@@ -219,7 +219,7 @@ void main() {
           },
           validators: [],
         );
-        fakeInitializeRoot(root);
+        initializeRoot(root);
 
         root.removeControl('child');
         bool isRegistered = root.containsControl('child');
@@ -235,10 +235,10 @@ void main() {
           },
           validators: [],
         );
-        fakeInitializeRoot(root);
+        initializeRoot(root);
 
-        expect_exception<FormBuilderException>(() {
-          root.removeControl(null);
+        expect_exception<FormBuilderException>(() async {
+          await root.removeControl(null);
         }, 'Cannot remove control if its name is not provided.');
       });
 
@@ -251,10 +251,10 @@ void main() {
           },
           validators: [],
         );
-        fakeInitializeRoot(root);
+        initializeRoot(root);
 
-        expect_exception<FormBuilderException>(() {
-          root.removeControl('');
+        expect_exception<FormBuilderException>(() async {
+          await root.removeControl('');
         }, 'Cannot remove control if its name is not provided.');
       });
 
@@ -265,10 +265,10 @@ void main() {
           controls: {},
           validators: [],
         );
-        fakeInitializeRoot(root);
+        initializeRoot(root);
 
-        expect_exception<FormBuilderException>(() {
-          root.removeControl('child');
+        expect_exception<FormBuilderException>(() async {
+          await root.removeControl('child');
         }, 'Cannot remove control if this one is not registered.');
       });
     });
@@ -281,7 +281,7 @@ void main() {
           },
           validators: [],
         );
-        fakeInitializeRoot(root);
+        initializeRoot(root);
 
         FormGroup formGroup = root.getFormGroup('child');
         expect(formGroup, isNotNull);
@@ -294,10 +294,10 @@ void main() {
           controls: {},
           validators: [],
         );
-        fakeInitializeRoot(root);
+        initializeRoot(root);
 
-        expect_exception<FormBuilderException>(() {
-          root.getFormGroup('child');
+        expect_exception<FormBuilderException>(() async {
+          await root.getFormGroup('child');
         }, 'FormGroup not found.');
       });
 
@@ -310,10 +310,10 @@ void main() {
           },
           validators: [],
         );
-        fakeInitializeRoot(root);
+        initializeRoot(root);
 
-        expect_exception<FormBuilderException>(() {
-          root.getFormGroup('child');
+        expect_exception<FormBuilderException>(() async {
+          await root.getFormGroup('child');
         }, 'Control is not of FormGroup type.');
       });
     });
@@ -326,7 +326,7 @@ void main() {
           },
           validators: [],
         );
-        fakeInitializeRoot(root);
+        initializeRoot(root);
 
         FormArray formArray = root.getFormArray('child');
         expect(formArray, isNotNull);
@@ -339,10 +339,10 @@ void main() {
           controls: {},
           validators: [],
         );
-        fakeInitializeRoot(root);
+        initializeRoot(root);
 
-        expect_exception<FormBuilderException>(() {
-          root.getFormArray('child');
+        expect_exception<FormBuilderException>(() async {
+          await root.getFormArray('child');
         }, 'FormArray not found.');
       });
 
@@ -355,10 +355,10 @@ void main() {
           },
           validators: [],
         );
-        fakeInitializeRoot(root);
+        initializeRoot(root);
 
-        expect_exception<FormBuilderException>(() {
-          root.getFormArray('child');
+        expect_exception<FormBuilderException>(() async {
+          await root.getFormArray('child');
         }, 'Control is not of FormArray type.');
       });
     });
@@ -371,7 +371,7 @@ void main() {
           },
           validators: [],
         );
-        fakeInitializeRoot(root);
+        initializeRoot(root);
 
         FormControl formControl = root.getFormControl<String>('child');
         expect(formControl, isNotNull);
@@ -384,10 +384,10 @@ void main() {
           controls: {},
           validators: [],
         );
-        fakeInitializeRoot(root);
+        initializeRoot(root);
 
-        expect_exception<FormBuilderException>(() {
-          root.getFormControl<String>('child');
+        expect_exception<FormBuilderException>(() async {
+          await root.getFormControl<String>('child');
         }, 'FormControl not found.');
       });
 
@@ -400,10 +400,10 @@ void main() {
           },
           validators: [],
         );
-        fakeInitializeRoot(root);
+        initializeRoot(root);
 
-        expect_exception<FormBuilderException>(() {
-          root.getFormControl<int>('child');
+        expect_exception<FormBuilderException>(() async {
+          await root.getFormControl<int>('child');
         }, 'Control is not of FormControl<int> type.');
       });
     });

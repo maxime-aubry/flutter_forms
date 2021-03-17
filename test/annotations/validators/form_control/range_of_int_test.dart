@@ -17,7 +17,7 @@ void main() {
           },
           validators: [],
         );
-        fakeInitializeRoot(root);
+        initializeRoot(root);
 
         FormControl<int> formControl =
             root.controls['child'] as FormControl<int>;
@@ -40,7 +40,7 @@ void main() {
           },
           validators: [],
         );
-        fakeInitializeRoot(root);
+        initializeRoot(root);
 
         FormControl<int> formControl =
             root.controls['child'] as FormControl<int>;
@@ -63,7 +63,7 @@ void main() {
           },
           validators: [],
         );
-        fakeInitializeRoot(root);
+        initializeRoot(root);
 
         FormControl<int> formControl =
             root.controls['child'] as FormControl<int>;
@@ -83,7 +83,7 @@ void main() {
           },
           validators: [],
         );
-        fakeInitializeRoot(root);
+        initializeRoot(root);
 
         FormControl<int> formControl =
             root.controls['child'] as FormControl<int>;
@@ -108,7 +108,7 @@ void main() {
           },
           validators: [],
         );
-        fakeInitializeRoot(root);
+        initializeRoot(root);
 
         FormControl<int> formControl =
             root.controls['child'] as FormControl<int>;
@@ -131,7 +131,7 @@ void main() {
           },
           validators: [],
         );
-        fakeInitializeRoot(root);
+        initializeRoot(root);
 
         FormControl<int> formControl =
             root.controls['child'] as FormControl<int>;
@@ -160,7 +160,7 @@ void main() {
           },
           validators: [],
         );
-        fakeInitializeRoot(root);
+        initializeRoot(root);
 
         FormControl<int> formControl =
             root.controls['child'] as FormControl<int>;
@@ -194,7 +194,7 @@ void main() {
           },
           validators: [],
         );
-        fakeInitializeRoot(root);
+        initializeRoot(root);
 
         FormControl<int> formControl =
             root.controls['child'] as FormControl<int>;
@@ -228,7 +228,7 @@ void main() {
           },
           validators: [],
         );
-        fakeInitializeRoot(root);
+        initializeRoot(root);
 
         FormControl<int> formControl =
             root.controls['child'] as FormControl<int>;
@@ -251,7 +251,7 @@ void main() {
           },
           validators: [],
         );
-        fakeInitializeRoot(root);
+        initializeRoot(root);
 
         FormControl<int> formControl =
             root.controls['child'] as FormControl<int>;
@@ -274,7 +274,7 @@ void main() {
           },
           validators: [],
         );
-        fakeInitializeRoot(root);
+        initializeRoot(root);
 
         FormControl<int> formControl =
             root.controls['child'] as FormControl<int>;

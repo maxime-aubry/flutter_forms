@@ -16,7 +16,7 @@ void main() {
         },
         validators: [],
       );
-      fakeInitializeRoot(root);
+      initializeRoot(root);
       NavigatorTester navigator = new NavigatorTester();
 
       String parameter = navigator.getRemoteValidatorParameter<String>(
@@ -39,7 +39,7 @@ void main() {
         },
         validators: [],
       );
-      fakeInitializeRoot(root);
+      initializeRoot(root);
       NavigatorTester navigator = new NavigatorTester();
 
       DateTime parameter = navigator.getRemoteValidatorParameter<DateTime>(
@@ -64,7 +64,7 @@ void main() {
         },
         validators: [],
       );
-      fakeInitializeRoot(root);
+      initializeRoot(root);
       NavigatorTester navigator = new NavigatorTester();
 
       expect_exception<ValidatorParameterException>(() {
@@ -87,7 +87,7 @@ void main() {
         controls: {},
         validators: [],
       );
-      fakeInitializeRoot(root);
+      initializeRoot(root);
       NavigatorTester navigator = new NavigatorTester();
 
       expect_exception<ValidatorParameterException>(() {

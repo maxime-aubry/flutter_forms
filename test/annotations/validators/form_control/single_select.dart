@@ -25,7 +25,7 @@ void main() {
           },
           validators: [],
         );
-        fakeInitializeRoot(root);
+        initializeRoot(root);
 
         FormControl<EGender> formControl =
             root.controls['child'] as FormControl<EGender>;
@@ -54,7 +54,7 @@ void main() {
           },
           validators: [],
         );
-        fakeInitializeRoot(root);
+        initializeRoot(root);
 
         FormControl<EGender> formControl =
             root.controls['child'] as FormControl<EGender>;
@@ -86,7 +86,7 @@ void main() {
           },
           validators: [],
         );
-        fakeInitializeRoot(root);
+        initializeRoot(root);
 
         FormControl<EGender> formControl =
             root.controls['child'] as FormControl<EGender>;
@@ -120,7 +120,7 @@ void main() {
           },
           validators: [],
         );
-        fakeInitializeRoot(root);
+        initializeRoot(root);
 
         FormControl<EGender> formControl =
             root.controls['child'] as FormControl<EGender>;
@@ -156,7 +156,7 @@ void main() {
           },
           validators: [],
         );
-        fakeInitializeRoot(root);
+        initializeRoot(root);
 
         FormControl<EGender> formControl =
             root.controls['child'] as FormControl<EGender>;

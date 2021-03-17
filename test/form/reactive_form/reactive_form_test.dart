@@ -16,11 +16,9 @@ void main() {
 
       await tester.pumpWidget(ReactiveForm(
         formBuilder: formBuilder,
-        child: new FormGroupConsumer(
-          builder: (_, formGroup, __) {
-            return Text(formGroup.name);
-          },
-        ),
+        builder: (context, _) {
+          return new Container();
+        },
       ));
     });
   });

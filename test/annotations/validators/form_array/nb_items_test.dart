@@ -19,7 +19,7 @@ void main() {
           },
           validators: [],
         );
-        fakeInitializeRoot(root);
+        initializeRoot(root);
 
         FormArray formArray = root.controls['child'] as FormArray;
         NbItems validator = NbItems(min: 1, max: 3, error: null);
@@ -41,7 +41,7 @@ void main() {
           },
           validators: [],
         );
-        fakeInitializeRoot(root);
+        initializeRoot(root);
 
         FormArray formArray = root.controls['child'] as FormArray;
         NbItems validator = NbItems(min: 1, max: 3, error: null);
@@ -62,7 +62,7 @@ void main() {
           },
           validators: [],
         );
-        fakeInitializeRoot(root);
+        initializeRoot(root);
 
         FormArray formArray = root.controls['child'] as FormArray;
         NbItems validator = NbItems(min: 1, max: 3, error: null);
@@ -82,7 +82,7 @@ void main() {
           },
           validators: [],
         );
-        fakeInitializeRoot(root);
+        initializeRoot(root);
 
         FormArray formArray = root.controls['child'] as FormArray;
         NbItems validator = NbItems(min: 1, max: 3, error: null);
@@ -100,7 +100,7 @@ void main() {
           },
           validators: [],
         );
-        fakeInitializeRoot(root);
+        initializeRoot(root);
 
         FormArray formArray = root.controls['child'] as FormArray;
         NbItems validator = NbItems(min: 1, max: 3, error: null);
@@ -123,7 +123,7 @@ void main() {
           },
           validators: [],
         );
-        fakeInitializeRoot(root);
+        initializeRoot(root);
 
         FormArray formArray = root.controls['child'] as FormArray;
         NbItems validator = NbItems(min: 1, max: 3, error: null);
@@ -147,7 +147,7 @@ void main() {
           },
           validators: [],
         );
-        fakeInitializeRoot(root);
+        initializeRoot(root);
 
         FormArray formArray = root.controls['child'] as FormArray;
         NbItems validator =
@@ -173,7 +173,7 @@ void main() {
           },
           validators: [],
         );
-        fakeInitializeRoot(root);
+        initializeRoot(root);
 
         FormArray formArray = root.controls['child'] as FormArray;
         NbItems validator =
@@ -196,7 +196,7 @@ void main() {
           },
           validators: [],
         );
-        fakeInitializeRoot(root);
+        initializeRoot(root);
 
         FormArray formArray = root.controls['child'] as FormArray;
         NbItems validator = NbItems(min: null, max: 3, error: null);
@@ -218,7 +218,7 @@ void main() {
           },
           validators: [],
         );
-        fakeInitializeRoot(root);
+        initializeRoot(root);
 
         FormArray formArray = root.controls['child'] as FormArray;
         NbItems validator = NbItems(min: 1, max: null, error: null);
@@ -239,7 +239,7 @@ void main() {
           },
           validators: [],
         );
-        fakeInitializeRoot(root);
+        initializeRoot(root);
 
         FormArray formArray = root.controls['child'] as FormArray;
         NbItems validator = NbItems(min: 3, max: 1, error: null);

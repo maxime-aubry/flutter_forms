@@ -20,7 +20,7 @@ void main() {
           },
           validators: [],
         );
-        fakeInitializeRoot(root);
+        initializeRoot(root);
 
         FormArray child = root.controls['child'] as FormArray;
         expect(root, child.root);
@@ -33,7 +33,7 @@ void main() {
           },
           validators: [],
         );
-        fakeInitializeRoot(root);
+        initializeRoot(root);
 
         FormArray child = root.controls['child'] as FormArray;
         expect(child.formPath, 'root.controls[\'child\']');
@@ -46,7 +46,7 @@ void main() {
           },
           validators: [],
         );
-        fakeInitializeRoot(root);
+        initializeRoot(root);
 
         FormArray child = root.controls['child'] as FormArray;
         expect(child.modelPath, 'root.child');
@@ -64,7 +64,7 @@ void main() {
           },
           validators: [],
         );
-        fakeInitializeRoot(root);
+        initializeRoot(root);
 
         FormArray child = root.controls['child'] as FormArray;
         Required validator = child.getValidator<Required>();
@@ -80,7 +80,7 @@ void main() {
           },
           validators: [],
         );
-        fakeInitializeRoot(root);
+        initializeRoot(root);
 
         FormArray child = root.controls['child'] as FormArray;
 
@@ -98,13 +98,13 @@ void main() {
           },
           validators: [],
         );
-        fakeInitializeRoot(root);
+        initializeRoot(root);
 
         FormArray child = root.controls['child'] as FormArray;
         FormGroup groupToAdd = new FormGroup(controls: {}, validators: []);
 
         child.addGroup(groupToAdd, notify: false);
-        expect(child.groups.last, groupToAdd);
+        expect(child.groups.length, 1);
       });
 
       test(
@@ -116,34 +116,13 @@ void main() {
           },
           validators: [],
         );
-        fakeInitializeRoot(root);
+        initializeRoot(root);
 
         FormArray child = root.controls['child'] as FormArray;
 
-        expect_exception<FormBuilderException>(() {
-          child.addGroup(null, notify: false);
+        expect_exception<FormBuilderException>(() async {
+          await child.addGroup(null, notify: false);
         }, 'Cannot add FormGroup if this one is null.');
-      });
-
-      test(
-          'addGroup throws an exception of FormBuilderException type when group already exists.',
-          () {
-        FormGroup root = new FormGroup(
-          controls: {
-            'child': new FormArray(groups: [
-              new FormGroup(controls: {}, validators: []),
-            ], validators: []),
-          },
-          validators: [],
-        );
-        fakeInitializeRoot(root);
-
-        FormArray child = root.controls['child'] as FormArray;
-        FormGroup groupToAdd = child.groups[0];
-
-        expect_exception<FormBuilderException>(() {
-          child.addGroup(groupToAdd, notify: false);
-        }, 'Cannot add FormGroup if this one is already added.');
       });
     });
 
@@ -159,7 +138,7 @@ void main() {
           },
           validators: [],
         );
-        fakeInitializeRoot(root);
+        initializeRoot(root);
 
         FormArray child = root.controls['child'] as FormArray;
         FormGroup groupToRemove = child.groups[0];
@@ -183,7 +162,7 @@ void main() {
           },
           validators: [],
         );
-        fakeInitializeRoot(root);
+        initializeRoot(root);
 
         FormArray child = root.controls['child'] as FormArray;
         FormGroup groupToRemove = child.groups[1];
@@ -207,7 +186,7 @@ void main() {
           },
           validators: [],
         );
-        fakeInitializeRoot(root);
+        initializeRoot(root);
 
         FormArray child = root.controls['child'] as FormArray;
         FormGroup groupToRemove = child.groups[2];
@@ -233,12 +212,12 @@ void main() {
           },
           validators: [],
         );
-        fakeInitializeRoot(root);
+        initializeRoot(root);
 
         FormArray child = root.controls['child'] as FormArray;
 
-        expect_exception<FormBuilderException>(() {
-          child.removeGroup(null, notify: false);
+        expect_exception<FormBuilderException>(() async {
+          await child.removeGroup(null, notify: false);
         }, 'Cannot add FormGroup if this one is null.');
       });
 
@@ -251,13 +230,13 @@ void main() {
           },
           validators: [],
         );
-        fakeInitializeRoot(root);
+        initializeRoot(root);
 
         FormArray child = root.controls['child'] as FormArray;
         FormGroup groupToRemove = new FormGroup(controls: {}, validators: []);
 
-        expect_exception<FormBuilderException>(() {
-          child.removeGroup(groupToRemove, notify: false);
+        expect_exception<FormBuilderException>(() async {
+          await child.removeGroup(groupToRemove, notify: false);
         }, 'Cannot remove FormGroup if this one is not registered.');
       });
     });

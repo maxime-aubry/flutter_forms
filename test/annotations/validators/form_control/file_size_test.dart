@@ -22,7 +22,7 @@ void main() {
           },
           validators: [],
         );
-        fakeInitializeRoot(root);
+        initializeRoot(root);
 
         FormControl<Uint8List> formControl =
             root.controls['child'] as FormControl<Uint8List>;
@@ -41,7 +41,7 @@ void main() {
           },
           validators: [],
         );
-        fakeInitializeRoot(root);
+        initializeRoot(root);
 
         FormControl<Uint8List> formControl =
             root.controls['child'] as FormControl<Uint8List>;
@@ -65,7 +65,7 @@ void main() {
           },
           validators: [],
         );
-        fakeInitializeRoot(root);
+        initializeRoot(root);
 
         FormControl<Uint8List> formControl =
             root.controls['child'] as FormControl<Uint8List>;
@@ -91,7 +91,7 @@ void main() {
           },
           validators: [],
         );
-        fakeInitializeRoot(root);
+        initializeRoot(root);
 
         FormControl<Uint8List> formControl =
             root.controls['child'] as FormControl<Uint8List>;

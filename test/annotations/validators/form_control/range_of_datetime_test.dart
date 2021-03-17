@@ -19,7 +19,7 @@ void main() {
           },
           validators: [],
         );
-        fakeInitializeRoot(root);
+        initializeRoot(root);
 
         FormControl<DateTime> formControl =
             root.controls['child'] as FormControl<DateTime>;
@@ -46,7 +46,7 @@ void main() {
           },
           validators: [],
         );
-        fakeInitializeRoot(root);
+        initializeRoot(root);
 
         FormControl<DateTime> formControl =
             root.controls['child'] as FormControl<DateTime>;
@@ -73,7 +73,7 @@ void main() {
           },
           validators: [],
         );
-        fakeInitializeRoot(root);
+        initializeRoot(root);
 
         FormControl<DateTime> formControl =
             root.controls['child'] as FormControl<DateTime>;
@@ -97,7 +97,7 @@ void main() {
           },
           validators: [],
         );
-        fakeInitializeRoot(root);
+        initializeRoot(root);
 
         FormControl<DateTime> formControl =
             root.controls['child'] as FormControl<DateTime>;
@@ -126,7 +126,7 @@ void main() {
           },
           validators: [],
         );
-        fakeInitializeRoot(root);
+        initializeRoot(root);
 
         FormControl<DateTime> formControl =
             root.controls['child'] as FormControl<DateTime>;
@@ -153,7 +153,7 @@ void main() {
           },
           validators: [],
         );
-        fakeInitializeRoot(root);
+        initializeRoot(root);
 
         FormControl<DateTime> formControl =
             root.controls['child'] as FormControl<DateTime>;
@@ -186,7 +186,7 @@ void main() {
           },
           validators: [],
         );
-        fakeInitializeRoot(root);
+        initializeRoot(root);
 
         FormControl<DateTime> formControl =
             root.controls['child'] as FormControl<DateTime>;
@@ -221,7 +221,7 @@ void main() {
           },
           validators: [],
         );
-        fakeInitializeRoot(root);
+        initializeRoot(root);
 
         FormControl<DateTime> formControl =
             root.controls['child'] as FormControl<DateTime>;
@@ -256,7 +256,7 @@ void main() {
           },
           validators: [],
         );
-        fakeInitializeRoot(root);
+        initializeRoot(root);
 
         FormControl<DateTime> formControl =
             root.controls['child'] as FormControl<DateTime>;
@@ -283,7 +283,7 @@ void main() {
           },
           validators: [],
         );
-        fakeInitializeRoot(root);
+        initializeRoot(root);
 
         FormControl<DateTime> formControl =
             root.controls['child'] as FormControl<DateTime>;
@@ -310,7 +310,7 @@ void main() {
           },
           validators: [],
         );
-        fakeInitializeRoot(root);
+        initializeRoot(root);
 
         FormControl<DateTime> formControl =
             root.controls['child'] as FormControl<DateTime>;
