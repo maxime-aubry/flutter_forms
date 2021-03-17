@@ -52,7 +52,6 @@ By using **flutter_forms**, you will be able to simplify your code and validatio
     - [FormArrayProvider](#formarrayprovider)
     - [FormControlProvider](#formcontrolprovider)
     - [MultipleStepFormStateIndexerProvider](#multiplestepformstateindexerprovider)
-    - 
 - [See more examples](#see-more-examples)
 
 ## Getting Started
@@ -1091,6 +1090,56 @@ child: new FormControlConsumer<String>(
 ```
 
 ## MultipleStepFormStateIndexerProvider
+
+MultipleStepFormStateIndexer is used only inside form with multiple steps.
+
+Its role is to assemble all form state inside an indexer. So, **Stepper** will be able to target the good form state that you should use.
+
+Use it when you want to validate a step :
+
+```dart
+@override
+  Widget build(BuildContext context) {
+    return new MultipleStepFormContainer(
+        builder: (context, _) {
+          return new Stepper(
+            type: StepperType.horizontal,
+            steps: this.steps,
+            currentStep: currentStep,
+            onStepContinue: () async {
+              // here we get all steps names
+              List<String> stepsNames =
+                  context.readMultipleStepFormStateIndexer().keys.toList();
+    
+              // here we get the form state for the targeted step name
+              ReactiveFormState formState = context.readFormState(
+                step: stepsNames[currentStep],
+              );
+    
+              // here we validate the current step
+              if (await formState.validate()) {
+                // Data treatment and post to server here...
+              }
+            },
+            onStepTapped: (step) => goTo(step),
+            onStepCancel: cancel,
+          );
+        },
+      );
+  }
+```
+
+FormControl watcher :
+
+```dart
+MultipleStepFormStateIndexer indexer = context.watchMultipleStepFormStateIndexer();
+```
+
+FormControl reader :
+
+```dart
+MultipleStepFormStateIndexer indexer = context.readMultipleStepFormStateIndexer();
+```
 
 ## See more examples
 
