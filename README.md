@@ -22,12 +22,6 @@ By using **flutter_forms**, you will be able to simplify your code and validatio
 - [Getting Started](#getting-started)
     - [Requirements](#requirements)
     - [Dependencies](#dependencies)
-- [Define a model file](#define-a-model-file)
-- [Initialize library](#initialize-library)
-- [Define a new basic form](#define-a-new-basic-form)
-- [Add inputs](#add-inputs)
-- [Add validators](#add-validators)
-- [Create validators](#create-validators)
 - [FormBuilder](#formbuilder)
     - [FormGroup](#formgroup)
         - [Add control to a FormGroup](#add-control-to-a-formgroup)
@@ -39,6 +33,13 @@ By using **flutter_forms**, you will be able to simplify your code and validatio
     - [FormControl](#formcontrol)
         - [Set a value](#set-a-value)
     - [Clone a form element](#clone-a-form-element)
+- [How to add a reactive form into an application?](#how-to-add-a-reactive-form-into-an-application)
+    - [Define a model file](#define-a-model-file)
+    - [Initialize library](#initialize-library)
+    - [Define a new basic form](#define-a-new-basic-form)
+    - [Add inputs](#add-inputs)
+    - [Add validators](#add-validators)
+    - [Create validators](#create-validators)
 
 ## Getting Started
 
@@ -69,6 +70,298 @@ dependencies:
 
 Then, run **flutter packages get** command on the console.
 
+## FormBuilder
+
+**flutter_forms** is inspired by Angular reactive forms.
+
+Of course, FormBuilder is the starting point of form creation.
+
+Here is the way to build a form :
+
+```dart
+ReactiveFormBuilder form_builder = new ReactiveFormBuilder(
+  group: new FormGroup(
+    controls: {
+      'first_name': new FormControl<String>(value: null, validators: []),
+      'last_name': new FormControl<String>(value: null, validators: []),
+    },
+    validators: [],
+  ),
+);
+```
+
+A form is created and automatically instantiated when you add it to **ReactiveForm** widget. It provides a complete tree of form elements to use.
+
+> But it's a simplified version of **Angular reactive forms**.
+> As for **Angular reactive forms**, **flutter_forms** can create dynamic forms.
+> Lets see all these points together !
+
+## FormGroup
+
+First you have the **FormGroup**. This one is a group of **FormGroup**, **FormArray** and **FormControl**.
+
+You must use them for complex forms, with multiple levels.
+
+Imagine you have a to set your profile. You could have two distinct parts into this form.
+
+```dart
+ReactiveFormBuilder form_builder = new ReactiveFormBuilder(
+  group: new FormGroup(
+    controls: {
+      'personal': new FormGroup(
+        controls: {
+          'first_name': new FormControl<String>(value: null, validators: []),
+          'last_name': new FormControl<String>(value: null, validators: []),
+        },
+        validators: [],
+      ),
+      'social_links': new FormGroup(
+        controls: {
+          'github': new FormControl<String>(value: null, validators: []),
+          'facebook': new FormControl<String>(value: null, validators: []),
+        },
+        validators: [],
+      )
+    },
+    validators: [],
+  ),
+);
+```
+
+## Add control to a FormGroup
+
+How to add a sub part of you form dynamically ?
+
+Here is a short code to add a **FormGroup** in the children collection of a **FormGroup** :
+
+```dart
+FormGroup root = new FormGroup(controls: {}, validators: []);
+FormGroup child = new FormGroup(controls: {}, validators: []);
+root.addControl('child', child);
+```
+
+Here is a short code to add a **FormArray** in the children collection of a **FormGroup** :
+
+```dart
+FormGroup root = new FormGroup(controls: {}, validators: []);
+FormArray child = new FormArray(groups: [], validators: []);
+root.addControl('child', child);
+```
+
+Finally, here is a short code to add a **FormControl** in the children collection of a **FormGroup** :
+
+```dart
+FormGroup root = new FormGroup(controls: {}, validators: []);
+FormControl<String> child = new FormControl<String>(value: null, validators: []);
+root.addControl('child', child);
+```
+
+## Remove control from a FormGroup
+
+Here is a short code to remove a **FormGroup** from the children collection of a **FormGroup** :
+
+```dart
+FormGroup root = new FormGroup(
+  controls: {
+    'child': new FormGroup(controls: {}, validators: []),
+  },
+  validators: [],
+);
+root.removeControl('child');
+```
+
+> That function will trigger the validation engine and update the form to display errors if there are.
+
+Here is a short code to remove a **FormArray** from the children collection of a **FormGroup** :
+
+```dart
+FormGroup root = new FormGroup(
+  controls: {
+    'child': new FormArray(groups: [], validators: []),
+  },
+  validators: [],
+);
+root.removeControl('child');
+```
+
+> That function will trigger the validation engine and update the form to display errors if there are.
+
+Finally, here is a short code to remove a **FormControl** from the children collection of a **FormGroup** :
+
+```dart
+FormGroup root = new FormGroup(
+  controls: {
+    'child': new FormControl<String>(value: null, validators: []),
+  },
+  validators: [],
+);
+root.removeControl('child');
+```
+
+> That function will trigger the validation engine and update the form to display errors if there are.
+
+## Check if a control exists into a FormGroup
+
+How to check if a control does exist into a **FormGroup** ?
+
+```dart
+FormGroup root = new FormGroup(controls: {}, validators: []);
+bool exists = root.containsControl('child');
+```
+
+## FormArray
+
+Next you have the **FormArray**. This one is a collection of **FormGroup** only.
+
+This a difference with Angular's library. I disagree with the fact a **FormArray** can contain directly **FormControl** items.
+
+In my opinion, Angular **FormArray** is too permissive. Developer could try to add **FormGroup** and **FormControl** items into the same **FormArray**.
+
+This should not be possible, even if an exception is thrown after.
+
+So, here is the way to declare a **FormArray** :
+
+```dart
+ReactiveFormBuilder form_builder = new ReactiveFormBuilder(
+  group: new FormGroup(
+    controls: {
+      'social_links': new FormArray(
+        groups: [
+          new FormGroup(
+            controls: {
+              'social_network': new FormControl<String>(value: 'github', validators: []),
+              'url': new FormControl<String>(value: 'https://github.com/maxime-aubry/', validators: []),
+            },
+            validators: [],
+          ),
+        ],
+        validators: [],
+      )
+    },
+    validators: [],
+  ),
+);
+```
+
+> As you can see, you can register complex data into an item of a **FormArray**.
+
+## Add item to a FormArray
+
+Add an item to a **FormArray** is easy.
+Remember that you can add **FormGroup** items only.
+
+Here is the way to add an item :
+
+```dart
+FormArray array = new FormArray(groups: [], validators: []);
+FormGroup child = new FormGroup(controls: {}, validators: []);
+array.addGroup(child);
+```
+
+> That function will trigger the validation engine and update the form to display errors if there are.
+
+## Remove item from a FormArray
+
+Here is the way to remove an item :
+
+```dart
+FormArray array = new FormArray(
+  groups: [
+    // an item is here
+  ],
+  validators: [],
+);
+FormGroup child = new FormGroup(controls: {}, validators: []);
+array.removeGroup(child);
+```
+
+> That function will trigger the validation engine and update the form to display errors if there are.
+> This part is a little confuse because you don't see how to get an item from the form array. Lets see that later.
+
+## FormControl
+
+What would be a form if we didn't use **FormControl** ?
+
+This is the way to store data, while **FormGroup** and **FormArray** are used for the structure !
+
+**FormControl** are done to support a limited list of data types :
+- **DateTime**.
+- **num** (Number).
+- **int**.
+- **double**.
+- **String**.
+- **bool**.
+- List of **DateTime**.
+- List of **num**.
+- List of **int**.
+- List of **double**.
+- List of **String**.
+- List of **bool**.
+- **Uint8List**, **Uint16List**, **Uint32List**, **Uint64List**, **Int8List**, **Int16List**, **Int32List** and **Int64List** (for **buffer arrays**).
+- **enums**.
+- list of **enums**.
+
+If you try to use a disallowed type, an exception will be thrown.
+
+This list could evolve later.
+
+Here is the way to declare a FormControl with String generic type :
+
+```dart
+ReactiveFormBuilder form_builder = new ReactiveFormBuilder(
+  group: new FormGroup(
+    controls: {
+      'first_name': new FormControl<String>(value: 'Maxime', validators: []),
+    },
+    validators: [],
+  ),
+);
+```
+
+## Set a value
+
+Here is the way to set a value to a **FormControl** :
+
+```dart
+FormControl<String> control = new FormControl<String>(value: null, validators: []);
+control.setValue('my value');
+```
+
+> That function will trigger the validation engine and update the form to display errors if there are.
+
+## Clone a form element
+
+Clone a form element is a very important point of **flutter_forms**.
+
+Imagine you are modifying an item of your form, as a sub **FormGroup**. You changes values, and you decide to click on cancel button.
+
+Rollback your values could be hard !
+
+So, you should clone the part of the form you want to update, and apply those changes later if you want.
+
+When you clone a form element, you clone the full tree of **ReactiveFormBuilder**, so you can use you validators to compare a value with another.
+
+Here is an example :
+
+```dart
+ReactiveFormBuilder form_builder = new ReactiveFormBuilder(
+  group: new FormGroup(
+    controls: {
+      'first_name': new FormControl<String>(value: 'Maxime', validators: []),
+    },
+    validators: [],
+  ),
+);
+FormControl<String> child = form_builder.group.getFormControl<String>('first_name');
+FormControl<String> clone = child.getClone();
+```
+
+> Whether for **FormGroup**, **FormArray** or **FormControl**, you can use the same **getClone()** method.
+
+## How to add a reactive form into an application?
+
+Now we studied the basics of **flutter_forms**, lets see how to create a form into a **Flutter** application.
+
 ## Define a model file
 
 First, you should define a model file.
@@ -79,8 +372,10 @@ Into the **./lib/models.dart**, here are the different steps we will do :
 
 - define a namespace for models
 - import flutter_forms
-- define a main method (for reflectable)
+- define a **main()** method (for reflectable)
 - define you enums
+
+If you does not define your enums here, they will be refused with FormControl later. An exception will be thrown.
     
 Please, use **@flutterFormsValidator** notation to declare the content.
 
@@ -376,292 +671,3 @@ class CustomValidator extends FormControlValidatorAnnotation<String> {
   }
 }
 ```
-
-## FormBuilder
-
-**flutter_forms** is inspired by Angular reactive forms.
-
-Of course, FormBuilder is the starting point of form creation.
-
-As we saw before, here is the way to build a form :
-
-```dart
-ReactiveFormBuilder form_builder = new ReactiveFormBuilder(
-  group: new FormGroup(
-    controls: {
-      'first_name': new FormControl<String>(value: null, validators: []),
-      'last_name': new FormControl<String>(value: null, validators: []),
-    },
-    validators: [],
-  ),
-);
-```
-
-A form is created and automatically instantiated when you add it to **ReactiveForm** widget. It provides a complete tree of form elements to use.
-
-> But it's a simplified version of **Angular reactive forms**.
-> As for **Angular reactive forms**, **flutter_forms** can create dynamic forms.
-> Lets see all these points together !
-
-## FormGroup
-
-First you have the **FormGroup**. This one is a group of **FormGroup**, **FormArray** and **FormControl**.
-
-You must use them for complex forms, with multiple levels.
-
-Imagine you have a to set your profile. You could have two distinct parts into this form.
-
-```dart
-ReactiveFormBuilder form_builder = new ReactiveFormBuilder(
-  group: new FormGroup(
-    controls: {
-      'personal': new FormGroup(
-        controls: {
-          'first_name': new FormControl<String>(value: null, validators: []),
-          'last_name': new FormControl<String>(value: null, validators: []),
-        },
-        validators: [],
-      ),
-      'social_links': new FormGroup(
-        controls: {
-          'github': new FormControl<String>(value: null, validators: []),
-          'facebook': new FormControl<String>(value: null, validators: []),
-        },
-        validators: [],
-      )
-    },
-    validators: [],
-  ),
-);
-```
-
-## Add control to a FormGroup
-
-How to add a sub part of you form dynamically ?
-
-Here is a short code to add a **FormGroup** in the children collection of a **FormGroup** :
-
-```dart
-FormGroup root = new FormGroup(controls: {}, validators: []);
-FormGroup child = new FormGroup(controls: {}, validators: []);
-root.addControl('child', child);
-```
-
-Here is a short code to add a **FormArray** in the children collection of a **FormGroup** :
-
-```dart
-FormGroup root = new FormGroup(controls: {}, validators: []);
-FormArray child = new FormArray(groups: [], validators: []);
-root.addControl('child', child);
-```
-
-Finally, here is a short code to add a **FormControl** in the children collection of a **FormGroup** :
-
-```dart
-FormGroup root = new FormGroup(controls: {}, validators: []);
-FormControl<String> child = new FormControl<String>(value: null, validators: []);
-root.addControl('child', child);
-```
-
-## Remove control from a FormGroup
-
-Here is a short code to remove a **FormGroup** from the children collection of a **FormGroup** :
-
-```dart
-FormGroup root = new FormGroup(
-  controls: {
-    'child': new FormGroup(controls: {}, validators: []),
-  },
-  validators: [],
-);
-root.removeControl('child');
-```
-
-> That function will trigger the validation engine and update the form to display errors if there are.
-
-Here is a short code to remove a **FormArray** from the children collection of a **FormGroup** :
-
-```dart
-FormGroup root = new FormGroup(
-  controls: {
-    'child': new FormArray(groups: [], validators: []),
-  },
-  validators: [],
-);
-root.removeControl('child');
-```
-
-> That function will trigger the validation engine and update the form to display errors if there are.
-
-Finally, here is a short code to remove a **FormControl** from the children collection of a **FormGroup** :
-
-```dart
-FormGroup root = new FormGroup(
-  controls: {
-    'child': new FormControl<String>(value: null, validators: []),
-  },
-  validators: [],
-);
-root.removeControl('child');
-```
-
-> That function will trigger the validation engine and update the form to display errors if there are.
-
-## Check if a control exists into a FormGroup
-
-How to check if a control does exist into a **FormGroup** ?
-
-```dart
-FormGroup root = new FormGroup(controls: {}, validators: []);
-bool exists = root.containsControl('child');
-```
-
-## FormArray
-
-Next you have the **FormArray**. This one is a collection of **FormGroup** only.
-
-This a difference with Angular's library. I disagree with the fact a **FormArray** can contain directly **FormControl** items.
-
-In my opinion, Angular **FormArray** is too permissive. Developer could try to add **FormGroup** and **FormControl** items into the same **FormArray**.
-
-This should not be possible, even if an exception is thrown after.
-
-So, here is the way to declare a **FormArray** :
-
-```dart
-ReactiveFormBuilder form_builder = new ReactiveFormBuilder(
-  group: new FormGroup(
-    controls: {
-      'social_links': new FormArray(
-        groups: [
-          new FormGroup(
-            controls: {
-              'social_network': new FormControl<String>(value: 'github', validators: []),
-              'url': new FormControl<String>(value: 'https://github.com/maxime-aubry/', validators: []),
-            },
-            validators: [],
-          ),
-        ],
-        validators: [],
-      )
-    },
-    validators: [],
-  ),
-);
-```
-
-> As you can see, you can register complex data into an item of a **FormArray**.
-
-## Add item to a FormArray
-
-Add an item to a **FormArray** is easy.
-Remember that you can add **FormGroup** items only.
-
-Here is the way to add an item :
-
-```dart
-FormArray array = new FormArray(groups: [], validators: []);
-FormGroup child = new FormGroup(controls: {}, validators: []);
-array.addGroup(child);
-```
-
-> That function will trigger the validation engine and update the form to display errors if there are.
-
-## Remove item from a FormArray
-
-Here is the way to remove an item :
-
-```dart
-FormArray array = new FormArray(
-  groups: [
-    // an item is here
-  ],
-  validators: [],
-);
-FormGroup child = new FormGroup(controls: {}, validators: []);
-array.removeGroup(child);
-```
-
-> That function will trigger the validation engine and update the form to display errors if there are.
-> This part is a little confuse because you don't see how to get an item from the form array. Lets see that later.
-
-## FormControl
-
-What would be a form if we didn't use **FormControl** ?
-
-This is the way to store data, while **FormGroup** and **FormArray** are used for the structure !
-
-**FormControl** are done to support a limited list of data types :
-- **DateTime**.
-- **num** (Number).
-- **int**.
-- **double**.
-- **String**.
-- **bool**.
-- List of **DateTime**.
-- List of **num**.
-- List of **int**.
-- List of **double**.
-- List of **String**.
-- List of **bool**.
-- **Uint8List**, **Uint16List**, **Uint32List**, **Uint64List**, **Int8List**, **Int16List**, **Int32List** and **Int64List** (for **buffer arrays**).
-- **enums**.
-- list of **enums**.
-
-If you try to use a disallowed type, an exception will be thrown.
-
-This list could evolve later.
-
-Here is the way to declare a FormControl with String generic type :
-
-```dart
-ReactiveFormBuilder form_builder = new ReactiveFormBuilder(
-  group: new FormGroup(
-    controls: {
-      'first_name': new FormControl<String>(value: 'Maxime', validators: []),
-    },
-    validators: [],
-  ),
-);
-```
-
-## Set a value
-
-Here is the way to set a value to a **FormControl** :
-
-```dart
-FormControl<String> control = new FormControl<String>(value: null, validators: []);
-control.setValue('my value');
-```
-
-> That function will trigger the validation engine and update the form to display errors if there are.
-
-## Clone a form element
-
-Clone a form element is a very important point of **flutter_forms**.
-
-Imagine you are modifying an item of your form, as a sub **FormGroup**. You changes values, and you decide to click on cancel button.
-
-Rollback your values could be hard !
-
-So, you should clone the part of the form you want to update, and apply those changes later if you want.
-
-When you clone a form element, you clone the full tree of **ReactiveFormBuilder**, so you can use you validators to compare a value with another.
-
-Here is an example :
-
-```dart
-ReactiveFormBuilder form_builder = new ReactiveFormBuilder(
-  group: new FormGroup(
-    controls: {
-      'first_name': new FormControl<String>(value: 'Maxime', validators: []),
-    },
-    validators: [],
-  ),
-);
-FormControl<String> child = form_builder.group.getFormControl<String>('first_name');
-FormControl<String> clone = child.getClone();
-```
-
-> Whether for **FormGroup**, **FormArray** or **FormControl**, you can use the same **getClone()** method.
-
