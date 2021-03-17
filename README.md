@@ -27,6 +27,9 @@ By using **flutter_forms**, you will be able to simplify your code and validatio
         - [Add control to a FormGroup](#add-control-to-a-formgroup)
         - [Remove control from a FormGroup](#remove-control-from-a-formgroup)
         - [Check if a control exists into a FormGroup](#check-if-a-control-exists-into-a-formgroup)
+        - [Get a FormGroup child](#get-a-formgroup-child)
+        - [Get a FormArray child](#get-a-formarray-child)
+        - [Get a FormControl child](#get-a-formcontrol-child)
     - [FormArray](#formarray)
         - [Add item to a FormArray](#add-item-to-a-formarray)
         - [Remove item from a FormArray](#remove-item-from-a-formarray)
@@ -207,6 +210,90 @@ How to check if a control does exist into a **FormGroup** ?
 ```dart
 FormGroup root = new FormGroup(controls: {}, validators: []);
 bool exists = root.containsControl('child');
+```
+
+## Get a FormGroup child
+
+How to get a FormGroup child ?
+
+DON'T DO THIS !
+
+```dart
+FormGroup root = new FormGroup(
+  controls: {
+    'child': new FormGroup(controls: {}, validators: []),
+  },
+  validators: [],
+);
+FormGroup child = root.controls['child'] as FormGroup;
+```
+
+DO THIS !
+
+```dart
+FormGroup root = new FormGroup(
+  controls: {
+    'child': new FormGroup(controls: {}, validators: []),
+  },
+  validators: [],
+);
+FormGroup child = root.getFormGroup('child');
+```
+
+## Get a FormArray child
+
+How to get a FormArray child ?
+
+DON'T DO THIS !
+
+```dart
+FormGroup root = new FormGroup(
+  controls: {
+    'child': new FormControl<String>(value: null, validators: []),
+  },
+  validators: [],
+);
+FormControl<String> child = root.controls['child'] as FormControl<String>;
+```
+
+DO THIS !
+
+```dart
+FormGroup root = new FormGroup(
+  controls: {
+    'child': new FormControl<String>(value: null, validators: []),
+  },
+  validators: [],
+);
+FormControl<String> child = root.getFormControl<String>('child');
+```
+
+## Get a FormControl child
+
+How to get a FormArray child ?
+
+DON'T DO THIS !
+
+```dart
+FormGroup root = new FormGroup(
+  controls: {
+    'child': new FormArray(groups: [], validators: []),
+  },
+  validators: [],
+);
+FormArray child = root.controls['child'] as FormArray;
+```
+
+DO THIS !
+
+```dart
+FormGroup root = new FormGroup(
+  controls: {
+    'child': new FormArray(groups: [], validators: []),
+  },
+  validators: [],
+);
+FormArray child = root.getFormArray('child');
 ```
 
 ## FormArray
