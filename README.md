@@ -216,7 +216,7 @@ bool exists = root.containsControl('child');
 
 How to get a FormGroup child ?
 
-DON'T DO THIS !
+**DON'T DO THIS !**
 
 ```dart
 FormGroup root = new FormGroup(
@@ -228,7 +228,7 @@ FormGroup root = new FormGroup(
 FormGroup child = root.controls['child'] as FormGroup;
 ```
 
-DO THIS !
+**DO THIS !**
 
 ```dart
 FormGroup root = new FormGroup(
@@ -244,7 +244,7 @@ FormGroup child = root.getFormGroup('child');
 
 How to get a FormArray child ?
 
-DON'T DO THIS !
+**DON'T DO THIS !**
 
 ```dart
 FormGroup root = new FormGroup(
@@ -256,7 +256,7 @@ FormGroup root = new FormGroup(
 FormControl<String> child = root.controls['child'] as FormControl<String>;
 ```
 
-DO THIS !
+**DO THIS !**
 
 ```dart
 FormGroup root = new FormGroup(
@@ -272,7 +272,7 @@ FormControl<String> child = root.getFormControl<String>('child');
 
 How to get a FormArray child ?
 
-DON'T DO THIS !
+**DON'T DO THIS !**
 
 ```dart
 FormGroup root = new FormGroup(
@@ -284,7 +284,7 @@ FormGroup root = new FormGroup(
 FormArray child = root.controls['child'] as FormArray;
 ```
 
-DO THIS !
+**DO THIS !**
 
 ```dart
 FormGroup root = new FormGroup(
