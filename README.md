@@ -640,9 +640,7 @@ control.setValue('my value');
 
 Clone a form element is a very important point of **flutter_forms**.
 
-Imagine you are modifying an item of your form, as a sub **FormGroup**.
-
-You changes values, and you decide to click on cancel button.
+Imagine you are modifying an item of your form, as a sub **FormGroup**. You changes values, and you decide to click on cancel button.
 
 Rollback your values could be hard !
 
@@ -653,5 +651,16 @@ When you clone a form element, you clone the full tree of **ReactiveFormBuilder*
 Here is an example :
 
 ```dart
-
+ReactiveFormBuilder form_builder = new ReactiveFormBuilder(
+  group: new FormGroup(
+    controls: {
+      'first_name': new FormControl<String>(value: 'Maxime', validators: []),
+    },
+    validators: [],
+  ),
+);
+FormControl<String> child = form_builder.group.getFormControl<String>('first_name');
+FormControl<String> clone = child.getClone();
 ```
+
+> Whetever for **FormGroup**, **FormArray** or **FormControl**, you can use the same **getClone()** method.
