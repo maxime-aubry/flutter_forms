@@ -13,6 +13,10 @@
 ![queries version](https://img.shields.io/badge/queries-0.1.14-brightgreen)
 ![reflectable version](https://img.shields.io/badge/reflectable-2.2.9-brightgreen)
 
+<a href="https://www.buymeacoffee.com/maxime.aubry" target="_blank">
+    <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" width="195" height="55" />
+</a>
+
 Comme avec **Angular**, les formulaires réactifs sont désormais disponibles avec [Flutter] !
 
 En utilisant **flutter_forms**, vous serez capable de simplifier votre code et la validation de vos formulaires.
@@ -340,13 +344,15 @@ ReactiveFormBuilder form_builder = new ReactiveFormBuilder(
 );
 ```
 
-> As you can see, you can register complex data into an item of a **FormArray**.
+> Comment vous pouvez le voir, vous pouvez enregistrer des données complexes dans les items d'un **FormArray**.
 
 ## Ajouter un item à un FormArray
 
-Add an item to a **FormArray** is easy.
-Remember that you can add **FormGroup** items only.
+Ajout un item à un **FormArray** est facile.
 
+Souvenez-vous que vous pouvez ajouter des items de **FormGroup** uniquement.
+
+Voici le moyen d'ajouter un item :
 Here is the way to add an item :
 
 ```dart
