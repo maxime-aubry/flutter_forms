@@ -1,7 +1,7 @@
 name: flutter_forms
-description: A new Flutter package.
-version: 0.0.1
-homepage:
+description: flutter_form is a form handler inspired by Angular, with model-driven approach.
+version: 1.0.0
+homepage: https://github.com/maxime-aubry/flutter_forms
 
 environment:
   sdk: ">=2.7.0 <3.0.0"
