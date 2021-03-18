@@ -26,7 +26,7 @@ En utilisant **flutter_forms**, vous serez capable de simplifier votre code et l
     - [FormGroup](#formgroup)
         - [Ajouter un contrôle à un FormGroup](#ajouter-un-contrôle-à-un-formgroup)
         - [Supprimer un contrôle d'un FormGroup](#supprimer-un-contrôle-dun-formgroup)
-        - [Vérifier si un contrôle existe dans un FormGroup](#vérifier-si-un-contrle-existe-dans-un-formgroup)
+        - [Vérifier si un contrôle existe dans un FormGroup](#vérifier-si-un-contrôle-existe-dans-un-formgroup)
         - [Obtenir un sous-FormGroup](#obtenir-un-sous-formgroup)
         - [Obtenir un sous-FormArray](#obtenir-un-sous-formarray)
         - [Obtenir un sous-FormControl](#obtenir-un-sous-formcontrol)
