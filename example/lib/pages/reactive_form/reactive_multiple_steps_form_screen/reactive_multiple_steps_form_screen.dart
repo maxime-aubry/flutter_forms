@@ -2,6 +2,7 @@ import 'package:example/custom_drawer.dart';
 import 'package:example/models.dart';
 import 'package:example/pages/reactive_form/reactive_multiple_steps_form_screen/profile.dart';
 import 'package:example/pages/reactive_form/reactive_multiple_steps_form_screen/social_links_array.dart';
+import 'package:example/widgets/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_forms/flutter_forms.dart';
 
@@ -96,7 +97,10 @@ class _ReactiveMultipleStepsFormScreenState
 
               if (await formState.validate()) {
                 // Data treatment and post to server here...
+                displayAlert(context, 'Form is valid !');
                 next();
+              } else {
+                displayAlert(context, 'Form is invalid !');
               }
             },
             onStepTapped: (step) => goTo(step),

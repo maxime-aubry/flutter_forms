@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'dart:typed_data';
 
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
@@ -7,7 +8,7 @@ import 'package:flutter_forms/flutter_forms.dart';
 
 class CustomFilePicker extends StatefulWidget {
   final String label;
-  final FormControl<String> formControl;
+  final FormControl<Uint8List> formControl;
 
   const CustomFilePicker({
     Key key,
@@ -28,7 +29,11 @@ class _CustomFilePickerState extends State<CustomFilePicker> {
 
         if (result != null) {
           List<File> files = result.paths.map((path) => File(path)).toList();
-          print(files.length);
+
+          if (files.length > 0) {
+            Uint8List buffer = files[0].readAsBytesSync();
+            widget.formControl.setValue(buffer);
+          }
         }
       },
       icon: Icon(Icons.file_upload),

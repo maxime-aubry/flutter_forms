@@ -80,6 +80,9 @@ class _ReactiveFormWithDynamicContentState
               ReactiveFormState formState = context.readFormState();
               if (await formState.validate()) {
                 // Data treatment and post to server here...
+                displayAlert(context, 'Form is valid !');
+              } else {
+                displayAlert(context, 'Form is invalid !');
               }
             },
           ),

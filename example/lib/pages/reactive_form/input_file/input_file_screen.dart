@@ -1,4 +1,7 @@
+import 'dart:typed_data';
+
 import 'package:example/custom_drawer.dart';
+import 'package:example/widgets/alert.dart';
 import 'package:example/widgets/custom_file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -18,7 +21,8 @@ class _InputFileState extends State<InputFile> {
       formBuilder: this._getFormBuilder(),
       builder: (context, _) {
         FormGroup root = context.watchFormGroup();
-        FormControl<String> formControl = root.getFormControl<String>('field');
+        FormControl<Uint8List> formControl =
+            root.getFormControl<Uint8List>('field');
 
         return new Scaffold(
           appBar: new AppBar(title: Text("Input file")),
@@ -33,6 +37,9 @@ class _InputFileState extends State<InputFile> {
               ReactiveFormState formState = context.readFormState();
               if (await formState.validate()) {
                 // Data treatment and post to server here...
+                displayAlert(context, 'Form is valid !');
+              } else {
+                displayAlert(context, 'Form is invalid !');
               }
             },
           ),
@@ -44,13 +51,21 @@ class _InputFileState extends State<InputFile> {
   ReactiveFormBuilder _getFormBuilder() => new ReactiveFormBuilder(
         group: new FormGroup(
           controls: {
-            'field': new FormControl<String>(value: null, validators: []),
+            'field': new FormControl<Uint8List>(
+              value: null,
+              validators: [
+                FileMimeType(
+                  mimeTypes: ['image/jpeg'],
+                  error: 'invalid file',
+                ),
+              ],
+            ),
           },
           validators: [],
         ),
       );
 
-  Widget getInput(FormControl<String> formControl) => new CustomFilePicker(
+  Widget getInput(FormControl<Uint8List> formControl) => new CustomFilePicker(
         label: 'input',
         formControl: formControl,
       );

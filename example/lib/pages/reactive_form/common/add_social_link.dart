@@ -58,7 +58,10 @@ class _AddSocialLinkState extends State<AddSocialLink> {
               ReactiveFormState formState = context.readFormState();
               if (await formState.validate()) {
                 FormGroup socialLinkToAdd = context.readFormGroup();
+                displayAlert(context, 'Form is valid !');
                 this._saveForm(socialLinks, socialLinkToAdd);
+              } else {
+                displayAlert(context, 'Form is invalid !');
               }
             },
           ),

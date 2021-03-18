@@ -7,9 +7,9 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-      appBar: AppBar(title: Text('Flutter Model Form Validation Demo.')),
+      appBar: AppBar(title: Text('flutter_forms demo')),
       drawer: CustomDrawer(),
-      body: Center(child: Text('Flutter Model Form Validation Demo.')),
+      body: Center(child: Text('flutter_forms demo')),
     );
   }
 }

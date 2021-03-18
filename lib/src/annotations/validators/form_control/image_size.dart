@@ -105,25 +105,23 @@ class ImageSize extends FormControlValidatorAnnotation<Uint8List> {
     int minHeight,
     int maxHeight,
   ) {
-    if (minWidth == null)
-      throw new ValidatorParameterException('minWidth is not defined.');
+    if (minWidth == null &&
+        maxWidth == null &&
+        minHeight == null &&
+        maxHeight == null)
+      throw new ValidatorParameterException('No setting has been defined.');
 
-    if (maxWidth == null)
-      throw new ValidatorParameterException('maxWidth is not defined.');
+    if (minWidth != null && maxWidth != null) {
+      if (minWidth.compareTo(maxWidth) > 0)
+        throw new ValidatorParameterException(
+            'minWidth value is greater than maxWidth value.');
+    }
 
-    if (minHeight == null)
-      throw new ValidatorParameterException('minHeight is not defined.');
-
-    if (maxHeight == null)
-      throw new ValidatorParameterException('maxHeight is not defined.');
-
-    if (minWidth.compareTo(maxWidth) > 0)
-      throw new ValidatorParameterException(
-          'minWidth value is greater than maxWidth value.');
-
-    if (minHeight.compareTo(maxHeight) > 0)
-      throw new ValidatorParameterException(
-          'minHeight value is greater than maxHeight value.');
+    if (minHeight != null && maxHeight != null) {
+      if (minHeight.compareTo(maxHeight) > 0)
+        throw new ValidatorParameterException(
+            'minHeight value is greater than maxHeight value.');
+    }
   }
 
   bool _validate(
@@ -140,10 +138,10 @@ class ImageSize extends FormControlValidatorAnnotation<Uint8List> {
     if (image == null)
       throw new ValidationException('current file is not an image.');
 
-    if (image.width < minWidth ||
-        image.height < minHeight ||
-        image.width > maxWidth ||
-        image.height > maxHeight) return false;
+    if (minWidth != null && image.width < minWidth) return false;
+    if (minHeight != null && image.height < minHeight) return false;
+    if (maxWidth != null && image.width > maxWidth) return false;
+    if (maxHeight != null && image.height > maxHeight) return false;
     return true;
   }
 }

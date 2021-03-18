@@ -47,6 +47,130 @@ void main() {
         expect(validator.maxHeight, 600);
       });
 
+      test('Image has allowed size with minWidth constraint.', () async {
+        FormGroup root = new FormGroup(
+          controls: {
+            'child': new FormControl<Uint8List>(
+              value: file?.readAsBytesSync(),
+              validators: [],
+            ),
+          },
+          validators: [],
+        );
+        initializeRoot(root);
+
+        FormControl<Uint8List> formControl =
+            root.controls['child'] as FormControl<Uint8List>;
+        ImageSize validator = ImageSize(
+          minWidth: 800,
+          maxWidth: null,
+          minHeight: null,
+          maxHeight: null,
+          error: null,
+        );
+
+        bool isValid = await validator.isValid(formControl);
+        expect(isValid, isTrue);
+        expect(formControl.value, file?.readAsBytesSync());
+        expect(validator.minWidth, 800);
+        expect(validator.maxWidth, isNull);
+        expect(validator.minHeight, isNull);
+        expect(validator.maxHeight, isNull);
+      });
+
+      test('Image has allowed size with minHeight constraint.', () async {
+        FormGroup root = new FormGroup(
+          controls: {
+            'child': new FormControl<Uint8List>(
+              value: file?.readAsBytesSync(),
+              validators: [],
+            ),
+          },
+          validators: [],
+        );
+        initializeRoot(root);
+
+        FormControl<Uint8List> formControl =
+            root.controls['child'] as FormControl<Uint8List>;
+        ImageSize validator = ImageSize(
+          minWidth: null,
+          maxWidth: null,
+          minHeight: 500,
+          maxHeight: null,
+          error: null,
+        );
+
+        bool isValid = await validator.isValid(formControl);
+        expect(isValid, isTrue);
+        expect(formControl.value, file?.readAsBytesSync());
+        expect(validator.minWidth, isNull);
+        expect(validator.maxWidth, isNull);
+        expect(validator.minHeight, 500);
+        expect(validator.maxHeight, isNull);
+      });
+
+      test('Image has allowed size with maxWidth constraint.', () async {
+        FormGroup root = new FormGroup(
+          controls: {
+            'child': new FormControl<Uint8List>(
+              value: file?.readAsBytesSync(),
+              validators: [],
+            ),
+          },
+          validators: [],
+        );
+        initializeRoot(root);
+
+        FormControl<Uint8List> formControl =
+            root.controls['child'] as FormControl<Uint8List>;
+        ImageSize validator = ImageSize(
+          minWidth: null,
+          maxWidth: 900,
+          minHeight: null,
+          maxHeight: null,
+          error: null,
+        );
+
+        bool isValid = await validator.isValid(formControl);
+        expect(isValid, isTrue);
+        expect(formControl.value, file?.readAsBytesSync());
+        expect(validator.minWidth, isNull);
+        expect(validator.maxWidth, 900);
+        expect(validator.minHeight, isNull);
+        expect(validator.maxHeight, isNull);
+      });
+
+      test('Image has allowed size with maxHeight constraint.', () async {
+        FormGroup root = new FormGroup(
+          controls: {
+            'child': new FormControl<Uint8List>(
+              value: file?.readAsBytesSync(),
+              validators: [],
+            ),
+          },
+          validators: [],
+        );
+        initializeRoot(root);
+
+        FormControl<Uint8List> formControl =
+            root.controls['child'] as FormControl<Uint8List>;
+        ImageSize validator = ImageSize(
+          minWidth: null,
+          maxWidth: null,
+          minHeight: null,
+          maxHeight: 600,
+          error: null,
+        );
+
+        bool isValid = await validator.isValid(formControl);
+        expect(isValid, isTrue);
+        expect(formControl.value, file?.readAsBytesSync());
+        expect(validator.minWidth, isNull);
+        expect(validator.maxWidth, isNull);
+        expect(validator.minHeight, isNull);
+        expect(validator.maxHeight, 600);
+      });
+
       test('File is null.', () async {
         FormGroup root = new FormGroup(
           controls: {
@@ -201,7 +325,7 @@ void main() {
 
     group('Exceptions.', () {
       test(
-          'Throws an exception of ValidatorParameterException type when minWidth is null.',
+          'Throws an exception of ValidatorParameterException type when no setting has been defined.',
           () async {
         FormGroup root = new FormGroup(
           controls: {
@@ -218,126 +342,21 @@ void main() {
             root.controls['child'] as FormControl<Uint8List>;
         ImageSize validator = ImageSize(
           minWidth: null,
-          maxWidth: 900,
-          minHeight: 500,
-          maxHeight: 600,
-          error: null,
-        );
-
-        expect(formControl.value, file?.readAsBytesSync());
-        expect(validator.minWidth, isNull);
-        expect(validator.maxWidth, 900);
-        expect(validator.minHeight, 500);
-        expect(validator.maxHeight, 600);
-
-        expect_exception<ValidatorParameterException>(() async {
-          await validator.isValid(formControl);
-        }, 'minWidth is not defined.');
-      });
-
-      test(
-          'Throws an exception of ValidatorParameterException type when maxWidth is null.',
-          () async {
-        FormGroup root = new FormGroup(
-          controls: {
-            'child': new FormControl<Uint8List>(
-              value: file?.readAsBytesSync(),
-              validators: [],
-            ),
-          },
-          validators: [],
-        );
-        initializeRoot(root);
-
-        FormControl<Uint8List> formControl =
-            root.controls['child'] as FormControl<Uint8List>;
-        ImageSize validator = ImageSize(
-          minWidth: 800,
           maxWidth: null,
-          minHeight: 500,
-          maxHeight: 600,
-          error: null,
-        );
-
-        expect(formControl.value, file?.readAsBytesSync());
-        expect(validator.minWidth, 800);
-        expect(validator.maxWidth, isNull);
-        expect(validator.minHeight, 500);
-        expect(validator.maxHeight, 600);
-
-        expect_exception<ValidatorParameterException>(() async {
-          await validator.isValid(formControl);
-        }, 'maxWidth is not defined.');
-      });
-
-      test(
-          'Throws an exception of ValidatorParameterException type when minHeight is null.',
-          () async {
-        FormGroup root = new FormGroup(
-          controls: {
-            'child': new FormControl<Uint8List>(
-              value: file?.readAsBytesSync(),
-              validators: [],
-            ),
-          },
-          validators: [],
-        );
-        initializeRoot(root);
-
-        FormControl<Uint8List> formControl =
-            root.controls['child'] as FormControl<Uint8List>;
-        ImageSize validator = ImageSize(
-          minWidth: 800,
-          maxWidth: 900,
           minHeight: null,
-          maxHeight: 600,
-          error: null,
-        );
-
-        expect(formControl.value, file?.readAsBytesSync());
-        expect(validator.minWidth, 800);
-        expect(validator.maxWidth, 900);
-        expect(validator.minHeight, isNull);
-        expect(validator.maxHeight, 600);
-
-        expect_exception<ValidatorParameterException>(() async {
-          await validator.isValid(formControl);
-        }, 'minHeight is not defined.');
-      });
-
-      test(
-          'Throws an exception of ValidatorParameterException type when maxHeight is null.',
-          () async {
-        FormGroup root = new FormGroup(
-          controls: {
-            'child': new FormControl<Uint8List>(
-              value: file?.readAsBytesSync(),
-              validators: [],
-            ),
-          },
-          validators: [],
-        );
-        initializeRoot(root);
-
-        FormControl<Uint8List> formControl =
-            root.controls['child'] as FormControl<Uint8List>;
-        ImageSize validator = ImageSize(
-          minWidth: 800,
-          maxWidth: 900,
-          minHeight: 500,
           maxHeight: null,
           error: null,
         );
 
         expect(formControl.value, file?.readAsBytesSync());
-        expect(validator.minWidth, 800);
-        expect(validator.maxWidth, 900);
-        expect(validator.minHeight, 500);
+        expect(validator.minWidth, isNull);
+        expect(validator.maxWidth, isNull);
+        expect(validator.minHeight, isNull);
         expect(validator.maxHeight, isNull);
 
         expect_exception<ValidatorParameterException>(() async {
           await validator.isValid(formControl);
-        }, 'maxHeight is not defined.');
+        }, 'No setting has been defined.');
       });
 
       test(
