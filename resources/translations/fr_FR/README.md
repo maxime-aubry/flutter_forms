@@ -20,8 +20,8 @@ En utilisant **flutter_forms**, vous serez capable de simplifier votre code et l
 ## Sommaire
 
 - [Commencement](#commencement)
-    - [Prérequis](#prérequis)
-    - [Dépendances](#dépendances)
+    - [Prérequis](#prrequis)
+    - [Dépendances](#dpendances)
 - [FormBuilder](#formbuilder)
     - [FormGroup](#formgroup)
         - [Ajouter un contrôle à un FormGroup](#ajouter-un-contrle--un-formgroup)
