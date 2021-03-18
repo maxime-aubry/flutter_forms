@@ -30,7 +30,7 @@ class RegularExpression extends FormControlValidatorAnnotation<String> {
   @override
   Future<bool> isValid(FormControl<String> control) async {
     this._validateParameters();
-    bool isValid = await this._validate(control.value);
+    bool isValid = this._validate(control.value);
     return isValid;
   }
 
