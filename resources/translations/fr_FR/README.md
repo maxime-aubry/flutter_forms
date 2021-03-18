@@ -19,13 +19,13 @@ En utilisant **flutter_forms**, vous serez capable de simplifier votre code et l
 
 ## Sommaire
 
-- [Commencement](#getting-started)
-    - [Pré-requis](#requirements)
-    - [Dépendences](#dependencies)
+- [Commencement](#commencement)
+    - [Prérequis](#prérequis)
+    - [Dépendances](#dépendances)
 - [FormBuilder](#formbuilder)
     - [FormGroup](#formgroup)
-        - [Ajouter un contrôle à un FormGroup](#add-control-to-a-formgroup)
-        - [Supprimer un contrôle d'un FormGroup](#remove-control-from-a-formgroup)
+        - [Ajouter un contrôle à un FormGroup](#ajouter-un-contrôle-à-un-formgroup)
+        - [Supprimer un contrôle d'un FormGroup](#supprimer-un-contrôle-d-un-formgroup)
         - [Vérifier si un contrôle existe dans un FormGroup](#check-if-a-control-exists-into-a-formgroup)
         - [Obtenir un sous-FormGroup](#get-a-formgroup-child)
         - [Obtenir un sous-FormArray](#get-a-formarray-child)
@@ -62,12 +62,12 @@ S'il vous plait, veuillez lire [la documentation en ligne](https://flutter.dev/d
 
 Vous trouvez des tutoriels, des code labs, des projets de démonstration... Tout ce dont vous aurez besoin pour être autonome.
 
-## Pré-requis
+## Prérequis
 
 - Dart SDK: >=2.7.0 <3.0.0
 - Flutter: >= 1.17.0
 
-## Dépendences
+## Dépendances
 
 Vous devez installer toutes ces dépendances pour utiliser **flutter_forms** :
 
