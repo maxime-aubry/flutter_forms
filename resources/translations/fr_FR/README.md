@@ -692,7 +692,7 @@ Here is another step :
       );
 ```
 
-## À propos de validateur
+## À propos des validateurs
 
 What would be this library without validators ? NOTHING !
 
