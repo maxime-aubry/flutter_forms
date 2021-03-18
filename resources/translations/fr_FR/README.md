@@ -308,15 +308,15 @@ FormArray child = root.getFormArray('child');
 
 ## FormArray
 
-Next you have the **FormArray**. This one is a collection of **FormGroup** only.
+Ensuite vous avez le **FormArray**. Celui-ci est une collection de **FormGroup** uniquement.
 
-This a difference with Angular's library. I disagree with the fact a **FormArray** can contain directly **FormControl** items.
+C'est une différence avec la librairie d'**Angular**. Je ne suis pas d'accord avec le fait qu'un **FormArray** puisse détenir directement des items de **FormControl**.
 
-In my opinion, Angular **FormArray** is too permissive. Developer could try to add **FormGroup** and **FormControl** items into the same **FormArray**.
+Selon moi, **FormArray** d'Angular est trop permissif. Un développeur pourrait essayer d'ajouter des items de **FormGroup** et **FormControl** dans le même **FormArray**.
 
-This should not be possible, even if an exception is thrown after.
+Ça ne devrait pas être possible, même si une exception était levée par la suite.
 
-So, here is the way to declare a **FormArray** :
+Donc, voici le moyen de déclarer un **FormArray** :
 
 ```dart
 ReactiveFormBuilder form_builder = new ReactiveFormBuilder(
