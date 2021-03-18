@@ -89,7 +89,7 @@ Ensuite, lancez la commande **flutter packages get** dans la console.
 
 Bien sur, FormBuilder est le point de départ de la création de formulaire.
 
-Voilà comment créer un formulaore :
+Voilà comment créer un formulaire :
 
 ```dart
 ReactiveFormBuilder form_builder = new ReactiveFormBuilder(
@@ -111,11 +111,11 @@ Un formulaire est créé et automatiquement instancié quand vous l'ajoutez au w
 
 ## FormGroup
 
-First you have the **FormGroup**. This one is a group of **FormGroup**, **FormArray** and **FormControl**.
+Tout d'abord vous avez les **FormGroup**. Celui-ci est un rassemblement de **FormGroup**, **FormArray** et **FormControl**.
 
-You must use them for complex forms, with multiple levels.
+Vous devez les utiliser pour des formulaires complexes, avec de multiples niveaux.
 
-Imagine you have a to set your profile. You could have two distinct parts into this form.
+Imaginez que vous devez renseigner votre profil. Vous pourriez avoir deux parties distinctes dans ce formulaire.
 
 ```dart
 ReactiveFormBuilder form_builder = new ReactiveFormBuilder(
@@ -143,9 +143,9 @@ ReactiveFormBuilder form_builder = new ReactiveFormBuilder(
 
 ## Ajouter un contrôle à un FormGroup
 
-How to add a sub part of you form dynamically ?
+Comment ajouter une partie sous-jacente de votre formulaire dynamiquement ?
 
-Here is a short code to add a **FormGroup** in the children collection of a **FormGroup** :
+Voici un code pour ajouter un **FormGroup** dans une collection enfant d'un **FormGroup** :
 
 ```dart
 FormGroup root = new FormGroup(controls: {}, validators: []);
