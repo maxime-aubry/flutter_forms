@@ -56,7 +56,7 @@ By using **flutter_forms**, you will be able to simplify your code and validatio
 
 ## Getting Started
 
-**flutter_forms** is very easy to use. First, you should learn to use Flutter.
+**flutter_forms** is very easy to use. First, you should learn to use **Flutter**.
 
 Please, read the [online documentation](https://flutter.dev/docs) before using this library.
 
@@ -105,7 +105,7 @@ ReactiveFormBuilder form_builder = new ReactiveFormBuilder(
 
 A form is created and automatically instantiated when you add it to **ReactiveForm** widget. It provides a complete tree of form elements to use.
 
-> But it's a simplified version of **Angular reactive forms**.
+> It's a simplified version of **Angular reactive forms**.
 > As for **Angular reactive forms**, **flutter_forms** can create dynamic forms.
 > Lets see all these points together !
 
