@@ -224,9 +224,9 @@ bool exists = root.containsControl('child');
 
 ## Obtenir un sous-FormGroup
 
-How to get a FormGroup child ?
+Comment obtenir un **FormGroup** enfant ?
 
-**DON'T DO THIS !**
+**NE FAITES PAS ÇA !**
 
 ```dart
 FormGroup root = new FormGroup(
@@ -238,7 +238,7 @@ FormGroup root = new FormGroup(
 FormGroup child = root.controls['child'] as FormGroup;
 ```
 
-**DO THIS !**
+**FAITES ÇA !**
 
 ```dart
 FormGroup root = new FormGroup(
@@ -252,9 +252,9 @@ FormGroup child = root.getFormGroup('child');
 
 ## Obtenir un sous-FormArray
 
-How to get a FormArray child ?
+Comment obtenir un **FormArray** enfant ?
 
-**DON'T DO THIS !**
+**NE FAITES PAS ÇA !**
 
 ```dart
 FormGroup root = new FormGroup(
@@ -266,7 +266,7 @@ FormGroup root = new FormGroup(
 FormControl<String> child = root.controls['child'] as FormControl<String>;
 ```
 
-**DO THIS !**
+**FAITES ÇA !**
 
 ```dart
 FormGroup root = new FormGroup(
@@ -280,9 +280,9 @@ FormControl<String> child = root.getFormControl<String>('child');
 
 ## Obtenir un sous-FormControl
 
-How to get a FormArray child ?
+Comment obtenir un **FormControl** enfant ?
 
-**DON'T DO THIS !**
+**NE FAITES PAS ÇA !**
 
 ```dart
 FormGroup root = new FormGroup(
@@ -294,7 +294,7 @@ FormGroup root = new FormGroup(
 FormArray child = root.controls['child'] as FormArray;
 ```
 
-**DO THIS !**
+**FAITES ÇA !**
 
 ```dart
 FormGroup root = new FormGroup(

@@ -224,7 +224,7 @@ bool exists = root.containsControl('child');
 
 ## Get a FormGroup child
 
-How to get a FormGroup child ?
+How to get a **FormGroup** child ?
 
 **DON'T DO THIS !**
 
@@ -252,7 +252,7 @@ FormGroup child = root.getFormGroup('child');
 
 ## Get a FormArray child
 
-How to get a FormArray child ?
+How to get a **FormArray** child ?
 
 **DON'T DO THIS !**
 
@@ -280,7 +280,7 @@ FormControl<String> child = root.getFormControl<String>('child');
 
 ## Get a FormControl child
 
-How to get a FormArray child ?
+How to get a **FormControl** child ?
 
 **DON'T DO THIS !**
 
