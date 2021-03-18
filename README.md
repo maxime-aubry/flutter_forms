@@ -1144,7 +1144,16 @@ MultipleStepFormStateIndexer indexer = context.readMultipleStepFormStateIndexer(
 ## See more examples
 
 I invite you to study [example project].
+Example project uses libraries :
+- [date_time_picker].
+- [file_picker].
+- [flutter_slidable].
+- [smart_select].
 
 [Flutter]: https://flutter.dev/
 [Provider library]: https://github.com/rrousselGit/provider
 [example project]: https://github.com/maxime-aubry/flutter_forms/tree/main/example
+[date_time_picker]: https://pub.dev/packages/date_time_picker
+[file_picker]: https://pub.dev/packages/file_picker
+[flutter_slidable]: https://pub.dev/packages/flutter_slidable
+[smart_select]: https://pub.dev/packages/smart_select

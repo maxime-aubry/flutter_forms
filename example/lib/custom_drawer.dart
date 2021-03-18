@@ -96,27 +96,6 @@ class CustomDrawer extends StatelessWidget {
               pageRoutes.dropdown,
             ),
           ),
-          createDrawerBodyItem(
-            text: 'Autocomplete',
-            onTap: () => Navigator.pushReplacementNamed(
-              context,
-              null,
-            ),
-          ),
-          createDrawerBodyItem(
-            text: 'Radio button',
-            onTap: () => Navigator.pushReplacementNamed(
-              context,
-              null,
-            ),
-          ),
-          createDrawerBodyItem(
-            text: 'Checkboxes',
-            onTap: () => Navigator.pushReplacementNamed(
-              context,
-              null,
-            ),
-          ),
         ],
       ),
     );
