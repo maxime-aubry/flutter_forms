@@ -13,10 +13,7 @@
 ![queries version](https://img.shields.io/badge/queries-0.1.14-brightgreen)
 ![reflectable version](https://img.shields.io/badge/reflectable-2.2.9-brightgreen)
 
-<a href="https://www.buymeacoffee.com/maxime.aubry" target="_blank">
-    <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" width="195" height="55" />
-</a>
-
+<a href="https://www.buymeacoffee.com/maxime.aubry" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" width="195" height="55" /></a>
 
 Comme avec **Angular**, les formulaires réactifs sont désormais disponibles avec [Flutter] !
 
