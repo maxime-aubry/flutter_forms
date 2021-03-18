@@ -6,6 +6,7 @@ class pageRoutes {
   static const String inputDateTime = InputDateTime.routeName;
   static const String inputFile = InputFile.routeName;
   static const String inputNumber = InputNumber.routeName;
+  static const String inputSwitch = InputSwitch.routeName;
   static const String inputText = InputText.routeName;
   static const String reactiveForm = ReactiveFormScreen.routeName;
   static const String reactiveFormWithDynamicContent =

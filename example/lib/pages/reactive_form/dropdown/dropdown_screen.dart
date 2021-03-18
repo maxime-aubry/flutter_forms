@@ -57,7 +57,7 @@ class _DropdownState extends State<Dropdown> {
         FormGroup root = context.watchFormGroup();
 
         return new Scaffold(
-          appBar: new AppBar(title: Text("Input text")),
+          appBar: new AppBar(title: Text("Dropdown")),
           drawer: new CustomDrawer(),
           body: new Padding(
             padding: EdgeInsets.all(5.0),

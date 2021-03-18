@@ -23,7 +23,7 @@ class _CustomSwitchState extends State<CustomSwitchInput> {
           children: [
             Expanded(
               child: Text(
-                'display address ?',
+                widget.label,
                 style: new TextStyle(color: Colors.black54, fontSize: 16),
               ),
             ),

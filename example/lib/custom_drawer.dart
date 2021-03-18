@@ -96,6 +96,13 @@ class CustomDrawer extends StatelessWidget {
               pageRoutes.dropdown,
             ),
           ),
+          createDrawerBodyItem(
+            text: 'Switch',
+            onTap: () => Navigator.pushReplacementNamed(
+              context,
+              pageRoutes.inputSwitch,
+            ),
+          ),
         ],
       ),
     );
