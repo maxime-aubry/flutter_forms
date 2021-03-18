@@ -153,7 +153,7 @@ FormGroup child = new FormGroup(controls: {}, validators: []);
 root.addControl('child', child);
 ```
 
-Here is a short code to add a **FormArray** in the children collection of a **FormGroup** :
+Voici un code pour ajouter un **FormArray** dans une collection enfant d'un **FormGroup** :
 
 ```dart
 FormGroup root = new FormGroup(controls: {}, validators: []);
@@ -161,7 +161,7 @@ FormArray child = new FormArray(groups: [], validators: []);
 root.addControl('child', child);
 ```
 
-Finally, here is a short code to add a **FormControl** in the children collection of a **FormGroup** :
+Et pour finir, voici un code pour ajouter un **FormControl** dans une collection enfant d'un **FormGroup** :
 
 ```dart
 FormGroup root = new FormGroup(controls: {}, validators: []);
@@ -171,7 +171,7 @@ root.addControl('child', child);
 
 ## Supprimer un contrôle d'un FormGroup
 
-Here is a short code to remove a **FormGroup** from the children collection of a **FormGroup** :
+Voici un code pour supprimer un **FormGroup** de la collection enfant d'un **FormGroup** :
 
 ```dart
 FormGroup root = new FormGroup(
@@ -183,9 +183,9 @@ FormGroup root = new FormGroup(
 root.removeControl('child');
 ```
 
-> That function will trigger the validation engine and update the form to display errors if there are.
+> Cette méthode déclenchera le processus de validation et mettra à jour le formulaire pour afficher des erreurs s'il y en a.
 
-Here is a short code to remove a **FormArray** from the children collection of a **FormGroup** :
+Voici un code pour supprimer un **FormArray** de la collection enfant d'un **FormGroup** :
 
 ```dart
 FormGroup root = new FormGroup(
@@ -197,9 +197,9 @@ FormGroup root = new FormGroup(
 root.removeControl('child');
 ```
 
-> That function will trigger the validation engine and update the form to display errors if there are.
+> Cette méthode déclenchera le processus de validation et mettra à jour le formulaire pour afficher des erreurs s'il y en a.
 
-Finally, here is a short code to remove a **FormControl** from the children collection of a **FormGroup** :
+Et pour finir, voici un code pour supprimer un **FormControl** de la collection enfant d'un **FormGroup** :
 
 ```dart
 FormGroup root = new FormGroup(
@@ -211,11 +211,11 @@ FormGroup root = new FormGroup(
 root.removeControl('child');
 ```
 
-> That function will trigger the validation engine and update the form to display errors if there are.
+> Cette méthode déclenchera le processus de validation et mettra à jour le formulaire pour afficher des erreurs s'il y en a.
 
 ## Vérifier si un contrôle existe dans un FormGroup
 
-How to check if a control does exist into a **FormGroup** ?
+Comment vérifier si un control existe dans un **FormGroup** ?
 
 ```dart
 FormGroup root = new FormGroup(controls: {}, validators: []);
@@ -355,7 +355,7 @@ FormGroup child = new FormGroup(controls: {}, validators: []);
 array.addGroup(child);
 ```
 
-> That function will trigger the validation engine and update the form to display errors if there are.
+> Cette méthode déclenchera le processus de validation et mettra à jour le formulaire pour afficher des erreurs s'il y en a.
 
 ## Supprimer un item d'un FormArray
 
@@ -372,7 +372,7 @@ FormGroup child = new FormGroup(controls: {}, validators: []);
 array.removeGroup(child);
 ```
 
-> That function will trigger the validation engine and update the form to display errors if there are.
+> Cette méthode déclenchera le processus de validation et mettra à jour le formulaire pour afficher des erreurs s'il y en a.
 > This part is a little confuse because you don't see how to get an item from the form array. Lets see that later.
 
 ## FormControl
@@ -424,7 +424,7 @@ FormControl<String> control = new FormControl<String>(value: null, validators: [
 control.setValue('my value');
 ```
 
-> That function will trigger the validation engine and update the form to display errors if there are.
+> Cette méthode déclenchera le processus de validation et mettra à jour le formulaire pour afficher des erreurs s'il y en a.
 
 ## Cloner un élément de formulaire
 
