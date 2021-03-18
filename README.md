@@ -7,11 +7,11 @@
 ![Pub Version](https://img.shields.io/pub/v/flutter_forms)
 ![collection version](https://img.shields.io/badge/collection-1.15.0-brightgreen)
 ![constant_datetime version](https://img.shields.io/badge/constant_datetime-1.0.0-brightgreen)
-![image version](https://img.shields.io/badge/image-2.1.19-brightgreen)
+![image version](https://img.shields.io/badge/image-3.0.1-brightgreen)
 ![mime version](https://img.shields.io/badge/mime-1.0.0-brightgreen)
 ![provider version](https://img.shields.io/badge/provider-5.0.0-brightgreen)
 ![queries version](https://img.shields.io/badge/queries-0.1.14-brightgreen)
-![reflectable version](https://img.shields.io/badge/reflectable-2.2.9-brightgreen)
+![reflectable version](https://img.shields.io/badge/reflectable-3.0.0-brightgreen)
 
 <a href="https://www.buymeacoffee.com/maxime.aubry" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" width="195" height="55" /></a>
 
@@ -404,7 +404,7 @@ If you try to use a disallowed type, an exception will be thrown.
 
 This list could evolve later.
 
-Here is the way to declare a FormControl with String generic type :
+Here is the way to declare a **FormControl** with String generic type :
 
 ```dart
 ReactiveFormBuilder form_builder = new ReactiveFormBuilder(

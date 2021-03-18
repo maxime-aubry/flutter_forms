@@ -7,11 +7,11 @@
 ![Pub Version](https://img.shields.io/pub/v/flutter_forms)
 ![collection version](https://img.shields.io/badge/collection-1.15.0-brightgreen)
 ![constant_datetime version](https://img.shields.io/badge/constant_datetime-1.0.0-brightgreen)
-![image version](https://img.shields.io/badge/image-2.1.19-brightgreen)
+![image version](https://img.shields.io/badge/image-3.0.1-brightgreen)
 ![mime version](https://img.shields.io/badge/mime-1.0.0-brightgreen)
 ![provider version](https://img.shields.io/badge/provider-5.0.0-brightgreen)
 ![queries version](https://img.shields.io/badge/queries-0.1.14-brightgreen)
-![reflectable version](https://img.shields.io/badge/reflectable-2.2.9-brightgreen)
+![reflectable version](https://img.shields.io/badge/reflectable-3.0.0-brightgreen)
 
 <a href="https://www.buymeacoffee.com/maxime.aubry" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" width="195" height="55" /></a>
 
@@ -346,11 +346,11 @@ ReactiveFormBuilder form_builder = new ReactiveFormBuilder(
 
 ## Ajouter un item à un FormArray
 
-Ajout un item à un **FormArray** est facile.
+Ajouter un item à un **FormArray** est facile.
 
 Souvenez-vous que vous pouvez ajouter des items de **FormGroup** uniquement.
 
-Voici le moyen d'ajouter un item :
+Voici comment ajouter un item :
 Here is the way to add an item :
 
 ```dart
@@ -363,7 +363,7 @@ array.addGroup(child);
 
 ## Supprimer un item d'un FormArray
 
-Here is the way to remove an item :
+Voici comment supprimer un item :
 
 ```dart
 FormArray array = new FormArray(
@@ -377,36 +377,36 @@ array.removeGroup(child);
 ```
 
 > Cette méthode déclenchera le processus de validation et mettra à jour le formulaire pour afficher des erreurs s'il y en a.
-> This part is a little confuse because you don't see how to get an item from the form array. Lets see that later.
+> Cette partiel est un peu confuse car vous n'avez pas encore vu comment obtenir un item à partir d'un form array. Voyons ça ensemble.
 
 ## FormControl
 
-What would be a form if we didn't use **FormControl** ?
+Que serait un formulaire si nous n'utilisions pas **FormControl** ?
 
-This is the way to store data, while **FormGroup** and **FormArray** are used for the structure !
+Voici comment stocker des données, tandis que **FormGroup** et **FormArray** sont utilisés pour la structure !
 
-**FormControl** are done to support a limited list of data types :
+**FormControl** sont prévus pour supporter une liste limitée de types de données :
 - **DateTime**.
 - **num** (Number).
 - **int**.
 - **double**.
 - **String**.
 - **bool**.
-- List of **DateTime**.
-- List of **num**.
-- List of **int**.
-- List of **double**.
-- List of **String**.
-- List of **bool**.
+- Liste de **DateTime**.
+- Liste de **num**.
+- Liste de **int**.
+- Liste de **double**.
+- Liste de **String**.
+- Liste def **bool**.
 - **Uint8List**, **Uint16List**, **Uint32List**, **Uint64List**, **Int8List**, **Int16List**, **Int32List** and **Int64List** (for **buffer arrays**).
 - **enums**.
-- list of **enums**.
+- Liste d'**enums**.
 
-If you try to use a disallowed type, an exception will be thrown.
+Si vous essayez d'utiliser un type non autorisé, une exception sera levée.
 
-This list could evolve later.
+Cette liste pourrait évoluer plus tard.
 
-Here is the way to declare a FormControl with String generic type :
+Voici comment déclarer un **FormControl** avec un type générique String :
 
 ```dart
 ReactiveFormBuilder form_builder = new ReactiveFormBuilder(
@@ -420,6 +420,7 @@ ReactiveFormBuilder form_builder = new ReactiveFormBuilder(
 ```
 
 ## Attribuer une valeur
+
 
 Here is the way to set a value to a **FormControl** :
 
