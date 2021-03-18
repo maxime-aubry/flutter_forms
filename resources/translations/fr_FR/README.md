@@ -459,7 +459,7 @@ FormControl<String> clone = child.getClone();
 
 Now we studied the basics of **flutter_forms**, lets see how to create a form into a [Flutter] application.
 
-## Définir un fichier de modèle
+## Définir un fichier de model
 
 First, you should define a model file.
 
