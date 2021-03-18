@@ -93,7 +93,7 @@ class CustomDrawer extends StatelessWidget {
             text: 'Dropdown',
             onTap: () => Navigator.pushReplacementNamed(
               context,
-              null,
+              pageRoutes.dropdown,
             ),
           ),
           createDrawerBodyItem(

@@ -49,7 +49,12 @@ class _InputDateTimeState extends State<InputDateTime> {
   ReactiveFormBuilder _getFormBuilder() => new ReactiveFormBuilder(
         group: new FormGroup(
           controls: {
-            'field': new FormControl<DateTime>(value: null, validators: []),
+            'field': new FormControl<DateTime>(
+              value: null,
+              validators: [
+                Required(error: 'Datetime is required'),
+              ],
+            ),
           },
           validators: [],
         ),

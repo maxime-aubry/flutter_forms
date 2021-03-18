@@ -2,6 +2,7 @@ import 'package:example/pages/index.dart';
 
 class pageRoutes {
   static const String home = Home.routeName;
+  static const String dropdown = Dropdown.routeName;
   static const String inputDateTime = InputDateTime.routeName;
   static const String inputFile = InputFile.routeName;
   static const String inputNumber = InputNumber.routeName;

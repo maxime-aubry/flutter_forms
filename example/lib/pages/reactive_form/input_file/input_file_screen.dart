@@ -55,6 +55,7 @@ class _InputFileState extends State<InputFile> {
             'field': new FormControl<Uint8List>(
               value: null,
               validators: [
+                Required(error: 'File is required'),
                 FileMimeType(
                   mimeTypes: ['image/jpeg'],
                   error: 'invalid file',
@@ -64,10 +65,5 @@ class _InputFileState extends State<InputFile> {
           },
           validators: [],
         ),
-      );
-
-  Widget getInput(FormControl<Uint8List> formControl) => new CustomFilePicker(
-        label: 'input',
-        formControl: formControl,
       );
 }

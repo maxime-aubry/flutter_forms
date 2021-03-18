@@ -49,7 +49,12 @@ class _InputNumberState extends State<InputNumber> {
   ReactiveFormBuilder _getFormBuilder() => new ReactiveFormBuilder(
         group: new FormGroup(
           controls: {
-            'field': new FormControl<double>(value: null, validators: []),
+            'field': new FormControl<double>(
+              value: null,
+              validators: [
+                Required(error: 'Number is required'),
+              ],
+            ),
           },
           validators: [],
         ),

@@ -29,6 +29,7 @@ class MyApp extends StatelessWidget {
       home: Home(),
       routes: {
         pageRoutes.home: (context) => Home(),
+        pageRoutes.dropdown: (context) => Dropdown(),
         pageRoutes.inputDateTime: (context) => InputDateTime(),
         pageRoutes.inputFile: (context) => InputFile(),
         pageRoutes.inputNumber: (context) => InputNumber(),

@@ -54,9 +54,4 @@ class _InputTextState extends State<InputText> {
           validators: [],
         ),
       );
-
-  Widget getInput(FormControl<String> formControl) => new CustomTextInput(
-        label: 'input',
-        formControl: formControl,
-      );
 }
