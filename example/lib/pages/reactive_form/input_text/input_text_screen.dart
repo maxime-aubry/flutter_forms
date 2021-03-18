@@ -18,14 +18,16 @@ class _InputTextState extends State<InputText> {
       formBuilder: this._getFormBuilder(),
       builder: (context, _) {
         FormGroup root = context.watchFormGroup();
-        FormControl<String> formControl = root.getFormControl<String>('field');
 
         return new Scaffold(
           appBar: new AppBar(title: Text("Input text")),
           drawer: new CustomDrawer(),
           body: new Padding(
             padding: EdgeInsets.all(5.0),
-            child: this.getInput(formControl),
+            child: new CustomTextInput(
+              label: 'input',
+              formControl: root.getFormControl<String>('field'),
+            ),
           ),
           floatingActionButton: new FloatingActionButton(
             child: Icon(Icons.done),

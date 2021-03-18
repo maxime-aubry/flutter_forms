@@ -18,15 +18,16 @@ class _InputDateTimeState extends State<InputDateTime> {
       formBuilder: this._getFormBuilder(),
       builder: (context, _) {
         FormGroup root = context.watchFormGroup();
-        FormControl<DateTime> formControl =
-            root.getFormControl<DateTime>('field');
 
         return new Scaffold(
           appBar: new AppBar(title: Text("Input datetime")),
           drawer: new CustomDrawer(),
           body: new Padding(
             padding: EdgeInsets.all(5.0),
-            child: this.getInput(formControl),
+            child: new CustomDatePicker(
+              label: 'input',
+              formControl: root.getFormControl<DateTime>('field'),
+            ),
           ),
           floatingActionButton: new FloatingActionButton(
             child: Icon(Icons.done),
@@ -52,10 +53,5 @@ class _InputDateTimeState extends State<InputDateTime> {
           },
           validators: [],
         ),
-      );
-
-  Widget getInput(FormControl<DateTime> formControl) => new CustomDatePicker(
-        label: 'input',
-        formControl: formControl,
       );
 }

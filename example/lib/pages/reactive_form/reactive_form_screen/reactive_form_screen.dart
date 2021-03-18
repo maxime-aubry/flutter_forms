@@ -62,9 +62,19 @@ class _ReactiveFormScreenState extends State<ReactiveFormScreen> {
             padding: EdgeInsets.all(5.0),
             child: new Column(
               children: [
-                this._firstnameInput(root.getFormControl<String>('firstname')),
-                this._lastnameInput(root.getFormControl<String>('lastname')),
-                this._genderInput(root.getFormControl<EGender>('gender')),
+                new CustomTextInput(
+                  label: 'firstname',
+                  formControl: root.getFormControl<String>('firstname'),
+                ),
+                new CustomTextInput(
+                  label: 'lastname',
+                  formControl: root.getFormControl<String>('lastname'),
+                ),
+                new CustomSingleDropdown<EGender>(
+                  label: 'gender',
+                  dataSource: this.genders,
+                  formControl: root.getFormControl<EGender>('gender'),
+                ),
               ],
             ),
           ),
@@ -109,18 +119,5 @@ class _ReactiveFormScreenState extends State<ReactiveFormScreen> {
           },
           validators: [],
         ),
-      );
-
-  Widget _firstnameInput(FormControl<String> formControl) =>
-      new CustomTextInput(label: 'firstname', formControl: formControl);
-
-  Widget _lastnameInput(FormControl<String> formControl) =>
-      new CustomTextInput(label: 'lastname', formControl: formControl);
-
-  Widget _genderInput(FormControl<EGender> formControl) =>
-      new CustomSingleDropdown<EGender>(
-        label: 'gender',
-        dataSource: this.genders,
-        formControl: formControl,
       );
 }

@@ -21,15 +21,16 @@ class _InputFileState extends State<InputFile> {
       formBuilder: this._getFormBuilder(),
       builder: (context, _) {
         FormGroup root = context.watchFormGroup();
-        FormControl<Uint8List> formControl =
-            root.getFormControl<Uint8List>('field');
 
         return new Scaffold(
           appBar: new AppBar(title: Text("Input file")),
           drawer: new CustomDrawer(),
           body: new Padding(
             padding: EdgeInsets.all(5.0),
-            child: this.getInput(formControl),
+            child: new CustomFilePicker(
+              label: 'input',
+              formControl: root.getFormControl<Uint8List>('field'),
+            ),
           ),
           floatingActionButton: new FloatingActionButton(
             child: Icon(Icons.done),

@@ -18,14 +18,16 @@ class _InputNumberState extends State<InputNumber> {
       formBuilder: this._getFormBuilder(),
       builder: (context, _) {
         FormGroup root = context.watchFormGroup();
-        FormControl<double> formControl = root.getFormControl<double>('field');
 
         return new Scaffold(
           appBar: new AppBar(title: Text("Input number")),
           drawer: new CustomDrawer(),
           body: new Padding(
             padding: EdgeInsets.all(5.0),
-            child: this.getInput(formControl),
+            child: new CustomNumberInput(
+              label: 'input',
+              formControl: root.getFormControl<double>('field'),
+            ),
           ),
           floatingActionButton: new FloatingActionButton(
             child: Icon(Icons.done),
@@ -51,10 +53,5 @@ class _InputNumberState extends State<InputNumber> {
           },
           validators: [],
         ),
-      );
-
-  Widget getInput(FormControl<double> formControl) => new CustomNumberInput(
-        label: 'input',
-        formControl: formControl,
       );
 }

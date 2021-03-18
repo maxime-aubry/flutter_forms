@@ -64,11 +64,22 @@ class _ReactiveFormWithDynamicContentState
             padding: EdgeInsets.fromLTRB(8, 0, 8, 0),
             child: new Column(
               children: [
-                this._firstnameInput(root.getFormControl<String>('firstname')),
-                this._lastnameInput(root.getFormControl<String>('lastname')),
-                this._genderInput(root.getFormControl<EGender>('gender')),
-                this._shareAddressInput(
-                  root.getFormControl<bool>('share_address'),
+                new CustomTextInput(
+                  label: 'firstname',
+                  formControl: root.getFormControl<String>('firstname'),
+                ),
+                new CustomTextInput(
+                  label: 'lastname',
+                  formControl: root.getFormControl<String>('lastname'),
+                ),
+                new CustomSingleDropdown<EGender>(
+                  label: 'gender',
+                  dataSource: this.genders,
+                  formControl: root.getFormControl<EGender>('gender'),
+                ),
+                new CustomSwitchInput(
+                  label: 'share address',
+                  formControl: root.getFormControl<bool>('share_address'),
                 ),
                 new _AddressFormGroup(),
               ],
@@ -124,22 +135,6 @@ class _ReactiveFormWithDynamicContentState
           validators: [],
         ),
       );
-
-  Widget _firstnameInput(FormControl<String> formControl) =>
-      new CustomTextInput(label: 'firstname', formControl: formControl);
-
-  Widget _lastnameInput(FormControl<String> formControl) =>
-      new CustomTextInput(label: 'lastname', formControl: formControl);
-
-  Widget _genderInput(FormControl<EGender> formControl) =>
-      new CustomSingleDropdown<EGender>(
-        label: 'gender',
-        dataSource: this.genders,
-        formControl: formControl,
-      );
-
-  Widget _shareAddressInput(FormControl<bool> formControl) =>
-      new CustomSwitchInput(label: 'share address', formControl: formControl);
 }
 
 class _AddressFormGroup extends StatefulWidget {
