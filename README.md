@@ -497,7 +497,7 @@ Use this command line to get the file to get a new file named **models.reflectab
 
 ## Initialize library
 
-Next, into the main.dart file, you must initialize the namespace to import.
+Next, into the **main.dart** file, you must initialize the namespace to import.
 
 Here, you import **example.models** from **./lib/models.reflectable.dart**.
 
@@ -518,7 +518,7 @@ Here we are. We are going to define our new form.
 
 Into your widget, start by defining a [ReactiveForm] object.
 
-[formBuilder] property receives the form builder.
+[formBuilder] property receives the **ReactiveFormBuilder**.
 
 ```dart
 @override
@@ -602,11 +602,11 @@ Widget _inputText(FormControl<String> formControl, String label) =>
 
 **flutter_forms** supports forms with multiples steps !
 
-You must add your forms into a container that will assemble all form states.
+You must add your forms into a container that will assemble all **ReactiveFormState**.
 
 Lets see an easy example.
 
-Here is the main screen :
+Here is the main page :
 
 ```dart
 @override
@@ -721,7 +721,7 @@ FormControls :
 
 | Validator | Description  | Progress |
 | ----- | ----- | ----- |
-| **Email** | Checks if a value is a valid email. | **done** |
+| **Email** | Checks if a string value is a valid email. | **done** |
 | **EqualToDateTime** | Checks if a datetime value is equal to another. | **done** |
 | **EqualToDouble** | Checks if a double value is equal to another. | **done** |
 | **EqualToInt** | Checks if a int value is equal to another. | **done** |
@@ -739,7 +739,7 @@ FormControls :
 | **GreaterThanInt** | Checks if a int value is greater than another. | **done** |
 | **GreaterThanNumber** | Checks if a number value is greater than another. | **done** |
 | **GreaterThanString** | Checks if a string value is greater than another. | **done** |
-| **ImageSize** | Checks if the image width and height. | **done** |
+| **ImageSize** | Checks if the image width and height are valid. | **done** |
 | **InText** | Checks if the text is contained into another text. | **done** |
 | **MembershipPassword** | Checks if the password has a good format according to the settings. | **done** |
 | **MultiSelect** | Checks if value is a selection of items contained into a list of items. | **done** |
@@ -771,9 +771,9 @@ FormControls :
 
 How can we add validators to a form element ?
 
-You can add these functions to FormGroup, FormArray and FormControls.
+You can add these functions to **FormGroup**, **FormArray** and **FormControls**.
 
-These three classes has a **validators** property.
+These three classes have a **validators** property.
 
 So, let see how to do this.
 
@@ -805,19 +805,19 @@ Next time you will validate the form, these validators will be run.
 
 Be careful, these validators will be run in this the order you will add them.
 
-So, don't add StringLength validator before Required validator for example.
+So, don't add **StringLength** validator before **Required** validator for example.
 
 ## Create validators
 
 You easily can create you own validators.
 
-Custom validators must override one of these three classes :
+Custom validators must override one of these four classes :
 - **FormGroupValidatorAnnotation** for FormGroup validators.
 - **FormArrayValidatorAnnotation** for FormArray validators.
 - **FormControlValidatorAnnotation** for FormControl validators.
 - **FormValidatorAnnotation** for validators that are common for these three form elements.
 
-Here is a basic example for a FormGroup validator :
+Here is a basic example for a **FormGroup** validator :
 
 ```dart
 class CustomValidator extends FormGroupValidatorAnnotation {

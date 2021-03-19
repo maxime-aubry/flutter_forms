@@ -498,9 +498,9 @@ Utilisez cette ligne de commande pour obtenir un nouveau fichier nommé **models
 
 ## Initialiser la librarie
 
-Next, into the main.dart file, you must initialize the namespace to import.
+Ensuite, dans le fichier **main.dart**, vous devez initialiser le namespace à importer.
 
-Here, you import **example.models** from **./lib/models.reflectable.dart**.
+Ici, vous importez **example.models** à partir de **./lib/models.reflectable.dart**.
 
 ```dart
 import 'package:example/models.reflectable.dart';
@@ -515,11 +515,12 @@ void main() {
 
 ## Définir un formulaire basique
 
-Here we are. We are going to define our new form.
+Nous y sommes. Nous allons définir nous nouveau formulaire.
 
-Into your widget, start by defining a [ReactiveForm] object.
+Dans votre **widget**, commencez par définir un object [ReactiveForm].
 
-[formBuilder] property receives the form builder.
+
+La propriété [formBuilder] reçoit le **ReactiveFormBuilder**.
 
 ```dart
 @override
@@ -543,11 +544,11 @@ ReactiveFormBuilder _getFormBuilder() => new ReactiveFormBuilder(
 );
 ```
 
-We just created a new form with two fields, **first_name** and **last_name**.
+Nous venons juste de créer un nouveau formulaire avec deux champs de saisie, **first_name** et **last_name**.
 
 ## Ajouter des champs de saisie
 
-Next, let add inputs to display on our screen.
+Ensuite, ajoutons des champs de saisie à afficher sur notre écran.
 
 ```dart
 @override
@@ -601,13 +602,13 @@ Widget _inputText(FormControl<String> formControl, String label) =>
 
 ## Comment ajouter un formulaire réactif avec de multiple étapes dans une application?
 
-**flutter_forms** supports forms with multiples steps !
+**flutter_forms** supporte les formulaires avec de multiples étapes !
 
-You must add your forms into a container that will assemble all form states.
+Vous devez ajouter des formulaires dans un contaneur qui assemblera tous les **ReactiveFormState**.
 
-Lets see an easy example.
+Voyons un exemple :
 
-Here is the main screen :
+Voici la page principale :
 
 ```dart
 @override
@@ -639,7 +640,7 @@ Here is the main screen :
   }
 ```
 
-Here is a step :
+Voici une étape :
 
 ```dart
 @override
@@ -667,7 +668,7 @@ Here is a step :
       );
 ```
 
-Here is another step :
+Voici une autre étape :
 
 ```dart
 @override
@@ -696,33 +697,33 @@ Here is another step :
 
 ## À propos des validateurs
 
-What would be this library without validators ? NOTHING !
+Que serait cette librarie sans les validateurs ? RIEN !
 
 ## Ajouter des validateurs
 
-So, here is a list of available validators :
+Donc, voici une liste des validateurs disponibles :
 
-Common :
+Communs :
 
-| Validator | Description  | Progress |
+| Validateur | Description  | Progression |
 | ----- | ----- | ----- |
-| **Required** | Validate a FormGroup, FormArray and FormControl. Checks if a FormGroup is not null and contains controls. Checks if a FormArray is not null and contains items. Checks if a FormControl is not null. If this one is a string, checks if it's not an empty string. | **done** |
+| **Required** | Validez un FormGroup, FormArray et FormControl. Vérifie si un FormGroup n'est pas null et contient des contrôles. Vérifie si un FormArray n'est pas null et contient des éléments. Vérifie si un FormControl n'est pas null. Si celui-ci est une chaîne de caractères, vérifie si ce n'est pas une chaîne de caractères vide. | **fait** |
 
 FormGroup :
 
-> There are not validators for FormGroup for this time.
+> Il n'y a pas de validateurs FormGroup pour le moment.
 
 FormArray :
 
-| Validator | Description  | Progress |
+| Validateur | Description  | Progression |
 | ----- | ----- | ----- |
-| **NbItems** | Checks if a FormArray has a valid length. | **done** |
+| **NbItems** | Vérifie si un FormArray has a valid length. | **fait** |
 
 FormControls :
 
-| Validator | Description  | Progress |
+| Validateur | Description  | Progression |
 | ----- | ----- | ----- |
-| **Email** | Checks if a value is a valid email. | **done** |
+| **Email** | Checks if a string value is a valid email. | **done** |
 | **EqualToDateTime** | Checks if a datetime value is equal to another. | **done** |
 | **EqualToDouble** | Checks if a double value is equal to another. | **done** |
 | **EqualToInt** | Checks if a int value is equal to another. | **done** |
@@ -740,7 +741,7 @@ FormControls :
 | **GreaterThanInt** | Checks if a int value is greater than another. | **done** |
 | **GreaterThanNumber** | Checks if a number value is greater than another. | **done** |
 | **GreaterThanString** | Checks if a string value is greater than another. | **done** |
-| **ImageSize** | Checks if the image width and height. | **done** |
+| **ImageSize** | Checks if the image width and height are valid. | **done** |
 | **InText** | Checks if the text is contained into another text. | **done** |
 | **MembershipPassword** | Checks if the password has a good format according to the settings. | **done** |
 | **MultiSelect** | Checks if value is a selection of items contained into a list of items. | **done** |
@@ -770,13 +771,13 @@ FormControls :
 | **StringLength** | Checks if a string value is a valid length. | **done** |
 | **Url** | Checks if a value has a good URL format.. | **done** |
 
-How can we add validators to a form element ?
+Comment pouvons-nous ajouter des validateurs à un élément de formulaire ?
 
-You can add these functions to FormGroup, FormArray and FormControls.
+Vous pouvez ajouter cette méthodes à un **FormGroup**, **FormArray** ou **FormControls**.
 
-These three classes has a **validators** property.
+Ces trois classes ont une propriété **validators**.
 
-So, let see how to do this.
+Donc, voyons comment faire ça.
 
 ```dart
 ReactiveFormBuilder _getFormBuilder() => new ReactiveFormBuilder(
@@ -802,23 +803,23 @@ ReactiveFormBuilder _getFormBuilder() => new ReactiveFormBuilder(
 );
 ```
 
-Next time you will validate the form, these validators will be run.
+La prochaine fois que vous validerez le formulaire, ces validateurs seront exécutés.
 
-Be careful, these validators will be run in this the order you will add them.
+Attention, ces validateurs seront exécutés dans l'ordre dans lequel vous les ajouterez.
 
-So, don't add StringLength validator before Required validator for example.
+Donc, n'ajoutez pas le validateur **StringLength** avant le validateur **Required** par exemple.
 
 ## Créer des validateurs
 
-You easily can create you own validators.
+Vous pouvez facilement créer vos propres validateurs.
 
-Custom validators must override one of these three classes :
-- **FormGroupValidatorAnnotation** for FormGroup validators.
-- **FormArrayValidatorAnnotation** for FormArray validators.
-- **FormControlValidatorAnnotation** for FormControl validators.
-- **FormValidatorAnnotation** for validators that are common for these three form elements.
+Les validateurs personnalisés devront surcharger l'une de ces quatre classes:
+- **FormGroupValidatorAnnotation** pour les validateurs FormGroup.
+- **FormArrayValidatorAnnotation** pour les validateurs FormArray.
+- **FormControlValidatorAnnotation** pour les validateurs FormControl.
+- **FormValidatorAnnotation** pour les validateurs communs à ces trois éléments de formulaire.
 
-Here is a basic example for a FormGroup validator :
+Voici un exemple de base pour un validateur **FormGroup**:
 
 ```dart
 class CustomValidator extends FormGroupValidatorAnnotation {
