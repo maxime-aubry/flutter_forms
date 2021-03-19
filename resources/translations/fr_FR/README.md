@@ -456,7 +456,7 @@ FormControl<String> child = form_builder.group.getFormControl<String>('first_nam
 FormControl<String> clone = child.getClone();
 ```
 
-> Whether for **FormGroup**, **FormArray** or **FormControl**, you can use the same **getClone()** method.
+> Que ce soit pour **FormGroup**, **FormArray** ou **FormControl**, vous pouvez utiliser la même méthode **getClone()**.
 
 ## Comment ajouter un formulaire réactif dans une application?
 
@@ -464,20 +464,19 @@ Maintenant que nous avons étudié les bases de **flutter_forms**, voyons commen
 
 ## Définir un fichier de model
 
-First, you should define a model file.
+Tout d'abord, vous devriez définir un fichier de model.
 
-This one will contain all you enums, if you will use them.
+Celui-ci contriendra tous les enums, si vous voulez en utiliser.
 
-Into the **./lib/models.dart**, here are the different steps we will do :
+Dans le fichier **./lib/models.dart**, voici les différentes étapes que nous ferons :
+- définir un namespace pour les models.
+- importer **flutter_forms**.
+- définir une méthode **main()** (pour reflectable).
+- définir vos enums.
 
-- define a namespace for models
-- import flutter_forms
-- define a **main()** method (for reflectable)
-- define you enums
+Si vous ne définissez pas vos enums ici, ils seront refusés plus tard avec le **FormControl**. Une excepiton sera levée.
 
-If you does not define your enums here, they will be refused with FormControl later. An exception will be thrown.
-    
-Please, use **@flutterFormsValidator** notation to declare the content.
+Veuillez utiliser la notation **@flutterFormsValidator** pour déclarer un contenu.
 
 ```dart
 @flutterFormsValidator
@@ -491,7 +490,7 @@ void main() {}
 enum EGender { male, female }
 ```
 
-Use this command line to get the file to get a new file named **models.reflectable.dart** into a flutter application project.
+Utilisez cette ligne de commande pour obtenir un nouveau fichier nommé **models.reflectable.dart** dans un projet d'application **Flutter**.
 
 ```console
 > flutter pub run build_runner build

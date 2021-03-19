@@ -467,14 +467,13 @@ First, you should define a model file.
 
 This one will contain all you enums, if you will use them.
 
-Into the **./lib/models.dart**, here are the different steps we will do :
+Into the **./lib/models.dart** file, here are the different steps we will do :
+- define a namespace for models.
+- import **flutter_forms**.
+- define a **main()** method (for reflectable).
+- define you enums.
 
-- define a namespace for models
-- import flutter_forms
-- define a **main()** method (for reflectable)
-- define you enums
-
-If you does not define your enums here, they will be refused with FormControl later. An exception will be thrown.
+If you don't define your enums here, they will be refused with **FormControl** later. An exception will be thrown.
     
 Please, use **@flutterFormsValidator** notation to declare the content.
 
@@ -490,7 +489,7 @@ void main() {}
 enum EGender { male, female }
 ```
 
-Use this command line to get the file to get a new file named **models.reflectable.dart** into a flutter application project.
+Use this command line to get the file to get a new file named **models.reflectable.dart** into a **Flutter** application project.
 
 ```console
 > flutter pub run build_runner build
