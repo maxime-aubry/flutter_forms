@@ -1,3 +1,4 @@
+/// {@category flutter_forms}
 library flutter_forms;
 
 export 'src/annotations/index.dart';

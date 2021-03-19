@@ -1,0 +1,18 @@
+dartdoc:
+  categories:
+    "Metadata":
+      markdown: doc/metadata.md
+      name: Metadata
+    "ValidationError":
+      markdown: doc/validation_error.md
+      name: ValidationError
+    "Form":
+      markdown: doc/form.md
+      name: Form
+    "Providers":
+      markdown: doc/proviers.md
+      name: Proviers
+    "Utilities":
+      markdown: doc/utilities.md
+      name: Utilities
+  categoryOrder: ["Metadata", "ValidationError", "Form", "Providers", "Utilities"]
