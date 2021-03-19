@@ -3,9 +3,9 @@ import 'package:flutter_forms/src/form/index.dart';
 import 'package:provider/single_child_widget.dart';
 
 /// [MultipleStepFormContainer] declares a new form.
-/// 
+///
 /// How to use it :
-/// 
+///
 /// ``` dart
 /// return MultipleStepFormContainer(
 ///   builder: (context, _) {
@@ -15,8 +15,8 @@ import 'package:provider/single_child_widget.dart';
 ///   },
 /// );
 /// ```
-/// {@category Providers}
-/// {@subCategory Providers}
+/// {@category Form}
+/// {@subCategory Reactive forms}
 class MultipleStepFormContainer extends SingleChildStatefulWidget {
   final TransitionBuilder builder;
 

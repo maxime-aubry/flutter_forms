@@ -14,7 +14,7 @@ import 'package:provider/provider.dart';
 ///   },
 /// );
 /// ```
-/// {@category Providers and Consumers}
+/// {@category Form}
 /// {@subCategory Consumers}
 class FormControlConsumer<TProperty> extends Consumer<FormControl<TProperty>> {
   FormControlConsumer({

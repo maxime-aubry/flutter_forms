@@ -4,7 +4,7 @@ import 'package:flutter_forms/src/form/index.dart';
 import 'package:provider/provider.dart';
 
 /// [MultipleStepFormStateIndexerProvider] provides [MultipleStepFormStateIndexer].
-/// {@category Providers and Consumers}
+/// {@category Form}
 /// {@subCategory Providers}
 class MultipleStepFormStateIndexerProvider
     extends Provider<MultipleStepFormStateIndexer> {

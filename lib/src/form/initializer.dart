@@ -2,6 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter_forms/src/exceptions/index.dart';
 
 /// [LibraryInitializer] initializes the library, declares the library name that contains contents (models, enums...).
+/// {@category Form}
 class LibraryInitializer {
   static bool _isInitialized = false;
   static String _libraryName;

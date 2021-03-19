@@ -5,6 +5,12 @@ import 'package:flutter_forms/src/form/form_control_filter/index.dart';
 import 'package:flutter_forms/src/form/index.dart';
 import 'package:flutter_forms/src/form/reactive_form/index.dart';
 
+/// [FormControl] is a sub-class of [AbstractControl].
+///
+/// It's a way set data.
+///
+/// {@category Form}
+/// {@subCategory Reactive forms}
 class FormControl<TProperty> extends AbstractControl
     with FormControlFilter<TProperty> {
   /* Public properties */

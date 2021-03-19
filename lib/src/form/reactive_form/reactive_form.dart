@@ -5,9 +5,9 @@ import 'package:flutter_forms/src/form/reactive_form/index.dart';
 import 'package:provider/single_child_widget.dart';
 
 /// [ReactiveForm] declares a new form.
-/// 
+///
 /// How to use it :
-/// 
+///
 /// ``` dart
 /// return ReactiveForm(
 ///   formBuilder: this._getFormBuilder(), // define this method provides a ReactiveFormBuilder
@@ -16,9 +16,9 @@ import 'package:provider/single_child_widget.dart';
 ///   },
 /// );
 /// ```
-/// 
+///
 /// How to use it if form has multiple steps :
-/// 
+///
 /// ``` dart
 /// return ReactiveForm(
 ///   formBuilder: this._getFormBuilder(), // define this method provides a ReactiveFormBuilder
@@ -28,8 +28,8 @@ import 'package:provider/single_child_widget.dart';
 ///   },
 /// );
 /// ```
-/// {@category Providers}
-/// {@subCategory Providers}
+/// {@category Form}
+/// {@subCategory Reactive forms}
 class ReactiveForm extends SingleChildStatefulWidget {
   /* Public properties */
   final ReactiveFormBuilder formBuilder;

@@ -4,7 +4,6 @@ import 'package:flutter_forms/src/form/index.dart';
 
 /// [FormGroupValidatorAnnotation] is a sub-class of [FormValidatorAnnotation] class for every validators you will create and use, linked to a [FormGroup].
 /// {@category Metadata}
-/// {@subCategory Form validators}
 abstract class FormGroupValidatorAnnotation
     extends FormValidatorAnnotation<FormGroup> {
   /* Public properties */

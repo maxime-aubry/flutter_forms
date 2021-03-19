@@ -6,6 +6,8 @@ import 'package:flutter_forms/src/form/reactive_form/index.dart';
 import 'package:queries/collections.dart';
 
 /// [AbstractControl] is the parent class for every form element.
+/// {@category Form}
+/// {@subCategory Reactive forms}
 class AbstractControl extends ChangeNotifier {
   /* Public properties */
   FormGroup parent;
@@ -29,7 +31,7 @@ class AbstractControl extends ChangeNotifier {
   String get uniqueName => '${this.hashCode}.${this.name}';
   ReactiveFormBuilder get formBuilder => this.formState.formBuilder;
   FormGroup get root => this._searchRoot();
-  
+
   /// [formPath] is an interpretation of the way to find a form element.
   String get formPath => null;
 

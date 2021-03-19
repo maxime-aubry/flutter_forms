@@ -4,7 +4,7 @@ import 'package:flutter_forms/src/form/index.dart';
 import 'package:provider/provider.dart';
 
 /// [ReactiveFormStateProvider] provides a [ReactiveFormState] to a form.
-/// {@category Providers and Consumers}
+/// {@category Form}
 /// {@subCategory Providers}
 class ReactiveFormStateProvider extends Provider<ReactiveFormState> {
   // ReactiveFormStateProvider({

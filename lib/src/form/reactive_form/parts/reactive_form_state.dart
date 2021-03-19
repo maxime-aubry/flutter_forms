@@ -11,6 +11,8 @@ enum EFormStatus {
 
 /// [ReactiveFormState] is the state of the form.
 /// This one permits to validate the form and get the status and error of each field.
+/// {@category Form}
+/// {@subCategory Reactive forms}
 class ReactiveFormState {
   /* Public properties */
 

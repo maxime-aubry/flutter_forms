@@ -5,7 +5,6 @@ import 'package:flutter_forms/src/form/index.dart';
 
 /// [FormValidatorNavigator] is a mixin used to navigate into a form with a validator.
 /// {@category Metadata}
-/// {@subCategory Form validators}
 mixin FormValidatorNavigator {
   /* Public properties */
 
@@ -23,21 +22,21 @@ mixin FormValidatorNavigator {
   /// [getRemoteValidatorParameter] is a function used to get remote data.
   /// A default value can be provided by the developer, inside de definition of the validator.
   /// But this one can be overrided by a remote value into the form.
-  /// 
+  ///
   /// If parameter name is not provided, this function will throw an exception.
   /// For DateTime data, you must use a ConstantDateTime for default parameter. If you don't, this function will throw an exception.
-  /// 
+  ///
   /// How to use it :
   /// ```dart
   /// class CustomValidator extends FormControlValidatorAnnotation<String> {
   ///   final int localParameter;
   ///   final String remoteParameterName;
-  /// 
+  ///
   ///   const CustomValidator(
   ///     this.localParameter,
   ///     @required String error,
   ///   ) : super(error: error);
-  /// 
+  ///
   ///   @override
   ///   Future<bool> isValid(FormControl<String> control) async {
   ///     int parameter = super.getRemoteValidatorParameter<int>(
