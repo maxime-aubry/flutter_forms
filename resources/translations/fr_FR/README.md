@@ -78,8 +78,8 @@ dependencies:
   flutter:
     sdk: flutter
 
-  build_runner: any
-  reflectable: ^2.2.9
+  build_runner: ^1.12.2
+  reflectable: ^3.0.0
   flutter_forms: ^1.0.0
 ```
 
