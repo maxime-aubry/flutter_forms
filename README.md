@@ -905,21 +905,21 @@ Navigator.push(
 
 ## ReactiveFormStateProvider
 
-ReactiveFormStateProvider is used inside **ReactiveForm** widget. Thanks to him, you are able to use **Consumers**, **watchers** and **readers** without defining it yourself.
+**ReactiveFormStateProvider** is used inside **ReactiveForm** **widget**. Thanks to him, you are able to use **Consumers**, **watchers** and **readers** without defining it yourself.
 
-ReactiveFormState watcher :
+**ReactiveFormState watcher** :
 
 ```dart
 ReactiveFormState formState = context.watchFormState();
 ```
 
-ReactiveFormState reader :
+**ReactiveFormState reader** :
 
 ```dart
 ReactiveFormState formState = context.readFormState();
 ```
 
-ReactiveFormState consumer :
+**ReactiveFormState consumer** :
 
 ```dart
 child: new ReactiveFormStateConsumer(
@@ -931,11 +931,11 @@ child: new ReactiveFormStateConsumer(
 
 ## FormGroupProvider
 
-FormGroupProvider is used inside **ReactiveForm** widget. Thanks to him, you are able to use **Consumers**, **watchers** and **readers** without defining it yourself.
+**FormGroupProvider** is used inside **ReactiveForm** **widget**. Thanks to him, you are able to use **Consumers**, **watchers** and **readers** without defining it yourself.
 
 But, if you want to consume a sub form element, in the sub level of the root, you must provide it.
 
-For example, here is a form. Root level is provided, thanks to **ReactiveForm** widget.
+For example, here is a form. **Root** level is provided, thanks to **ReactiveForm** **widget**.
 
 If we want to use **Consumers**, **watchers** or **readers** on a sub form element, use **FormGroupProvider.value** on it !
 
@@ -962,19 +962,19 @@ If we want to use **Consumers**, **watchers** or **readers** on a sub form eleme
   }
 ```
 
-FormGroup watcher :
+**FormGroup watcher** :
 
 ```dart
 FormGroup formGroup = context.watchFormGroup();
 ```
 
-FormGroup reader :
+**FormGroup reader** :
 
 ```dart
 FormGroup formGroup = context.readFormGroup();
 ```
 
-FormGroup consumer :
+**FormGroup consumer** :
 
 ```dart
 child: new FormGroupConsumer(
@@ -986,11 +986,11 @@ child: new FormGroupConsumer(
 
 ## FormArrayProvider
 
-FormArray is always a sub form element of root level. If you want to consume it, you must provide it.
+**FormArray** is always a sub form element of **root** level. If you want to consume it, you must provide it.
 
-For example, here is a form. Root level is provided, thanks to **ReactiveForm** widget.
+For example, here is a form. **Root** level is provided, thanks to **ReactiveForm** **widget**.
 
-If we want to use **Consumers**, **watchers** or **readers** on a sub form element, use **FormArrayProvider.value** on it !
+If we want to use **Consumers**, **Watchers** or **Readers** on a sub form element, use **FormArrayProvider.value** on it !
 
 ```dart
 @override
@@ -1015,19 +1015,19 @@ If we want to use **Consumers**, **watchers** or **readers** on a sub form eleme
   }
 ```
 
-FormArray watcher :
+**FormArray watcher** :
 
 ```dart
 FormArray formArray = context.watchFormArray();
 ```
 
-FormArray reader :
+**FormArray reader** :
 
 ```dart
 FormArray formArray = context.readFormArray();
 ```
 
-FormArray consumer :
+**FormArray consumer** :
 
 ```dart
 child: new FormArrayConsumer(
@@ -1039,11 +1039,11 @@ child: new FormArrayConsumer(
 
 ## FormControlProvider
 
-FormControl is always a sub form element of root level. If you want to consume it, you must provide it.
+**FormControl** is always a sub form element of **root** level. If you want to consume it, you must provide it.
 
-For example, here is a form. Root level is provided, thanks to **ReactiveForm** widget.
+For example, here is a form. **Root** level is provided, thanks to **ReactiveForm** **widget**.
 
-If we want to use **Consumers**, **watchers** or **readers** on a sub form element, use **FormControlProvider.value** on it !
+If we want to use **Consumers**, **Watchers** or **Readers** on a sub form element, use **FormControlProvider.value** on it !
 
 ```dart
 @override
@@ -1068,19 +1068,19 @@ If we want to use **Consumers**, **watchers** or **readers** on a sub form eleme
   }
 ```
 
-FormControl watcher :
+**FormControl watcher** :
 
 ```dart
 FormControl<String> formControl = context.watchFormControl<String>();
 ```
 
-FormControl reader :
+**FormControl reader** :
 
 ```dart
 FormControl<String> formControl = context.readFormControl<String>();
 ```
 
-FormControl consumer :
+**FormControl consumer** :
 
 ```dart
 child: new FormControlConsumer<String>(
@@ -1092,9 +1092,9 @@ child: new FormControlConsumer<String>(
 
 ## MultipleStepFormStateIndexerProvider
 
-MultipleStepFormStateIndexer is used only inside form with multiple steps.
+**MultipleStepFormStateIndexer** is used only inside form with multiple steps.
 
-Its role is to assemble all form state inside an indexer. So, **Stepper** will be able to target the good form state that you should use.
+Its role is to assemble all **ReactiveFormState** inside an indexer. So, **Stepper** will be able to target the good form state that you should use.
 
 Use it when you want to validate a step :
 
@@ -1130,13 +1130,13 @@ Use it when you want to validate a step :
   }
 ```
 
-FormControl watcher :
+**FormControl watcher** :
 
 ```dart
 MultipleStepFormStateIndexer indexer = context.watchMultipleStepFormStateIndexer();
 ```
 
-FormControl reader :
+**FormControl reader** :
 
 ```dart
 MultipleStepFormStateIndexer indexer = context.readMultipleStepFormStateIndexer();
