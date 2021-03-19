@@ -91,7 +91,7 @@ Ensuite, lancez la commande **flutter packages get** dans la console.
 
 Bien sur, FormBuilder est le point de départ de la création de formulaire.
 
-Voilà comment créer un formulaire :
+Comment créer un formulaire :
 
 ```dart
 ReactiveFormBuilder form_builder = new ReactiveFormBuilder(
@@ -147,7 +147,7 @@ ReactiveFormBuilder form_builder = new ReactiveFormBuilder(
 
 Comment ajouter une partie sous-jacente de votre formulaire dynamiquement ?
 
-Voici un code pour ajouter un **FormGroup** dans une collection enfant d'un **FormGroup** :
+Comment ajouter un **FormGroup** dans une collection enfant d'un **FormGroup** :
 
 ```dart
 FormGroup root = new FormGroup(controls: {}, validators: []);
@@ -155,7 +155,7 @@ FormGroup child = new FormGroup(controls: {}, validators: []);
 root.addControl('child', child);
 ```
 
-Voici un code pour ajouter un **FormArray** dans une collection enfant d'un **FormGroup** :
+Comment ajouter un **FormArray** dans une collection enfant d'un **FormGroup** :
 
 ```dart
 FormGroup root = new FormGroup(controls: {}, validators: []);
@@ -163,7 +163,7 @@ FormArray child = new FormArray(groups: [], validators: []);
 root.addControl('child', child);
 ```
 
-Et pour finir, voici un code pour ajouter un **FormControl** dans une collection enfant d'un **FormGroup** :
+Comment ajouter un **FormControl** dans une collection enfant d'un **FormGroup** :
 
 ```dart
 FormGroup root = new FormGroup(controls: {}, validators: []);
@@ -173,7 +173,7 @@ root.addControl('child', child);
 
 ## Supprimer un contrôle d'un FormGroup
 
-Voici un code pour supprimer un **FormGroup** de la collection enfant d'un **FormGroup** :
+Comment supprimer un **FormGroup** de la collection enfant d'un **FormGroup** :
 
 ```dart
 FormGroup root = new FormGroup(
@@ -187,7 +187,7 @@ root.removeControl('child');
 
 > Cette méthode déclenchera le processus de validation et mettra à jour le formulaire pour afficher des erreurs s'il y en a.
 
-Voici un code pour supprimer un **FormArray** de la collection enfant d'un **FormGroup** :
+Comment supprimer un **FormArray** de la collection enfant d'un **FormGroup** :
 
 ```dart
 FormGroup root = new FormGroup(
@@ -201,7 +201,7 @@ root.removeControl('child');
 
 > Cette méthode déclenchera le processus de validation et mettra à jour le formulaire pour afficher des erreurs s'il y en a.
 
-Et pour finir, voici un code pour supprimer un **FormControl** de la collection enfant d'un **FormGroup** :
+Comment supprimer un **FormControl** de la collection enfant d'un **FormGroup** :
 
 ```dart
 FormGroup root = new FormGroup(
@@ -318,7 +318,7 @@ Selon moi, **FormArray** d'Angular est trop permissif. Un développeur pourrait 
 
 Ça ne devrait pas être possible, même si une exception était levée par la suite.
 
-Donc, voici le moyen de déclarer un **FormArray** :
+Comment déclarer un **FormArray** :
 
 ```dart
 ReactiveFormBuilder form_builder = new ReactiveFormBuilder(
@@ -350,8 +350,7 @@ Ajouter un item à un **FormArray** est facile.
 
 Souvenez-vous que vous pouvez ajouter des items de **FormGroup** uniquement.
 
-Voici comment ajouter un item :
-Here is the way to add an item :
+Comment ajouter un item :
 
 ```dart
 FormArray array = new FormArray(groups: [], validators: []);
@@ -363,7 +362,7 @@ array.addGroup(child);
 
 ## Supprimer un item d'un FormArray
 
-Voici comment supprimer un item :
+Comment supprimer un item :
 
 ```dart
 FormArray array = new FormArray(
@@ -383,7 +382,7 @@ array.removeGroup(child);
 
 Que serait un formulaire si nous n'utilisions pas **FormControl** ?
 
-Voici comment stocker des données, tandis que **FormGroup** et **FormArray** sont utilisés pour la structure !
+Comment stocker des données, tandis que **FormGroup** et **FormArray** sont utilisés pour la structure !
 
 **FormControl** sont prévus pour supporter une liste limitée de types de données :
 - **DateTime**.
@@ -406,7 +405,7 @@ Si vous essayez d'utiliser un type non autorisé, une exception sera levée.
 
 Cette liste pourrait évoluer plus tard.
 
-Voici comment déclarer un **FormControl** avec un type générique String :
+Comment déclarer un **FormControl** avec un type générique String :
 
 ```dart
 ReactiveFormBuilder form_builder = new ReactiveFormBuilder(
@@ -421,8 +420,7 @@ ReactiveFormBuilder form_builder = new ReactiveFormBuilder(
 
 ## Attribuer une valeur
 
-
-Here is the way to set a value to a **FormControl** :
+Comment attribuer une valeur à un **FormControl** :
 
 ```dart
 FormControl<String> control = new FormControl<String>(value: null, validators: []);
@@ -435,15 +433,15 @@ control.setValue('my value');
 
 Cloner un élément de formulaire is a very important point of **flutter_forms**.
 
-Imagine you are modifying an item of your form, as a sub **FormGroup**. You changes values, and you decide to click on cancel button.
+Imaginez que vous modifiez un item de votre formulaire, tel qu'un sous **FormGroup**. Vous changez les valeurs, et vous décidez de cliquer sur le bouton d'annulation.
 
-Rollback your values could be hard !
+Un retour en arrières sur vos valeurs pourrait être un peu compliqué !
 
-So, you should clone the part of the form you want to update, and apply those changes later if you want.
+Donc, vous devriez cloner la partie du formulaire que vous souhaitez mettre à jour, et appliquer les changements plus tard si vous voulez.
 
-When you clone a form element, you clone the full tree of **ReactiveFormBuilder**, so you can use you validators to compare a value with another.
+Quand vous clonez un élément de formulaire, vous clonez l'arborescence complète d'un **ReactiveFormBuilder**, donc vous pouvez utiliser les validateurs pour comparer une valeur avec une autre.
 
-Here is an example :
+Voici un exemple :
 
 ```dart
 ReactiveFormBuilder form_builder = new ReactiveFormBuilder(
@@ -462,7 +460,7 @@ FormControl<String> clone = child.getClone();
 
 ## Comment ajouter un formulaire réactif dans une application?
 
-Now we studied the basics of **flutter_forms**, lets see how to create a form into a [Flutter] application.
+Maintenant que nous avons étudié les bases de **flutter_forms**, voyons comment créer un formulaire dans une application [Flutter].
 
 ## Définir un fichier de model
 

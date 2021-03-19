@@ -91,7 +91,7 @@ Then, run **flutter packages get** command on the console.
 
 Of course, FormBuilder is the starting point of form creation.
 
-Here is the way to build a form :
+How to build a form :
 
 ```dart
 ReactiveFormBuilder form_builder = new ReactiveFormBuilder(
@@ -147,7 +147,7 @@ ReactiveFormBuilder form_builder = new ReactiveFormBuilder(
 
 How to add a sub part of you form dynamically ?
 
-Here is a short code to add a **FormGroup** in the children collection of a **FormGroup** :
+How to add a **FormGroup** in the children collection of a **FormGroup** :
 
 ```dart
 FormGroup root = new FormGroup(controls: {}, validators: []);
@@ -155,7 +155,7 @@ FormGroup child = new FormGroup(controls: {}, validators: []);
 root.addControl('child', child);
 ```
 
-Here is a short code to add a **FormArray** in the children collection of a **FormGroup** :
+How to add a **FormArray** in the children collection of a **FormGroup** :
 
 ```dart
 FormGroup root = new FormGroup(controls: {}, validators: []);
@@ -163,7 +163,7 @@ FormArray child = new FormArray(groups: [], validators: []);
 root.addControl('child', child);
 ```
 
-Finally, here is a short code to add a **FormControl** in the children collection of a **FormGroup** :
+How to add a **FormControl** in the children collection of a **FormGroup** :
 
 ```dart
 FormGroup root = new FormGroup(controls: {}, validators: []);
@@ -173,7 +173,7 @@ root.addControl('child', child);
 
 ## Remove control from a FormGroup
 
-Here is a short code to remove a **FormGroup** from the children collection of a **FormGroup** :
+How to remove a **FormGroup** from the children collection of a **FormGroup** :
 
 ```dart
 FormGroup root = new FormGroup(
@@ -187,7 +187,7 @@ root.removeControl('child');
 
 > That function will trigger the validation engine and update the form to display errors if there are.
 
-Here is a short code to remove a **FormArray** from the children collection of a **FormGroup** :
+How to remove a **FormArray** from the children collection of a **FormGroup** :
 
 ```dart
 FormGroup root = new FormGroup(
@@ -201,7 +201,7 @@ root.removeControl('child');
 
 > That function will trigger the validation engine and update the form to display errors if there are.
 
-Finally, here is a short code to remove a **FormControl** from the children collection of a **FormGroup** :
+How to remove a **FormControl** from the children collection of a **FormGroup** :
 
 ```dart
 FormGroup root = new FormGroup(
@@ -318,7 +318,7 @@ In my opinion, Angular **FormArray** is too permissive. Developer could try to a
 
 This should not be possible, even if an exception is thrown after.
 
-So, here is the way to declare a **FormArray** :
+How to declare a **FormArray** :
 
 ```dart
 ReactiveFormBuilder form_builder = new ReactiveFormBuilder(
@@ -349,7 +349,7 @@ ReactiveFormBuilder form_builder = new ReactiveFormBuilder(
 Add an item to a **FormArray** is easy.
 Remember that you can add **FormGroup** items only.
 
-Here is the way to add an item :
+How to add an item :
 
 ```dart
 FormArray array = new FormArray(groups: [], validators: []);
@@ -361,7 +361,7 @@ array.addGroup(child);
 
 ## Remove item from a FormArray
 
-Here is the way to remove an item :
+How to remove an item :
 
 ```dart
 FormArray array = new FormArray(
@@ -404,7 +404,7 @@ If you try to use a disallowed type, an exception will be thrown.
 
 This list could evolve later.
 
-Here is the way to declare a **FormControl** with String generic type :
+How to declare a **FormControl** with String generic type :
 
 ```dart
 ReactiveFormBuilder form_builder = new ReactiveFormBuilder(
@@ -419,7 +419,7 @@ ReactiveFormBuilder form_builder = new ReactiveFormBuilder(
 
 ## Set a value
 
-Here is the way to set a value to a **FormControl** :
+How to set a value to a **FormControl** :
 
 ```dart
 FormControl<String> control = new FormControl<String>(value: null, validators: []);
