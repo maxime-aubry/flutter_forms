@@ -2,8 +2,6 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter_forms/flutter_forms.dart';
 
 /// [_Range] with [TProperty] generic type is a validator that checks if a value is between min and max values.
-/// {@category Metadata}
-/// {@subCategory Form validators}
 class _Range<TProperty extends Comparable>
     extends FormControlValidatorAnnotation<TProperty> {
   /* Public properties */

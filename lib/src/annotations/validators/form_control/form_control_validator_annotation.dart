@@ -3,7 +3,6 @@ import 'package:flutter_forms/src/annotations/index.dart';
 import 'package:flutter_forms/src/form/index.dart';
 
 /// [FormControlValidatorAnnotation] is a sub-class of [FormValidatorAnnotation] class for every validators you will create and use, linked to a [FormControl].
-/// {@category Metadata}
 abstract class FormControlValidatorAnnotation<TProperty>
     extends FormValidatorAnnotation<FormControl<TProperty>> {
   /* Public properties */

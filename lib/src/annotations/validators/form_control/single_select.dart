@@ -3,8 +3,6 @@ import 'package:flutter_forms/flutter_forms.dart';
 import 'package:queries/collections.dart';
 
 /// [SingleSelect] is a validator that checks if value is an item contained into a list of items.
-/// {@category Metadata}
-/// {@subCategory Form validators}
 class SingleSelect<TProperty>
     extends FormControlValidatorAnnotation<TProperty> {
   /* Public properties */

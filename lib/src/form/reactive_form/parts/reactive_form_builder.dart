@@ -5,8 +5,6 @@ import 'package:flutter_forms/src/form/index.dart';
 import 'package:flutter_forms/src/form/reactive_form/index.dart';
 
 /// [ReactiveFormBuilder] will build your form.
-/// {@category Form}
-/// {@subCategory Reactive forms}
 class ReactiveFormBuilder {
   /* Public properties */
   bool isInitialized;

@@ -1,5 +1,4 @@
 /// [ValidationError] class provides an error report in case of no-validation of the form element.
-/// {@category Form}
 class ValidationError {
   ValidationError(
     this.propertyName,

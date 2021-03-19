@@ -15,8 +15,6 @@ import 'package:provider/single_child_widget.dart';
 ///   },
 /// );
 /// ```
-/// {@category Form}
-/// {@subCategory Reactive forms}
 class MultipleStepFormContainer extends SingleChildStatefulWidget {
   final TransitionBuilder builder;
 

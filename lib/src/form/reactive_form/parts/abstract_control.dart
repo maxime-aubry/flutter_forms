@@ -6,8 +6,6 @@ import 'package:flutter_forms/src/form/reactive_form/index.dart';
 import 'package:queries/collections.dart';
 
 /// [AbstractControl] is the parent class for every form element.
-/// {@category Form}
-/// {@subCategory Reactive forms}
 class AbstractControl extends ChangeNotifier {
   /* Public properties */
   FormGroup parent;

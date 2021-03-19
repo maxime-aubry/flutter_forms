@@ -16,8 +16,6 @@ import 'package:provider/provider.dart';
 ///   },
 /// );
 /// ```
-/// {@category Form}
-/// {@subCategory Providers}
 class FormGroupProvider extends ChangeNotifierProvider<FormGroup> {
   FormGroupProvider({
     Key key,

@@ -17,8 +17,6 @@ import 'package:provider/provider.dart';
 ///   },
 /// );
 /// ```
-/// {@category Form}
-/// {@subCategory Providers}
 class FormArrayProvider extends ChangeNotifierProvider<FormArray> {
   FormArrayProvider({
     Key key,

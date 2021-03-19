@@ -28,8 +28,6 @@ import 'package:provider/single_child_widget.dart';
 ///   },
 /// );
 /// ```
-/// {@category Form}
-/// {@subCategory Reactive forms}
 class ReactiveForm extends SingleChildStatefulWidget {
   /* Public properties */
   final ReactiveFormBuilder formBuilder;

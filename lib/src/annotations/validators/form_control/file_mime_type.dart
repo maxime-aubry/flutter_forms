@@ -7,8 +7,6 @@ import 'package:flutter_forms/src/form/reactive_form/index.dart';
 import 'package:mime/mime.dart';
 
 /// [FileMimeType] is a validator that checks if a file has an allowed mime type.
-/// {@category Metadata}
-/// {@subCategory Form validators}
 class FileMimeType extends FormControlValidatorAnnotation<Uint8List> {
   /* Public properties */
   /// [mimeTypes] is the allowed mime types list. It's a constant, provided by developer inside the [FileMimeType] annotation.

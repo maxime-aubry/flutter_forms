@@ -17,8 +17,6 @@ import 'package:provider/provider.dart';
 ///   },
 /// );
 /// ```
-/// {@category Form}
-/// {@subCategory Providers}
 class FormControlProvider<TProperty>
     extends ChangeNotifierProvider<FormControl<TProperty>> {
   FormControlProvider({

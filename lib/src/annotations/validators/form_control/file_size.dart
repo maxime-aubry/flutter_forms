@@ -6,8 +6,6 @@ import 'package:flutter_forms/src/annotations/validators/form_control/index.dart
 import 'package:flutter_forms/src/form/reactive_form/index.dart';
 
 /// [FileSize] is a validator that checks if a file has an allowed size.
-/// {@category Metadata}
-/// {@subCategory Form validators}
 class FileSize extends FormControlValidatorAnnotation<Uint8List> {
   /* Public properties */
   /// [size] is the allowed size. It's a constant, provided by developer inside the [FileSize] annotation.

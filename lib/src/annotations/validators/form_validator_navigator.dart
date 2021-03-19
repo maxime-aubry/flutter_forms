@@ -4,7 +4,6 @@ import 'package:flutter_forms/src/exceptions/index.dart';
 import 'package:flutter_forms/src/form/index.dart';
 
 /// [FormValidatorNavigator] is a mixin used to navigate into a form with a validator.
-/// {@category Metadata}
 mixin FormValidatorNavigator {
   /* Public properties */
 

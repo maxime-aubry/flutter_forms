@@ -2,8 +2,6 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter_forms/flutter_forms.dart';
 
 /// [Required] is a validator that checks if a value is provided or not.
-/// {@category Metadata}
-/// {@subCategory Form validators}
 class Required extends FormValidatorAnnotation<AbstractControl> {
   /* Public properties */
 
@@ -23,7 +21,7 @@ class Required extends FormValidatorAnnotation<AbstractControl> {
   /* Public methods */
   /// Check if [AbstractControl] is provided or not.
   /// Accepted [AbstractControl] are [FormGroup], [FormArray] and [FormControl].
-  /// 
+  ///
   /// If control is a [FormGroup], check if 'controls' variable length is greater than 0. If it is, returns [True], else returns [False].
   /// If control is a [FormArray], check if 'groups' variable length is grater than 0. If it is, returns [True], else returns [False].
   /// If control is a [FormControl] :

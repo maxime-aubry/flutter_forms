@@ -14,8 +14,6 @@ import 'package:provider/provider.dart';
 ///   },
 /// );
 /// ```
-/// {@category Form}
-/// {@subCategory Consumers}
 class ReactiveFormStateConsumer extends Consumer<ReactiveFormState> {
   ReactiveFormStateConsumer({
     Key key,

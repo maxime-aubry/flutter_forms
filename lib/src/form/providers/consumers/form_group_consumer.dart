@@ -14,8 +14,6 @@ import 'package:provider/provider.dart';
 ///   },
 /// );
 /// ```
-/// {@category Form}
-/// {@subCategory Consumers}
 class FormGroupConsumer extends Consumer<FormGroup> {
   FormGroupConsumer({
     Key key,

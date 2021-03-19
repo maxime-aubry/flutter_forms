@@ -3,8 +3,6 @@ import 'package:flutter_forms/src/annotations/validators/form_control/index.dart
 import 'package:flutter_forms/src/form/reactive_form/index.dart';
 
 /// [_GreaterThan] with [TProperty] generic type is a validator that checks if a value is greater than another.
-/// {@category Metadata}
-/// {@subCategory Form validators}
 class _GreaterThan<TProperty extends Comparable>
     extends FormControlValidatorAnnotation<TProperty> {
   /* Public properties */

@@ -1147,6 +1147,7 @@ MultipleStepFormStateIndexer indexer = context.readMultipleStepFormStateIndexer(
 ## Voir plus d'exemples
 
 I invite you to study [example project].
+
 Example project uses libraries :
 - [date_time_picker].
 - [file_picker].

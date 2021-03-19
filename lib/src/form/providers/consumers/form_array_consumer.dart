@@ -13,8 +13,6 @@ import 'package:provider/provider.dart';
 ///   },
 /// );
 /// ```
-/// {@category Form}
-/// {@subCategory Consumers}
 class FormArrayConsumer extends Consumer<FormArray> {
   FormArrayConsumer({
     Key key,

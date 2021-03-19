@@ -66,8 +66,6 @@ class CheckListOfEnum<TProperty> implements ICheckFilter {
   }
 }
 
-/// {@category Form}
-/// {@subCategory FormControl filters}
 mixin FormControlFilter<TProperty> {
   /* Public properties */
 

@@ -194,8 +194,6 @@ class _PasswordCheckSpecialCharacters implements _IPasswordCheckRule {
 }
 
 /// [MembershipPassword] is a validator that checks if the password has a good format according to the settings.
-/// {@category Metadata}
-/// {@subCategory Form validators}
 class MembershipPassword extends FormControlValidatorAnnotation<String> {
   /* Public properties */
   /// [minLength] is the minimal string length of your password.

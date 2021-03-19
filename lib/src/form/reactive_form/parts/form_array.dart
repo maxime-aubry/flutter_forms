@@ -9,8 +9,6 @@ import 'package:flutter_forms/src/form/reactive_form/index.dart';
 /// It's a way to group form elements.
 ///
 /// [FormArray] can contain [FormGroup] items only.
-/// {@category Form}
-/// {@subCategory Reactive forms}
 class FormArray extends AbstractControl {
   /* Public properties */
   /// [groups] is a collection of [FormGroup] items.

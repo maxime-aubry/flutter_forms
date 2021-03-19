@@ -2,8 +2,6 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter_forms/flutter_forms.dart';
 
 /// [_NotEqualTo] with [TProperty] generic type is a validator that checks if a value is not equal to another.
-/// {@category Metadata}
-/// {@subCategory Form validators}
 class _NotEqualTo<TProperty extends Comparable>
     extends FormControlValidatorAnnotation<TProperty> {
   /* Public properties */

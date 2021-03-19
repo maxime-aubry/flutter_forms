@@ -4,7 +4,6 @@ import 'package:flutter_forms/src/form/index.dart';
 import 'package:queries/collections.dart';
 
 /// [FormIndexer] indexes all [AbstractControl] items of a form by their name.
-/// {@category Form}
 class FormIndexer extends MapBase<String, AbstractControl> {
   /* Public properties */
 

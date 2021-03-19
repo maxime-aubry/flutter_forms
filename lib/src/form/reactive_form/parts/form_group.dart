@@ -5,12 +5,10 @@ import 'package:flutter_forms/src/form/index.dart';
 import 'package:flutter_forms/src/form/reactive_form/index.dart';
 
 /// [FormGroup] is a sub-class of [AbstractControl].
-/// 
+///
 /// It's a way to group form elements.
-/// 
+///
 /// [FormGroup] can contain [FormGroup], [FormArray] and [FormControl] elements.
-/// {@category Form}
-/// {@subCategory Reactive forms}
 class FormGroup extends AbstractControl {
   /* Public properties */
   /// [isArrayItem] permits to know if current [FormGroup] is a FormArray item.

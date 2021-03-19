@@ -5,16 +5,15 @@ typedef Future<List<SelectListItem<TProperty>>> ListItemsServiceFunction<
     TProperty>();
 
 /// [ListItemsProvider] provides data to validators, as dropdown, autocomplete...
-/// 
+///
 /// Items are provided from local data, or using by a HTTP request.
-/// {@category Utilities}
 class ListItemsProvider {
   static Map<String, ListItemsServiceFunction> _services = {};
 
   /// [clear] clears the services.
-  /// 
+  ///
   /// How to use it :
-  /// 
+  ///
   /// ``` dart
   /// ListItemsProvider.clear();
   /// ```
@@ -26,15 +25,15 @@ class ListItemsProvider {
   }
 
   /// [register] registers a service.
-  /// 
+  ///
   /// If the service name is not provided, the method will throw an exception.
-  /// 
+  ///
   /// If the service is not provided, the method will throw an exception.
-  /// 
+  ///
   /// If the service name is already registered, the method will throw an exception.
-  /// 
+  ///
   /// How to use it :
-  /// 
+  ///
   /// ``` dart
   /// ListItemsProvider.register<TProperty>('serviceName', () async => []);
   /// ```
@@ -59,13 +58,13 @@ class ListItemsProvider {
   }
 
   /// [close] closes a service.
-  /// 
+  ///
   /// If the service name is not provided, the method will throw an exception.
-  /// 
+  ///
   /// If the service name is not registered, the method will throw an exception.
-  /// 
+  ///
   /// How to use it :
-  /// 
+  ///
   /// ``` dart
   /// ListItemsProvider.close('serviceName');
   /// ```
@@ -83,13 +82,13 @@ class ListItemsProvider {
   }
 
   /// [provide] provides a service.
-  /// 
+  ///
   /// If the service name is not provided, the method will throw an exception.
-  /// 
+  ///
   /// If the service name is not registered, the method will throw an exception.
-  /// 
+  ///
   /// How to use it :
-  /// 
+  ///
   /// ``` dart
   /// Future<List<SelectListItem<TProperty>>> Function() service =
   ///   ListItemsProvider.provide<TProperty>('serviceName');
