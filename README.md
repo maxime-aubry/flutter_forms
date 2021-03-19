@@ -833,7 +833,7 @@ class CustomValidator extends FormGroupValidatorAnnotation {
 }
 ```
 
-Here is a basic example for a FormArray validator :
+Here is a basic example for a **FormArray** validator :
 
 ```dart
 class CustomValidator extends FormArrayValidatorAnnotation {
@@ -849,9 +849,9 @@ class CustomValidator extends FormArrayValidatorAnnotation {
 }
 ```
 
-For FormControl validators, you must use generic type !
+For **FormControl** validators, you must use generic type !
 
-Here is a basic example for a FormControl validator :
+Here is a basic example for a **FormControl** validator :
 
 ```dart
 class CustomValidator extends FormControlValidatorAnnotation<String> {
@@ -869,19 +869,19 @@ class CustomValidator extends FormControlValidatorAnnotation<String> {
 
 ## Providers and Consumers
 
-**flutter_forms** uses [Provider library] to provide and consume form elements into your widgets.
+**flutter_forms** uses [Provider library] to provide and consume form elements into your **widgets**.
 
-For almost each provider of **flutter_forms**, you can use **Consumers** (they are widgets), **watchers** and **readers**.
+For almost each provider of **flutter_forms**, you can use **Consumers** (they are **widgets**), **watchers** and **readers**.
 
 If you want to use **Consumers**, **watchers** or **readers**, data must be provided before.
 
-Watchers are done to get form elements and rebuild widgets than use them when their value changes.
+**Watchers** are done to get form elements and rebuild **widgets** than use them when their value changes.
 
-Readers are done to get form elements without rebuilding widgets than use them when their value changes.
+**Readers** are done to get form elements without rebuilding **widgets** than use them when their value changes.
 
-Consumers can make reading difficult.
+**Consumers** can make reading code more difficult.
 
-The last thing to know is **watchers** and **Consumers** do exactly the same thing.
+La dernière chose à savoir est que les **watchers** et le **Consumers** font exactement la même chose.
 
 ## FormProvider
 

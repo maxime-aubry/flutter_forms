@@ -819,7 +819,7 @@ Les validateurs personnalisés devront surcharger l'une de ces quatre classes:
 - **FormControlValidatorAnnotation** pour les validateurs FormControl.
 - **FormValidatorAnnotation** pour les validateurs communs à ces trois éléments de formulaire.
 
-Voici un exemple de base pour un validateur **FormGroup**:
+Voici un exemple basique pour un validateur **FormGroup** :
 
 ```dart
 class CustomValidator extends FormGroupValidatorAnnotation {
@@ -835,7 +835,7 @@ class CustomValidator extends FormGroupValidatorAnnotation {
 }
 ```
 
-Here is a basic example for a FormArray validator :
+Voici un exemple basique pour un validateur **FormArray** :
 
 ```dart
 class CustomValidator extends FormArrayValidatorAnnotation {
@@ -851,9 +851,9 @@ class CustomValidator extends FormArrayValidatorAnnotation {
 }
 ```
 
-For FormControl validators, you must use generic type !
+Pour les validateurs de **FormControl**, vous devez utilsier un type générique !
 
-Here is a basic example for a FormControl validator :
+Voici un exemple basique pour un validateur **FormControl** :
 
 ```dart
 class CustomValidator extends FormControlValidatorAnnotation<String> {
@@ -871,17 +871,17 @@ class CustomValidator extends FormControlValidatorAnnotation<String> {
 
 ## Providers et Consumers
 
-**flutter_forms** uses [Provider library] to provide and consume form elements into your widgets.
+**flutter_forms** utilise [la librairie Provider] pour fournir et consumer des éléments de formulaire à vos **widgets**.
 
-For almost each provider of **flutter_forms**, you can use **Consumers** (they are widgets), **watchers** and **readers**.
+Pour presque tous les providers de **flutter_forms**, vous pouvez utiliser les **Consumers** (qui sont des **widgets**), les **watchers** et les **readers**.
 
-If you want to use **Consumers**, **watchers** or **readers**, data must be provided before.
+Si vous voulez utiliser les **Consumers**, **watchers** ou **readers**, les données doivent être fournies avant.
 
-Watchers are done to get form elements and rebuild widgets than use them when their value changes.
+Les **Watchers** sont faits pour obtenir des éléments de formulaire et rebuilder les **widgets** qui les utilisent quand leur valeur change.
 
-Readers are done to get form elements without rebuilding widgets than use them when their value changes.
+Les **Readers** sont faits pour obtenir des éléments de formulaire sans rebuilder les **widgets** qui les utilisent quand leur valeur change.
 
-Consumers can make reading difficult.
+Les **Consumers** peuvent rendre la lecture du code plus difficile.
 
 The last thing to know is **watchers** and **Consumers** do exactly the same thing.
 
