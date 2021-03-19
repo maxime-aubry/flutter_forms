@@ -87,7 +87,7 @@ Ensuite, lancez la commande **flutter packages get** dans la console.
 
 ## FormBuilder
 
-**flutter_forms** est inspiré par les formulaires réactids d'Angular.
+**flutter_forms** est inspiré par les formulaires réactifs d'**Angular**.
 
 Bien sur, FormBuilder est le point de départ de la création de formulaire.
 
@@ -105,7 +105,7 @@ ReactiveFormBuilder form_builder = new ReactiveFormBuilder(
 );
 ```
 
-Un formulaire est créé et automatiquement instancié quand vous l'ajoutez au widget **ReactiveForm**. Il fournit un arborescence complète des éléments à utiliser.
+Un formulaire est créé et automatiquement instancié quand vous l'ajoutez au **widget** **ReactiveForm**. Il fournit un arborescence complète des éléments à utiliser.
 
 > C'est une version simplifiée de **Angular reactive forms**.
 > Comme pour **Angular reactive forms**, **flutter_forms** peut créer des formulaires dynamiques.
@@ -314,7 +314,7 @@ Ensuite vous avez le **FormArray**. Celui-ci est une collection de **FormGroup**
 
 C'est une différence avec la librairie d'**Angular**. Je ne suis pas d'accord avec le fait qu'un **FormArray** puisse détenir directement des items de **FormControl**.
 
-Selon moi, **FormArray** d'Angular est trop permissif. Un développeur pourrait essayer d'ajouter des items de **FormGroup** et **FormControl** dans le même **FormArray**.
+Selon moi, **FormArray** d'**Angular** est trop permissif. Un développeur pourrait essayer d'ajouter des items de **FormGroup** et **FormControl** dans le même **FormArray**.
 
 Ça ne devrait pas être possible, même si une exception était levée par la suite.
 
@@ -711,7 +711,7 @@ Communs :
 
 FormGroup :
 
-> Il n'y a pas de validateurs FormGroup pour le moment.
+> Il n'y a pas de validateurs **FormGroup** pour le moment.
 
 FormArray :
 
@@ -907,7 +907,7 @@ Navigator.push(
 
 ## ReactiveFormStateProvider
 
-**ReactiveFormStateProvider** est utilisé dans le widget **ReactiveForm**. Grâce à lui, vous pouvez utiliser des **Consumers**, des **Watchers** et des **Readers** sans le définir vous-même.
+**ReactiveFormStateProvider** est utilisé dans le **widget** **ReactiveForm**. Grâce à lui, vous pouvez utiliser des **Consumers**, des **Watchers** et des **Readers** sans le définir vous-même.
 
 **ReactiveFormState watcher** :
 
@@ -935,7 +935,7 @@ child: new ReactiveFormStateConsumer(
 
 **FormGroupProvider** est utilisé dans le **widget** **ReactiveForm**. Grâce à lui, vous pouvez utiliser des **Consumers**, des **Watchers** et des **Readers** sans le définir vous-même.
 
-Mais, si vous souhaitez consommer un élément de sous-formulaire, dans le sous-niveau de la racine, vous devez le fournir.
+Mais, si vous souhaitez consommer un élément de sous-formulaire, dans le sous-niveau du **root**, vous devez le fournir.
 
 Par exemple, voici un formulaire. Le niveau **root** est fourni, grâce au **widget** **ReactiveForm**.
 

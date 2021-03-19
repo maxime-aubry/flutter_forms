@@ -87,7 +87,7 @@ Then, run **flutter packages get** command on the console.
 
 ## FormBuilder
 
-**flutter_forms** is inspired by Angular reactive forms.
+**flutter_forms** is inspired by **Angular** reactive forms.
 
 Of course, FormBuilder is the starting point of form creation.
 
@@ -105,7 +105,7 @@ ReactiveFormBuilder form_builder = new ReactiveFormBuilder(
 );
 ```
 
-A form is created and automatically instantiated when you add it to **ReactiveForm** widget. It provides a complete tree of form elements to use.
+A form is created and automatically instantiated when you add it to **ReactiveForm** **widget**. It provides a complete tree of form elements to use.
 
 > It's a simplified version of **Angular reactive forms**.
 > As for **Angular reactive forms**, **flutter_forms** can create dynamic forms.
@@ -312,9 +312,9 @@ FormArray child = root.getFormArray('child');
 
 Next you have the **FormArray**. This one is a collection of **FormGroup** only.
 
-This a difference with Angular's library. I disagree with the fact a **FormArray** can contain directly **FormControl** items.
+This a difference with **Angular**'s library. I disagree with the fact a **FormArray** can contain directly **FormControl** items.
 
-In my opinion, Angular **FormArray** is too permissive. Developer could try to add **FormGroup** and **FormControl** items into the same **FormArray**.
+In my opinion, **Angular** **FormArray** is too permissive. Developer could try to add **FormGroup** and **FormControl** items into the same **FormArray**.
 
 This should not be possible, even if an exception is thrown after.
 
@@ -516,7 +516,7 @@ void main() {
 
 Here we are. We are going to define our new form.
 
-Into your widget, start by defining a [ReactiveForm] object.
+Into your **widget**, start by defining a [ReactiveForm] object.
 
 [formBuilder] property receives the **ReactiveFormBuilder**.
 
@@ -709,7 +709,7 @@ Common :
 
 FormGroup :
 
-> There are not validators for FormGroup for this time.
+> There are not validators for **FormGroup** for this time.
 
 FormArray :
 
@@ -933,7 +933,7 @@ child: new ReactiveFormStateConsumer(
 
 **FormGroupProvider** is used inside **ReactiveForm** **widget**. Thanks to him, you are able to use **Consumers**, **watchers** and **readers** without defining it yourself.
 
-But, if you want to consume a sub form element, in the sub level of the root, you must provide it.
+But, if you want to consume a sub form element, in the sub level of the **root**, you must provide it.
 
 For example, here is a form. **Root** level is provided, thanks to **ReactiveForm** **widget**.
 
