@@ -883,13 +883,13 @@ Les **Readers** sont faits pour obtenir des éléments de formulaire sans rebuil
 
 Les **Consumers** peuvent rendre la lecture du code plus difficile.
 
-The last thing to know is **watchers** and **Consumers** do exactly the same thing.
+La dernière chose à savoir est que les **watchers** et le **Consumers** font exactement la même chose.
 
 ## FormProvider
 
-FormProvider is used inside **ReactiveForm** widget. Thanks to him, you are able to use **Consumers**, **watchers** and **readers** without defining it yourself.
+**ReactiveFormProvider** est utilisé dans **ReactiveForm** **widget**. Grâce à lui, vous pouvez utiliser des **Consumers**, des **Watchers** et des **Readers** sans le définir vous-même.
 
-Except if you need to go to a new route, you will must share elements with the new widget.
+Excepté si vous naviguez vers une nouvelle route, vous devrez partager ces éléments avec le nouveau **widget**.
 
 ```dart
 Navigator.push(

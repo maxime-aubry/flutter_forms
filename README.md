@@ -881,13 +881,13 @@ If you want to use **Consumers**, **watchers** or **readers**, data must be prov
 
 **Consumers** can make reading code more difficult.
 
-La dernière chose à savoir est que les **watchers** et le **Consumers** font exactement la même chose.
+The last thing to know is **watchers** and **Consumers** do exactly the same thing.
 
 ## FormProvider
 
-FormProvider is used inside **ReactiveForm** widget. Thanks to him, you are able to use **Consumers**, **watchers** and **readers** without defining it yourself.
+**ReactiveFormProvider** is used inside **ReactiveForm** **widget**. Thanks to him, you are able to use **Consumers**, **watchers** and **readers** without defining it yourself.
 
-Except if you need to go to a new route, you will must share elements with the new widget.
+Except if you need to go to a new route, you will must share elements with the new **widget**.
 
 ```dart
 Navigator.push(
