@@ -1,6 +1,5 @@
 dartdoc:
   categories:
-
     "Metadata":
       markdown: doc/metadata.md
       name: Metadata
@@ -16,7 +15,6 @@ dartdoc:
     "Utilities":
       markdown: doc/utilities.md
       name: Utilities
-
     "Form validators":
       markdown: doc/metadata/form_validators.md
       name: Form validators
@@ -29,5 +27,5 @@ dartdoc:
     "Reactive forms":
       markdown: doc/form/reactive_forms.md
       name: Reactive forms
-
   categoryOrder: ["Metadata", "Form validators", "ValidationError", "Form", "Reactive forms", "Providers and Consumers", "Providers", "Consumers", "Utilities"]
+  showUndocumentedCategories: true
