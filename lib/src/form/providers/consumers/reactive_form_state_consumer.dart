@@ -4,9 +4,9 @@ import 'package:flutter_forms/src/form/index.dart';
 import 'package:provider/provider.dart';
 
 /// [ReactiveFormStateConsumer] listens for changes on last provided [ReactiveFormState].
-/// 
+///
 /// How to use it :
-/// 
+///
 /// ``` dart
 /// child: new ReactiveFormStateConsumer(
 ///   builder: (context, formState, child) {
@@ -14,7 +14,7 @@ import 'package:provider/provider.dart';
 ///   },
 /// );
 /// ```
-/// {@category Providers}
+/// {@category Providers and Consumers}
 /// {@subCategory Consumers}
 class ReactiveFormStateConsumer extends Consumer<ReactiveFormState> {
   ReactiveFormStateConsumer({

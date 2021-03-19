@@ -3,9 +3,9 @@ import 'package:flutter_forms/src/form/index.dart';
 import 'package:provider/provider.dart';
 
 /// [FormArrayConsumer] listens for changes on last provided [FormArray].
-/// 
+///
 /// How to use it :
-/// 
+///
 /// ``` dart
 /// child: new FormArrayConsumer(
 ///   builder: (context, formArray, child) {
@@ -13,7 +13,7 @@ import 'package:provider/provider.dart';
 ///   },
 /// );
 /// ```
-/// {@category Providers}
+/// {@category Providers and Consumers}
 /// {@subCategory Consumers}
 class FormArrayConsumer extends Consumer<FormArray> {
   FormArrayConsumer({

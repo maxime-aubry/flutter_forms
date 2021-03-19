@@ -4,9 +4,9 @@ import 'package:flutter_forms/src/form/index.dart';
 import 'package:provider/provider.dart';
 
 /// [FormGroupConsumer] listens for changes on last provided [FormGroup].
-/// 
+///
 /// How to use it :
-/// 
+///
 /// ``` dart
 /// child: new FormGroupConsumer(
 ///   builder: (context, formGroup, child) {
@@ -14,7 +14,7 @@ import 'package:provider/provider.dart';
 ///   },
 /// );
 /// ```
-/// {@category Providers}
+/// {@category Providers and Consumers}
 /// {@subCategory Consumers}
 class FormGroupConsumer extends Consumer<FormGroup> {
   FormGroupConsumer({

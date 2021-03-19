@@ -4,11 +4,11 @@ import 'package:flutter_forms/src/form/index.dart';
 import 'package:provider/provider.dart';
 
 /// [FormArrayProvider] provides a [FormArray] to a form.
-/// 
+///
 /// Use it when you want to instanciate a [FormArray] into the provider.
-/// 
+///
 /// How to use it :
-/// 
+///
 /// ``` dart
 /// child: new FormArrayProvider(
 ///   create: (_) => new FormArray(),
@@ -17,7 +17,7 @@ import 'package:provider/provider.dart';
 ///   },
 /// );
 /// ```
-/// {@category Providers}
+/// {@category Providers and Consumers}
 /// {@subCategory Providers}
 class FormArrayProvider extends ChangeNotifierProvider<FormArray> {
   FormArrayProvider({
@@ -35,11 +35,11 @@ class FormArrayProvider extends ChangeNotifierProvider<FormArray> {
         );
 
   /// [of] provides a [FormArray].
-  /// 
+  ///
   /// If [listen] is [True], [FormArray] will refresh each time the object will change.
-  /// 
+  ///
   /// How to use it :
-  /// 
+  ///
   /// ``` dart
   /// FormArray formArray = FormArrayProvider.of(context, listen: true);
   /// ```
@@ -47,14 +47,14 @@ class FormArrayProvider extends ChangeNotifierProvider<FormArray> {
       Provider.of<FormArray>(context, listen: listen);
 
   /// [FormArrayProvider] provides a [FormArray] to a form.
-  /// 
+  ///
   /// Use it when you want to instanciate a [FormArray] outside the provider.
-  /// 
+  ///
   /// How to use it :
-  /// 
+  ///
   /// ``` dart
   /// FormArray formArray = // ...
-  /// 
+  ///
   /// child: new FormArrayProvider.value(
   ///   value: formArray,
   ///   builder: (context, _) {
@@ -77,22 +77,22 @@ class FormArrayProvider extends ChangeNotifierProvider<FormArray> {
 
 extension FormArrayProviderExtension on BuildContext {
   /// [readFormArray] gets a [FormArray] object.
-  /// 
+  ///
   /// If a widget use this object, it won't rebuild when object changes.
-  /// 
+  ///
   /// How to use it :
-  /// 
+  ///
   /// ``` dart
   /// FormArray formArray = context.readFormArray();
   /// ```
   FormArray readFormArray() => FormArrayProvider.of(this, listen: false);
-  
+
   /// [watchFormArray] gets a [FormArray] object.
-  /// 
+  ///
   /// If a widget use this object, it will rebuild when object changes.
-  /// 
+  ///
   /// How to use it :
-  /// 
+  ///
   /// ``` dart
   /// FormArray formArray = context.watchFormArray();
   /// ```

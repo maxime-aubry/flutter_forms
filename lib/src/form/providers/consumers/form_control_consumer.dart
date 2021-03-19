@@ -4,9 +4,9 @@ import 'package:flutter_forms/src/form/index.dart';
 import 'package:provider/provider.dart';
 
 /// [FormControlConsumer] with [TProperty] generic type listens for changes on last provided [FormControl].
-/// 
+///
 /// How to use it :
-/// 
+///
 /// ``` dart
 /// child: new FormControlConsumer<TProperty>(
 ///   builder: (context, formControl, child) {
@@ -14,7 +14,7 @@ import 'package:provider/provider.dart';
 ///   },
 /// );
 /// ```
-/// {@category Providers}
+/// {@category Providers and Consumers}
 /// {@subCategory Consumers}
 class FormControlConsumer<TProperty> extends Consumer<FormControl<TProperty>> {
   FormControlConsumer({

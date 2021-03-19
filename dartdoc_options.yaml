@@ -1,5 +1,6 @@
 dartdoc:
   categories:
+
     "Metadata":
       markdown: doc/metadata.md
       name: Metadata
@@ -9,10 +10,24 @@ dartdoc:
     "Form":
       markdown: doc/form.md
       name: Form
-    "Providers":
-      markdown: doc/proviers.md
-      name: Proviers
+    "Providers and Consumers":
+      markdown: doc/providers_and_consumers.md
+      name: Providers and Consumers
     "Utilities":
       markdown: doc/utilities.md
       name: Utilities
-  categoryOrder: ["Metadata", "ValidationError", "Form", "Providers", "Utilities"]
+
+    "Form validators":
+      markdown: doc/metadata/form_validators.md
+      name: Form validators
+    "Providers":
+      markdown: doc/providers_and_consumers/providers.md
+      name: Consumers
+    "Consumers":
+      markdown: doc/providers_and_consumers/consumers.md
+      name: Consumers
+    "Reactive forms":
+      markdown: doc/form/reactive_forms.md
+      name: Reactive forms
+
+  categoryOrder: ["Metadata", "Form validators", "ValidationError", "Form", "Reactive forms", "Providers and Consumers", "Providers", "Consumers", "Utilities"]

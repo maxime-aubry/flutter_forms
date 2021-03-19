@@ -4,7 +4,7 @@ import 'package:flutter_forms/src/form/index.dart';
 import 'package:provider/provider.dart';
 
 /// [ReactiveFormStateProvider] provides a [ReactiveFormState] to a form.
-/// {@category Providers}
+/// {@category Providers and Consumers}
 /// {@subCategory Providers}
 class ReactiveFormStateProvider extends Provider<ReactiveFormState> {
   // ReactiveFormStateProvider({
@@ -24,11 +24,11 @@ class ReactiveFormStateProvider extends Provider<ReactiveFormState> {
   //       );
 
   /// [of] provides a [ReactiveFormState].
-  /// 
+  ///
   /// If [listen] is [True], [ReactiveFormState] will refresh each time the object will change.
-  /// 
+  ///
   /// How to use it :
-  /// 
+  ///
   /// ``` dart
   /// ReactiveFormState formState = ReactiveFormStateProvider.of(context, listen: true);
   /// ```
@@ -36,14 +36,14 @@ class ReactiveFormStateProvider extends Provider<ReactiveFormState> {
       Provider.of<ReactiveFormState>(context, listen: listen);
 
   /// [ReactiveFormStateProvider] provides a [ReactiveFormState] to a form.
-  /// 
+  ///
   /// Use it when you want to instanciate a [ReactiveFormState] outside the provider.
-  /// 
+  ///
   /// How to use it :
-  /// 
+  ///
   /// ``` dart
   /// ReactiveFormState reactiveFormState = // ...
-  /// 
+  ///
   /// child: new ReactiveFormStateProvider.value(
   ///   value: reactiveFormState,
   ///   builder: (context, _) {
@@ -68,23 +68,24 @@ class ReactiveFormStateProvider extends Provider<ReactiveFormState> {
 
 extension FormStateProviderExtension on BuildContext {
   /// [readFormState] gets a [ReactiveFormState] object.
-  /// 
+  ///
   /// If a widget use this object, it won't rebuild when object changes.
-  /// 
+  ///
   /// How to use it :
-  /// 
+  ///
   /// ``` dart
   /// ReactiveFormState formState = context.readFormState();
   /// ```
-  /// 
+  ///
   /// How to use it if form has multiple steps : :
-  /// 
+  ///
   /// ``` dart
   /// ReactiveFormState formState = context.readFormState(step: 'step1');
   /// ```
   ReactiveFormState readFormState({String step = null}) {
     //#region locales methods
-    ReactiveFormState readState() => ReactiveFormStateProvider.of(this, listen: false);
+    ReactiveFormState readState() =>
+        ReactiveFormStateProvider.of(this, listen: false);
 
     ReactiveFormState readStepState() {
       MultipleStepFormStateIndexer indexer =
@@ -99,23 +100,24 @@ extension FormStateProviderExtension on BuildContext {
   }
 
   /// [watchFormState] gets a [ReactiveFormState] object.
-  /// 
+  ///
   /// If a widget use this object, it will rebuild when object changes.
-  /// 
+  ///
   /// How to use it :
-  /// 
+  ///
   /// ``` dart
   /// ReactiveFormState formState = context.watchFormState();
   /// ```
-  /// 
+  ///
   /// How to use it if form has multiple steps : :
-  /// 
+  ///
   /// ``` dart
   /// ReactiveFormState formState = context.watchFormState(step: 'step1');
   /// ```
   ReactiveFormState watchFormState({String step = null}) {
     //#region locales methods
-    ReactiveFormState watchState() => ReactiveFormStateProvider.of(this, listen: true);
+    ReactiveFormState watchState() =>
+        ReactiveFormStateProvider.of(this, listen: true);
 
     ReactiveFormState watchStepState() {
       MultipleStepFormStateIndexer indexer =
